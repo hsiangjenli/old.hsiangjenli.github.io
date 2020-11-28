@@ -1,12 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>HJL</title>
-        <link>http://hsiangjenli.github.io/</link>
-        <description>Python &amp; Fintech</description>
+        <title>dataframe - Tag - HJL</title>
+        <link>http://hsiangjenli.github.io/tags/dataframe/</link>
+        <description>dataframe - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 28 Nov 2020 22:57:26 &#43;0800</lastBuildDate>
-            <atom:link href="http://hsiangjenli.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 28 Nov 2020 22:57:26 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/dataframe/" rel="self" type="application/rss+xml" /><item>
     <title>TWSE [3] 資料存入SQLite</title>
     <link>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</link>
     <pubDate>Sat, 28 Nov 2020 22:57:26 &#43;0800</pubDate>
