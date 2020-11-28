@@ -1,0 +1,25 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - HJL</title>
+        <link>http://hsiangjenli.github.io/posts/</link>
+        <description>All Posts | HJL</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Fri, 27 Nov 2020 16:57:26 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>First_post</title>
+    <link>http://hsiangjenli.github.io/first_post/</link>
+    <pubDate>Fri, 27 Nov 2020 16:57:26 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/first_post/</guid>
+    <description><![CDATA[TWSE股票資料 1.1 個股月成交資訊   個股月成交資訊以台積電2330為例
+  點選 列印/HTML
+  更改 html 為 jsn
+  更改 20200813為 20200713，即可找到7月資料
+  更改 stockNo=2330 為 stockNo=1234，即可找到黑松交易資
+ https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&amp;date=20200713&amp;stockNo=2330
+  https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&amp;date=20200713&amp;stockNo=1234
+   在exchangeReport前加上 /en/ 轉換成英文版
+ https://www.twse.com.tw/en/exchangeReport/STOCK_DAY?response=jsn&amp;date=20200713&amp;stockNo=1234
+ 1 2 3 4 5  stock_list = [1234, 2330] date = 20200813 for j in range(0,len(stock_list)): url = &#34;http://www.twse.com.tw/en/exchangeReport/STOCK_DAY?response=jsn&amp;date={}&amp;stockNo={}&#34;.format(date,stock_list[j]) print(url)   ``
+  1.2 每日收盤行情  每日收盤行情-全部 點選 列印/HTML 更改 html 為 jsn 更改 20200827 為 20200828，即可找到8月28日資料 在exchangeReport前加上 /en/ 轉換成英文版  https://www.]]></description>
+</item></channel>
+</rss>
