@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖 - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖" />
+<meta property="og:description" content="MySQL to Dataframe SQL連線 1 2 3 4 5 6 7 8 9 10  user = &#39;root&#39; pw = &#34;YourPassworrd&#34; conn=MySQLdb.connect(host=&#34;127.0.0.1&#34;,user=user, passwd=pw,charset=&#39;utf8&#39;) cursor=conn.cursor() cursor.execute(&#34;CREATE DATABASE IF NOT EXISTS TWSE DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_unicode_ci&#34; ) engine = create_engine(&#34;mysql&#43;pymysql://{}:{}@localhost/{db}&#34;.format(user,pw,db=&#34;TWSE&#34;)) df = pd.read_sql(&#34;SELECT* FROM `twse` WHERE `Stock Code` = 2330 AND `Date` BETWEEN &#39;2019/11/10 00:00:00&#39; AND &#39;2020/1/10 23:59:59&#39;&#34;, engine, coerce_float=True, parse_dates=True)   讀取資料庫Table至Dataframe 1 2 3 4  import pandas as pd df = pd." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" />
+<meta property="article:published_time" content="2020-11-29T12:40:15+08:00" />
+<meta property="article:modified_time" content="2020-11-29T12:40:15+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖"/>
+<meta name="twitter:description" content="MySQL to Dataframe SQL連線 1 2 3 4 5 6 7 8 9 10  user = &#39;root&#39; pw = &#34;YourPassworrd&#34; conn=MySQLdb.connect(host=&#34;127.0.0.1&#34;,user=user, passwd=pw,charset=&#39;utf8&#39;) cursor=conn.cursor() cursor.execute(&#34;CREATE DATABASE IF NOT EXISTS TWSE DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_unicode_ci&#34; ) engine = create_engine(&#34;mysql&#43;pymysql://{}:{}@localhost/{db}&#34;.format(user,pw,db=&#34;TWSE&#34;)) df = pd.read_sql(&#34;SELECT* FROM `twse` WHERE `Stock Code` = 2330 AND `Date` BETWEEN &#39;2019/11/10 00:00:00&#39; AND &#39;2020/1/10 23:59:59&#39;&#34;, engine, coerce_float=True, parse_dates=True)   讀取資料庫Table至Dataframe 1 2 3 4  import pandas as pd df = pd."/>
+<meta name="application-name" content="HJL">
+<meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" /><link rel="prev" href="http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TWSE [6] MySQL to Dataframe \u0026 mplfinance K線圖",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hsiangjenli.github.io\/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96\/"
+        },"genre": "posts","keywords": "Python, TWSE, MySQL, mplfinance, dataframe, pd.read_sql","wordcount":  385 ,
+        "url": "http:\/\/hsiangjenli.github.io\/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96\/","datePublished": "2020-11-29T12:40:15+08:00","dateModified": "2020-11-29T12:40:15+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "HJL"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HJL">HJL</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HJL">HJL</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a>&nbsp;<a href="/categories/twse/"><i class="far fa-folder fa-fw"></i>TWSE</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-29">2020-11-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;385 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sql連線">SQL連線</a></li>
+    <li><a href="#讀取資料庫table至dataframe">讀取資料庫Table至Dataframe</a>
+      <ul>
+        <li><a href="#1-取出指定col值">1 取出指定col值</a></li>
+        <li><a href="#2-取出指定index值">2 取出指定index值</a></li>
+        <li><a href="#3-取出指定index-and-col值">3 取出指定index and col值</a></li>
+        <li><a href="#4-取出多個col值">4 取出多個col值</a></li>
+        <li><a href="#5-欄位名稱">5 欄位名稱</a></li>
+        <li><a href="#6-資料">6 資料</a></li>
+        <li><a href="#7-欄位type">7 欄位Type</a></li>
+        <li><a href="#8-index值">8 index值</a></li>
+        <li><a href="#9-重新命名">9 重新命名</a></li>
+        <li><a href="#-實作"># 實作</a></li>
+      </ul>
+    </li>
+    <li><a href="#mplfinance-新版">mplfinance [新版]</a>
+      <ul>
+        <li><a href="#每日收盤行情">每日收盤行情</a>
+          <ul>
+            <li><a href="#sql連線-1">SQL連線</a></li>
+            <li><a href="#重新調整dataframe">重新調整Dataframe</a>
+              <ul>
+                <li><a href="#1-刪掉多餘的col">1 刪掉多餘的Col</a></li>
+                <li><a href="#2-重新命名col">2 重新命名Col</a></li>
+                <li><a href="#3-dfdate型態改變">3 df[&lsquo;Date&rsquo;]型態改變</a></li>
+                <li><a href="#4-重新排序">4 重新排序</a></li>
+              </ul>
+            </li>
+            <li><a href="#candlestick-chart">Candlestick chart</a>
+              <ul>
+                <li><a href="#基本">基本</a></li>
+                <li><a href="#美化">美化</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h1 id="mysql-to-dataframe">MySQL to Dataframe</h1>
+<h2 id="sql連線">SQL連線</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<span class="n">pw</span> <span class="o">=</span> <span class="s2">&#34;YourPassworrd&#34;</span>
+
+<span class="n">conn</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="n">pw</span><span class="p">,</span><span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">=</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> 
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;CREATE DATABASE IF NOT EXISTS TWSE DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_unicode_ci&#34;</span> <span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="n">db</span><span class="o">=</span><span class="s2">&#34;TWSE&#34;</span><span class="p">))</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&#34;SELECT* FROM `twse` WHERE `Stock Code` = 2330 AND `Date` BETWEEN &#39;2019/11/10 00:00:00&#39; AND &#39;2020/1/10 23:59:59&#39;&#34;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="讀取資料庫table至dataframe">讀取資料庫Table至Dataframe</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span> 
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT* FROM `twse`&#39;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">index_col</span><span class="o">=</span> <span class="s1">&#39;Stock Code&#39;</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="s1">&#39;Date&#39;</span><span class="p">)</span>
+<span class="n">df</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="1-取出指定col值">1 取出指定col值</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="p">[</span><span class="s1">&#39;Opening Price&#39;</span><span class="p">])</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="2-取出指定index值">2 取出指定index值</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-取出指定index-and-col值">3 取出指定index and col值</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">][</span><span class="s1">&#39;Opening Price&#39;</span><span class="p">])</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="4-取出多個col值">4 取出多個col值</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Opening Price&#39;</span><span class="p">,</span> <span class="s1">&#39;Closing Price&#39;</span><span class="p">]]</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="5-欄位名稱">5 欄位名稱</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">columns</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="6-資料">6 資料</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">values</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="7-欄位type">7 欄位Type</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="8-index值">8 index值</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">index</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="9-重新命名">9 重新命名</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;Opening Price&#39;</span><span class="p">:</span> <span class="s1">&#39;Open&#39;</span><span class="p">})</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="-實作"># 實作</h3>
+<blockquote>
+<p>讀取指定index值至Dataframe</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s1">&#39;SELECT* FROM `twse`, engine, index_col= &#39;</span><span class="n">Stock</span> <span class="n">Code</span><span class="s1">&#39;, coerce_float=True, parse_dates=&#39;</span><span class="n">Date</span><span class="s1">&#39;)  </span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="mplfinance-新版">mplfinance [新版]</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">pip install mplfinance
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">mplfinance</span> <span class="kn">as</span> <span class="nn">mpf</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="每日收盤行情">每日收盤行情</h3>
+<h4 id="sql連線-1">SQL連線</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<span class="n">pw</span> <span class="o">=</span> <span class="s2">&#34;YourPassworrd&#34;</span>
+
+<span class="n">conn</span><span class="o">=</span><span class="n">MySQLdb</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">host</span><span class="o">=</span><span class="s2">&#34;127.0.0.1&#34;</span><span class="p">,</span><span class="n">user</span><span class="o">=</span><span class="n">user</span><span class="p">,</span> <span class="n">passwd</span><span class="o">=</span><span class="n">pw</span><span class="p">,</span><span class="n">charset</span><span class="o">=</span><span class="s1">&#39;utf8&#39;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">=</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span> 
+
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">&#34;CREATE DATABASE IF NOT EXISTS TWSE DEFAULT CHARSET=utf8 DEFAULT COLLATE=utf8_unicode_ci&#34;</span> <span class="p">)</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="n">db</span><span class="o">=</span><span class="s2">&#34;TWSE&#34;</span><span class="p">))</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&#34;SELECT* FROM `twse` WHERE `Stock Code` = 2330 AND `Date` BETWEEN &#39;2019/11/10 00:00:00&#39; AND &#39;2020/1/10 23:59:59&#39;&#34;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="重新調整dataframe">重新調整Dataframe</h4>
+<h5 id="1-刪掉多餘的col">1 刪掉多餘的Col</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Stock Code&#39;</span><span class="p">,</span><span class="s1">&#39;Change&#39;</span><span class="p">,</span><span class="s1">&#39;Transaction&#39;</span><span class="p">,</span><span class="s1">&#39;Trade Value&#39;</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="2-重新命名col">2 重新命名Col</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Opening Price&#39;</span><span class="p">:</span> <span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;Highest Price&#39;</span><span class="p">:</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">:</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span>
+                       <span class="s1">&#39;Lowest Price&#39;</span><span class="p">:</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;Closing Price&#39;</span><span class="p">:</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;Trade Volume&#39;</span><span class="p">:</span><span class="s1">&#39;Volume&#39;</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="3-dfdate型態改變">3 df[&lsquo;Date&rsquo;]型態改變</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Date&#39;</span><span class="p">])</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="4-重新排序">4 重新排序</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">neworder</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Open&#39;</span><span class="p">,</span><span class="s1">&#39;High&#39;</span><span class="p">,</span><span class="s1">&#39;Low&#39;</span><span class="p">,</span><span class="s1">&#39;Close&#39;</span><span class="p">,</span><span class="s1">&#39;Volume&#39;</span><span class="p">]</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reindex</span><span class="p">(</span><span class="n">columns</span><span class="o">=</span><span class="n">neworder</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="candlestick-chart">Candlestick chart</h4>
+<h5 id="基本">基本</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mpf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="nb">type</span><span class="o">=</span><span class="s1">&#39;candle&#39;</span><span class="p">)</span> 
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/ZHQOYJH.png" width = "100%"/>
+<h5 id="美化">美化</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mc</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">make_marketcolors</span><span class="p">(</span><span class="n">up</span><span class="o">=</span><span class="s1">&#39;#5ac390&#39;</span><span class="p">,</span><span class="n">down</span><span class="o">=</span><span class="s1">&#39;#fd6a6c&#39;</span><span class="p">,</span><span class="n">volume</span><span class="o">=</span><span class="s1">&#39;in&#39;</span><span class="p">,</span><span class="n">edge</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">,)</span>
+
+<span class="n">s</span>  <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">make_mpf_style</span><span class="p">(</span><span class="n">base_mpl_style</span><span class="o">=</span><span class="s1">&#39;fivethirtyeight&#39;</span><span class="p">,</span><span class="n">gridstyle</span><span class="o">=</span><span class="s1">&#39;None&#39;</span><span class="p">,</span><span class="n">marketcolors</span><span class="o">=</span><span class="n">mc</span><span class="p">)</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">mpf</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">style</span><span class="o">=</span><span class="n">s</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">))</span>
+
+<span class="n">ax1</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.4</span><span class="p">])</span>
+<span class="n">ax2</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_axes</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span><span class="mf">0.1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mf">0.2</span><span class="p">])</span>
+
+<span class="n">mav</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
+
+<span class="n">mpf</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span>
+         <span class="nb">type</span><span class="o">=</span><span class="s1">&#39;candle&#39;</span><span class="p">,</span>
+         <span class="n">style</span><span class="o">=</span><span class="n">s</span><span class="p">,</span>
+         <span class="n">volume</span><span class="o">=</span><span class="n">ax2</span><span class="p">,</span>
+         <span class="n">mav</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span>
+         <span class="n">panel_ratios</span><span class="o">=</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span>
+         <span class="n">xrotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+         <span class="n">ax</span> <span class="o">=</span> <span class="n">ax1</span><span class="p">,</span>
+         <span class="n">update_width_config</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">candle_width</span> <span class="o">=</span> <span class="mf">0.95</span><span class="p">),</span>
+         <span class="n">scale_width_adjustment</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">lines</span><span class="o">=</span><span class="mi">2</span><span class="p">))</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">legend</span><span class="p">([</span><span class="s1">&#39;mav &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mav</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="s1">&#39;mav &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mav</span><span class="p">[</span><span class="mi">1</span><span class="p">]),</span><span class="s1">&#39;mav &#39;</span><span class="o">+</span><span class="nb">str</span><span class="p">(</span><span class="n">mav</span><span class="p">[</span><span class="mi">2</span><span class="p">])],</span>
+           <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;best&#39;</span><span class="p">,</span> <span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">),</span>
+           <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">20</span><span class="p">,</span>
+           <span class="n">frameon</span> <span class="o">=</span> <span class="bp">True</span><span class="p">,</span>
+           <span class="n">edgecolor</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span><span class="p">,</span>
+           <span class="n">facecolor</span> <span class="o">=</span> <span class="s1">&#39;w&#39;</span>
+           <span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span>
+    <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">TWSE</span><span class="se">\n\n</span><span class="s1">Stock Code:2330</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span>
+    <span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;fontsize&#39;</span><span class="p">:</span><span class="mi">30</span><span class="p">,</span>
+              <span class="s1">&#39;fontweight&#39;</span><span class="p">:</span><span class="s1">&#39;bold&#39;</span><span class="p">,</span>
+              <span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="s1">&#39;k&#39;</span><span class="p">},</span>
+    <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;center&#39;</span>
+             <span class="p">)</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Price&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">})</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;Volume&#39;</span><span class="p">,</span><span class="n">fontdict</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;weight&#39;</span><span class="p">:</span> <span class="s1">&#39;bold&#39;</span><span class="p">,</span> <span class="s1">&#39;size&#39;</span><span class="p">:</span> <span class="mi">20</span><span class="p">})</span>
+
+<span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_label_position</span><span class="p">(</span><span class="s2">&#34;left&#34;</span><span class="p">)</span>
+<span class="n">ax1</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">tick_left</span><span class="p">()</span>
+
+<span class="n">yticks</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]),</span> <span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]),</span> <span class="nb">round</span><span class="p">(</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">])</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Volume&#39;</span><span class="p">]))</span><span class="o">/</span><span class="mi">5</span> <span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">set_yticks</span><span class="p">(</span><span class="n">yticks</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/VvxKi2a.png" width = "100%"/></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-11-29</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖" data-hashtags="Python,TWSE,MySQL,mplfinance,dataframe,pd.read_sql"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/" data-title="TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖" data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/twse/">TWSE</a>,&nbsp;<a href="/tags/mysql/">MySQL</a>,&nbsp;<a href="/tags/mplfinance/">mplfinance</a>,&nbsp;<a href="/tags/dataframe/">dataframe</a>,&nbsp;<a href="/tags/pd.read_sql/">pd.read_sql</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/" class="prev" rel="prev" title="TWSE [5] mpl_finance K線圖"><i class="fas fa-angle-left fa-fw"></i>TWSE [5] mpl_finance K線圖</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=hsiangjenli&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":15},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":""}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
