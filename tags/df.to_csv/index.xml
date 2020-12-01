@@ -10,6 +10,8 @@
     <pubDate>Sat, 28 Nov 2020 16:57:26 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/</guid>
-    <description><![CDATA[DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 1  df.to_csv(&#39;檔案名稱.csv&#39;)   2 絕對路徑 1  df.to_csv (r&#39;路徑\檔案名稱.csv&#39;)   3 取得路徑 1 2 3  import os os.getcwd()   4 df.to_csv 使用 1 以&quot;/&ldquo;隔開 1  df.to_csv (&#39;檔案名稱.csv&#39;, sep=&#39;/&#39;)   2 將檔案重複寫入 1  df.to_csv (&#39;檔案名稱.csv&#39;, mode = &#39;a&#39;)   3 替換空值 1  df.to_csv (&#39;檔案名稱.csv&#39;, na_rep=&#39;NA&#39;)   4 小數4位 1  df.to_csv (&#39;檔案名稱.csv&#39;, float_format=&#39;%.4f&#39;)   5 不保留列名header 1  df.]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/QgtK8mU.png" referrerpolicy="no-referrer">
+            </div>DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 1  df.to_csv(&#39;檔案名稱.csv&#39;)   2 絕對路徑 1  df.to_csv (r&#39;路徑\檔案名稱.csv&#39;)   3 取得路徑 1 2 3  import os os.getcwd()   4 df.to_csv 使用 1 以&quot;/&ldquo;隔開 1  df.to_csv (&#39;檔案名稱.csv&#39;, sep=&#39;/&#39;)   2 將檔案重複寫入 1  df.to_csv (&#39;檔案名稱.csv&#39;, mode = &#39;a&#39;)   3 替換空值 1  df.to_csv (&#39;檔案名稱.csv&#39;, na_rep=&#39;NA&#39;)   4 小數4位 1  df.to_csv (&#39;檔案名稱.csv&#39;, float_format=&#39;%.4f&#39;)   5 不保留列名header 1  df.]]></description>
 </item></channel>
 </rss>

@@ -1,13 +1,11 @@
 # TWSE [1] jsn檔解析
 
-<img src="https://i.imgur.com/RH5klqG.jpg" wdith = "100%">
-
 ## TWSE股票資料
 ### 1 個股月成交資訊
 1. [個股月成交資訊](https://www.twse.com.tw/zh/page/trading/exchange/STOCK_DAY.html)以台積電2330為例
 2. 點選 [列印/HTML](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=html&date=20200813&stockNo=2330)
 3. 更改 **html** 為 **jsn**
-<img src="https://lh3.googleusercontent.com/L_4U_Ss-tY0RofktZ4Oj5cgcii94Ng6-hAz6UzrvKtoCoLDH7O0Y7htkfBT7insw1Z0xLQMtO5flzNiBXPdyl75SzcCzZkDdg2fLPrTq6z7ypVmgOSI=w1280" width="100%" />
+
 4. 更改 [**20200813**](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200813&stockNo=2330)為 [**20200713**](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200713&stockNo=2330)，即可找到7月資料
 5. 更改 **stockNo=2330** 為 **stockNo=1234**，即可找到黑松交易資
     > https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200713&stockNo=2330
@@ -51,7 +49,7 @@ for j in range(0,len(stock_list)):
        print(data) 
 ```
 #### 2 [Json Editor](https://jsonformatter.org/json-editor)
-![Json Editor](https://lh4.googleusercontent.com/O4eDpOJBJdFTE8Jllds7Ly65pmMwn4k29AZvkXnPUeACpkKXfVs92c-ssObk2Frp8AFSduhyxpoMLor0-QcqcQNKRRAjxumR1s0EFbqNj6Vc41n6nQQ=w1280)
+![Json Editor](https://i.imgur.com/1ohrpxY.jpg)
 
 ```python
 for i in range(0, len(data['data'])):

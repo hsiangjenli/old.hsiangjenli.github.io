@@ -54,7 +54,7 @@ for j in range(0,len(stock_list)):
 conn.close()
 print("Done") 
 ```
-<img src = "https://lh5.googleusercontent.com/GmcAvRZ9Dtr2bExnmDfNzByHKDX7nq7UH5MKl_-IK3ba3fahAHhw7Dus-2xKoo4iEFYGVVYYCtBgozybD0epZOBQiMV_h1v7uPYsE_9FDGOGAQqwi6qz=w1280" width = "100%" />
+<img src = "https://i.imgur.com/IxMi5Nj.jpg" width = "100%" />
 
 ## 資料庫資料重複問題解決
 ### 1 選出沒有重複的資料
@@ -64,7 +64,7 @@ FROM TWSE
 GROUP BY 股票代碼, 日期
 HAVING count(*)>0 
 ```
-<img src = "https://lh3.googleusercontent.com/pQu2Soxq_BOo-qErEVimWiMMlflC6BFFnYGq6_8JnJbJDeRq8KqWcI6MAxfYfNxzzkmLvSkStY4kGbXdk8eVu34gwSud0qufSJyKa_m0aIjtTw5bdQ=w1280" width = "100%" />
+<img src = "https://i.imgur.com/yu9YdMQ.jpg" width = "100%" />
 ### 2 TWSE_tempt當作緩存
 > 將TWSE改成TWSE_tempt當作緩存 ，再新增一個TWSE
 ```sql

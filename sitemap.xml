@@ -2,12 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</loc><lastmod>2020-11-29T12:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</loc><lastmod>2020-11-29T11:25:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</loc><lastmod>2020-11-28T22:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/</loc><lastmod>2020-11-28T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-1-jsn%E6%AA%94%E8%A7%A3%E6%9E%90/</loc><lastmod>2020-11-27T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/categories/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/dataframe/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -20,8 +14,14 @@
             <loc>http://hsiangjenli.github.io/tags/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/twse/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/categories/twse/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/mpl_finance/</loc><lastmod>2020-11-29T12:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</loc><lastmod>2020-11-29T12:05:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/df.to_sql/</loc><lastmod>2020-11-29T11:25:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</loc><lastmod>2020-11-29T11:25:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/sqlite/</loc><lastmod>2020-11-28T22:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</loc><lastmod>2020-11-28T22:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/df.to_csv/</loc><lastmod>2020-11-28T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/jsn/</loc><lastmod>2020-11-27T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
+            <loc>http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/</loc><lastmod>2020-11-28T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/jsn/</loc><lastmod>2020-11-27T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-1-jsn%E6%AA%94%E8%A7%A3%E6%9E%90/</loc><lastmod>2020-11-27T16:57:26&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url></urlset>
