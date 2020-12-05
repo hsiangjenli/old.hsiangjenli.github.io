@@ -4,9 +4,18 @@
         <link>http://hsiangjenli.github.io/</link>
         <description>Python &amp; Fintech</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 29 Nov 2020 12:40:15 &#43;0800</lastBuildDate>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 05 Dec 2020 21:55:51 &#43;0800</lastBuildDate>
             <atom:link href="http://hsiangjenli.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>TWSE [7] Interactive Candlestick Charts</title>
+    <link>http://hsiangjenli.github.io/twse-7-interactive-candlestick-charts/</link>
+    <pubDate>Sat, 05 Dec 2020 21:55:51 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/twse-7-interactive-candlestick-charts/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/XE4SlBT.png" referrerpolicy="no-referrer">
+            </div>Interactive Candlestick Charts Plotly 1  pip install plotly   個股月成交資訊 SQL連線 1 2 3 4 5 6 7 8 9 10  user = &#39;root&#39; pw = &#34;YourPassworrd&#34; db = &#34;STOCK&#34; engine = create_engine(&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;.format(user,pw,db=db)) df = pd.read_sql(&#34;SELECT* FROM `twse` WHERE `Stock Code` = 2330 &#34;, engine, coerce_float=True, parse_dates=True) df = df.drop(columns = [&#39;Stock Code&#39;,&#39;Change&#39;,&#39;Transaction&#39;,&#39;Trade Value&#39;]) df = df.rename(columns = {&#39;Opening Price&#39;: &#39;Open&#39;,&#39;Highest Price&#39;:&#39;High&#39;,&#39;Closing Price&#39;:&#39;Close&#39;, &#39;Lowest Price&#39;:&#39;Low&#39;,&#39;Closing Price&#39;:&#39;Close&#39;,&#39;Trade Volume&#39;:&#39;Volume&#39;})   Fig1 Basic 1 2 3 4 5 6 7 8  fig = go.]]></description>
+</item><item>
     <title>TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖</title>
     <link>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</link>
     <pubDate>Sun, 29 Nov 2020 12:40:15 &#43;0800</pubDate>
