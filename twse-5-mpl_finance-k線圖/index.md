@@ -1,7 +1,10 @@
 # TWSE [5] mpl_finance K線圖
 
 
+<div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 # mpl_finance [舊版]
+
 ## SQL連線
 ### 個股月成交資訊
 ```python
@@ -78,3 +81,5 @@ mpf.candlestick2_ochl(ax, op, cp, h,
 l, width=0.6, colorup='r', colordown='g', alpha=1); 
 ```
 <img src = "https://i.imgur.com/pSXpsdo.png" width = "100%"/>
+
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>

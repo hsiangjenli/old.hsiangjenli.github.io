@@ -1,6 +1,9 @@
 # TWSE [7] Interactive Candlestick Charts
 
+<div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 # Interactive Candlestick Charts
+
 ## Plotly
 
 ```shell
@@ -32,6 +35,7 @@ fig = go.Figure(data=[go.Candlestick(x=df['Date'],
 fig.write_html(r"C:\Users\User\Downloads\Python\1.html")
 fig.show()
 ```
+#### fig.show()
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_1.htm" height="500" width="100%" style="border:none;"></iframe>
 
 ### Fig2
@@ -48,7 +52,7 @@ fig.update_layout(xaxis_rangeslider_visible=False)
 fig.write_html(r"C:\Users\User\Downloads\Python\2.html")
 fig.show()
 ```
-
+#### fig.show()
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_2.htm" height="500" width="100%" style="border:none;"></iframe>
 
 ### Fig3
@@ -67,8 +71,9 @@ fig.update_layout(
     xaxis_rangeslider_visible=False)
 
 fig.write_html(r"C:\Users\User\Downloads\Python\3.html")                  
-fig.show()
+#### fig.show()
 ```
+####　fig.show()
 
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_3.htm" height="500" width="100%" style="border:none;"></iframe>
 
@@ -117,6 +122,7 @@ fig.update_layout(
     xaxis_rangeslider_visible=False)
 fig.show()
 ```
+#### fig.show()
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_4.htm" height="500" width="100%" style="border:none;"></iframe>
 
 ### Fig5
@@ -148,9 +154,9 @@ layout = go.Layout(yaxis2=dict(domain=[0, 0.3]),
                    hoverlabel_namelength = 0)
 fig = go.Figure(data=data, layout=layout)
 
-fig.show()
+#### fig.show()
 ```
-
+#### fig.show()
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_6.html" height="500" width="100%" style="border:none;"></iframe>
 
 
