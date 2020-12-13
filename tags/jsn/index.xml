@@ -11,8 +11,8 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-1-jsn%E6%AA%94%E8%A7%A3%E6%9E%90/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/RH5klqG.jpg" referrerpolicy="no-referrer">
-            </div>TWSE股票資料 1 個股月成交資訊   個股月成交資訊以台積電2330為例
+                <img src="https://i.imgur.com/adlW9i9.png" referrerpolicy="no-referrer">
+            </div>Freepik from www.flaticon.com TWSE股票資料 1 個股月成交資訊   個股月成交資訊以台積電2330為例
   點選 列印/HTML
   更改 html 為 jsn
   更改 20200813為 20200713，即可找到7月資料
@@ -22,6 +22,6 @@
    在exchangeReport前加上 /en/ 轉換成英文版
  https://www.twse.com.tw/en/exchangeReport/STOCK_DAY?response=jsn&amp;date=20200713&amp;stockNo=1234
  1 2 3 4 5  stock_list = [1234, 2330] date = 20200813 for j in range(0,len(stock_list)): url = &#34;http://www.twse.com.tw/en/exchangeReport/STOCK_DAY?response=jsn&amp;date={}&amp;stockNo={}&#34;.format(date,stock_list[j]) print(url)   ``
-  2 每日收盤行情  每日收盤行情-全部 點選 列印/HTML 更改 html 為 jsn 更改 20200827 為 20200828，即可找到8月28日資料 在exchangeReport前加上 /en/ 轉換成英文版  https://www.]]></description>
+  2 每日收盤行情   每日收盤行情-全部]]></description>
 </item></channel>
 </rss>

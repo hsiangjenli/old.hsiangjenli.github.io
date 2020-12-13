@@ -1,6 +1,9 @@
 # TWSE [1] jsn檔解析
 
+<div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
 ## TWSE股票資料
+
 ### 1 個股月成交資訊
 1. [個股月成交資訊](https://www.twse.com.tw/zh/page/trading/exchange/STOCK_DAY.html)以台積電2330為例
 2. 點選 [列印/HTML](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=html&date=20200813&stockNo=2330)
@@ -9,7 +12,7 @@
 4. 更改 [**20200813**](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200813&stockNo=2330)為 [**20200713**](https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200713&stockNo=2330)，即可找到7月資料
 5. 更改 **stockNo=2330** 為 **stockNo=1234**，即可找到黑松交易資
     > https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200713&stockNo=2330
-        
+    
     > https://www.twse.com.tw/exchangeReport/STOCK_DAY?response=jsn&date=20200713&stockNo=1234
 
 6. 在**exchangeReport**前加上 **/en/** 轉換成英文版
@@ -29,6 +32,7 @@
 3. 更改 **html** 為 **jsn**
 4. 更改 [**20200827**](https://www.twse.com.tw/exchangeReport/MI_INDEX?response=jsn&date=20200728&type=ALL) 為 [**20200828**](https://www.twse.com.tw/exchangeReport/MI_INDEX?response=jsn&date=20200828&type=ALL)，即可找到8月28日資料
 5. 在**exchangeReport**前加上 **/en/** 轉換成英文版
+	
 	> https://www.twse.com.tw/en/exchangeReport/MI_INDEX?response=jsn&date=20200828&type=ALL
 
 ##  解析Json檔
@@ -163,4 +167,5 @@ with urllib.request.urlopen(url) as jsonfile:
 df
 ```
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/stock_code=2330.tw.html" height="500" width="100%" style="border:none;"></iframe
+
 
