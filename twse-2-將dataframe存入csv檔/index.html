@@ -6,14 +6,14 @@
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
         <title>TWSE [2] 將DataFrame存入CSV檔 &amp; 抓取多筆資料 - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="TWSE [2] 將DataFrame存入CSV檔 &amp; 抓取多筆資料" />
-<meta property="og:description" content="Freepik from www.flaticon.com DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 1  df.to_csv(&#39;檔案名稱.csv&#39;)   2 絕對路徑 1  df.to_csv (r&#39;路徑\檔案名稱.csv&#39;)   3 取得路徑 1 2 3  import os os.getcwd()   4 df.to_csv 使用 1 以&quot;/&ldquo;隔開 1  df.to_csv (&#39;檔案名稱.csv&#39;, sep=&#39;/&#39;)   2 將檔案重複寫入 1  df.to_csv (&#39;檔案名稱.csv&#39;, mode = &#39;a&#39;)   3 替換空值 1  df.to_csv (&#39;檔案名稱.csv&#39;, na_rep=&#39;NA&#39;)   4 小數4位 1  df.to_csv (&#39;檔案名稱.csv&#39;, float_format=&#39;%.4f&#39;)   5 不保留列名header 1  df." />
+<meta property="og:description" content="" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/" />
 <meta property="article:published_time" content="2020-11-28T16:57:26+08:00" />
 <meta property="article:modified_time" content="2020-11-28T16:57:26+08:00" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="TWSE [2] 將DataFrame存入CSV檔 &amp; 抓取多筆資料"/>
-<meta name="twitter:description" content="Freepik from www.flaticon.com DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 1  df.to_csv(&#39;檔案名稱.csv&#39;)   2 絕對路徑 1  df.to_csv (r&#39;路徑\檔案名稱.csv&#39;)   3 取得路徑 1 2 3  import os os.getcwd()   4 df.to_csv 使用 1 以&quot;/&ldquo;隔開 1  df.to_csv (&#39;檔案名稱.csv&#39;, sep=&#39;/&#39;)   2 將檔案重複寫入 1  df.to_csv (&#39;檔案名稱.csv&#39;, mode = &#39;a&#39;)   3 替換空值 1  df.to_csv (&#39;檔案名稱.csv&#39;, na_rep=&#39;NA&#39;)   4 小數4位 1  df.to_csv (&#39;檔案名稱.csv&#39;, float_format=&#39;%.4f&#39;)   5 不保留列名header 1  df."/>
+<meta name="twitter:description" content=""/>
 <meta name="application-name" content="HJL">
 <meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -40,10 +40,17 @@
         <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
     <div class="header-wrapper">
         <div class="header-title">
-            <a href="/" title="HJL">HJL</a>
+            <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+            <div class="menu-inner"><a class="menu-item" href="/resume/"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
                         <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
                         <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
                             <i class="fas fa-search fa-fw"></i>
@@ -64,7 +71,14 @@
     <div class="header-container">
         <div class="header-wrapper">
             <div class="header-title">
-                <a href="/" title="HJL">HJL</a>
+                <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
             </div>
             <div class="menu-toggle" id="menu-toggle-mobile">
                 <span></span><span></span><span></span>
@@ -86,7 +100,7 @@
                     <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
                         Cancel
                     </a>
-                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                </div><a class="menu-item" href="/resume/" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -424,7 +438,7 @@
             </noscript></div></article></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
-                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>
 

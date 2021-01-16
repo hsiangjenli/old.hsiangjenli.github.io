@@ -1,0 +1,19 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>閱讀 - Category - HJL</title>
+        <link>http://hsiangjenli.github.io/categories/%E9%96%B1%E8%AE%80/</link>
+        <description>閱讀 - Category - HJL</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Thu, 17 Dec 2020 23:22:52 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/categories/%E9%96%B1%E8%AE%80/" rel="self" type="application/rss+xml" /><item>
+    <title>個人筆記 [1]</title>
+    <link>http://hsiangjenli.github.io/books/</link>
+    <pubDate>Thu, 17 Dec 2020 23:22:52 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/books/</guid>
+    <description><![CDATA[Freepik from www.flaticon.com 未來科技的15道難題  原文作者： Brad Smith, Carol Ann Browne
+譯者： 孔令新
+ISBN：9789864770557
+喜愛指數：⭐⭐⭐⭐（4/5）
+  ]]></description>
+</item></channel>
+</rss>

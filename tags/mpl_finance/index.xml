@@ -12,6 +12,6 @@
     <guid>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/bpLPbNK.png" referrerpolicy="no-referrer">
-            </div>Freepik from www.flaticon.com mpl_finance [舊版] SQL連線 個股月成交資訊 1 2 3 4 5 6 7 8  import MySQLdb user = &#39;root&#39; pw = &#34;YourPassworrd&#34; conn=MySQLdb.connect(host=&#34;127.0.0.1&#34;,user=user, passwd=pw,charset=&#39;utf8&#39;) cursor=conn.cursor() cursor.execute(&#39;USE STOCK&#39;)   mpl_finance 1 2 3  import matplotlib.pyplot as plt import mpl_finance as mpf %matplotlib inline   基本設定 1 2 3 4 5 6 7 8 9 10 11 12 13  p = [int(e) for e in input(&#34;請輸入起始日期和結束日期&#34;).split(&#34; &#34;)] # 以空格隔開 period = &#34;`Date` BETWEEN &#39;{}/{}/{} 00:00:00&#39; AND &#39;{}/{}/{} 23:59:59&#39;&#34;.]]></description>
+            </div>]]></description>
 </item></channel>
 </rss>

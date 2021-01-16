@@ -1,6 +1,6 @@
 # TWSE [5] mpl_finance K線圖
 
-
+<!--more-->
 <div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
 # mpl_finance [舊版]
