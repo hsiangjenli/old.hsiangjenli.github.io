@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TWSE [10] MongoDB&#43;Python - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="TWSE [10] MongoDB&#43;Python" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hsiangjenli.github.io/twse-10-mongodb-python/" />
+<meta property="article:published_time" content="2021-01-19T23:59:08+08:00" />
+<meta property="article:modified_time" content="2021-01-19T23:59:08+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TWSE [10] MongoDB&#43;Python"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="HJL">
+<meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/twse-10-mongodb-python/" /><link rel="prev" href="http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TWSE [10] MongoDB+Python",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hsiangjenli.github.io\/twse-10-mongodb-python\/"
+        },"genre": "posts","keywords": "Python, TWSE, MongoDB, NoSQL","wordcount":  694 ,
+        "url": "http:\/\/hsiangjenli.github.io\/twse-10-mongodb-python\/","datePublished": "2021-01-19T23:59:08+08:00","dateModified": "2021-01-19T23:59:08+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "HJL"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/resume/"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/resume/" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">TWSE [10] MongoDB&#43;Python</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a>&nbsp;<a href="/categories/twse/"><i class="far fa-folder fa-fw"></i>TWSE</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-19">2021-01-19</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;694 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/e9oP62W.png"
+        data-srcset="https://i.imgur.com/e9oP62W.png, https://i.imgur.com/e9oP62W.png 1.5x, https://i.imgur.com/e9oP62W.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/e9oP62W.png"
+        title="https://i.imgur.com/e9oP62W.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#monogodb">MonogoDB</a>
+      <ul>
+        <li><a href="#mongodb-version">MongoDB Version</a></li>
+        <li><a href="#mongodb-data-typeshttpswwww3schoolsinmongodbdata-typesdifferent_mongodb_data_types"><a href="https://www.w3schools.in/mongodb/data-types/#Different_MongoDB_Data_Types">MongoDB Data Types</a></a></li>
+      </ul>
+    </li>
+    <li><a href="#robo-3t">Robo 3T</a></li>
+    <li><a href="#python">Python</a>
+      <ul>
+        <li><a href="#w3schoolshttpswwww3schoolscompythonpython_mongodb_getstartedasp"><a href="https://www.w3schools.com/python/python_mongodb_getstarted.asp">w3schools</a></a>
+          <ul>
+            <li><a href="#1-pip-install">1 pip install</a></li>
+            <li><a href="#2-import">2 import</a></li>
+            <li><a href="#3-測試用文章">3 測試用文章</a></li>
+            <li><a href="#4-create-db--collection-and-insert-document">4 Create DB,  Collection and Insert document</a></li>
+            <li><a href="#5-印出所有db">5 印出所有DB</a></li>
+            <li><a href="#6-印出所有collection">6 印出所有collection</a></li>
+          </ul>
+        </li>
+        <li><a href="#python--bs4--鉅亨網">Python + bs4 + 鉅亨網</a>
+          <ul>
+            <li><a href="#1-def-get_texti">1 def get_text(i):</a></li>
+            <li><a href="#2-import套件">2 import套件</a></li>
+            <li><a href="#3-create-db--collection">3 Create DB,  Collection</a></li>
+            <li><a href="#4-insert-document">4 Insert document</a></li>
+            <li><a href="#5-find">5 find</a>
+              <ul>
+                <li><a href="#find">find({})</a>
+                  <ul>
+                    <li><a href="#全部">全部</a></li>
+                  </ul>
+                </li>
+                <li><a href="#findcount">find({}).count()</a>
+                  <ul>
+                    <li><a href="#計算全部數量">計算全部數量</a></li>
+                  </ul>
+                </li>
+                <li><a href="#findxxx">find({&ldquo;X&rdquo;:&ldquo;XX&rdquo;})</a>
+                  <ul>
+                    <li><a href="#特定資料">特定資料</a></li>
+                  </ul>
+                </li>
+                <li><a href="#findx-0036lt-xsortxx">find({&ldquo;X&rdquo;: {&quot;$lt&quot;: X}}).sort(&ldquo;XX&rdquo;)</a>
+                  <ul>
+                    <li><a href="#指定日期之前的所有資料sortdate">指定日期之前的所有資料.sort(&ldquo;Date&rdquo;)</a></li>
+                  </ul>
+                </li>
+                <li><a href="#finddate-0036gte-start0036lte-end">find({&lsquo;Date&rsquo;: {&quot;$gte&quot;: start,&quot;$lte&quot;: end}})</a>
+                  <ul>
+                    <li><a href="#找出一段時間的資料">找出一段時間的資料</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#6-刪除重複資料">6 刪除重複資料</a>
+              <ul>
+                <li><a href="#mongodb執行">MongoDB執行</a>
+                  <ul>
+                    <li><a href="#準備重複資料">準備重複資料</a></li>
+                    <li><a href="#執行程式碼sql">執行程式碼/SQL/</a></li>
+                  </ul>
+                </li>
+                <li><a href="#python執行">Python執行</a>
+                  <ul>
+                    <li><a href="#準備重複資料-1">準備重複資料</a></li>
+                    <li><a href="#執行程式碼python">執行程式碼/Python/</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#7-orderbyhttpsdocsmongodbcommanualreferenceoperatormetaorderby">7 <a href="https://docs.mongodb.com/manual/reference/operator/meta/orderby/">$orderby</a></a>
+              <ul>
+                <li><a href="#不改變原始資料">不改變原始資料</a>
+                  <ul>
+                    <li><a href="#執行程式碼sql-1">執行程式碼/SQL/</a></li>
+                    <li><a href="#執行程式碼python-1">執行程式碼/Python/</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<h1 id="nosql-monogodb--python">NoSQL MonogoDB + Python</h1>
+<h2 id="monogodb">MonogoDB</h2>
+<p><a href="https://www.mongodb.com/try/download/community" target="_blank" rel="noopener noreffer">Download</a></p>
+<blockquote>
+<p>參考資料</p>
+<p><a href="https://matthung0807.blogspot.com/2019/08/mongodb.html" target="_blank" rel="noopener noreffer">Windows MongoDB 下載與安裝教學</a></p>
+<p><a href="https://navicat.com/cht/company/aboutus/blog/1097-all-about-mongodb-s-_id-field.html" target="_blank" rel="noopener noreffer">關於 MongoDB 的 _id 欄位</a></p>
+<p><a href="https://kknews.cc/code/66g54mp.html" target="_blank" rel="noopener noreffer">MongoDB的_id和ObjectId怎麼理解？同樣是程式設計師，用心你就超前了</a></p>
+<p><a href="https://www.w3schools.in/mongodb/data-types/#Different_MongoDB_Data_Types" target="_blank" rel="noopener noreffer">MongoDB Data Types</a></p>
+</blockquote>
+<h3 id="mongodb-version">MongoDB Version</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="n">db</span><span class="p">.</span><span class="k">version</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="mi">4</span><span class="p">.</span><span class="mi">4</span><span class="p">.</span><span class="mi">2</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="mongodb-data-typeshttpswwww3schoolsinmongodbdata-typesdifferent_mongodb_data_types"><a href="https://www.w3schools.in/mongodb/data-types/#Different_MongoDB_Data_Types" target="_blank" rel="noopener noreffer">MongoDB Data Types</a></h3>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid #F2F2F2 .5pt;
+ mso-border-themecolor:background1;mso-border-themeshade:242;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid #F2F2F2;
+ mso-border-insideh-themecolor:background1;mso-border-insideh-themeshade:242;
+ mso-border-insidev:.5pt solid #F2F2F2;mso-border-insidev-themecolor:background1;
+ mso-border-insidev-themeshade:242">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="751" colspan="3" valign="top" style="width:450.8pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;mso-border-alt:
+  solid #F2F2F2 .5pt;mso-border-themecolor:background1;mso-border-themeshade:
+  242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:16.0pt;
+  mso-bidi-font-size:11.0pt;mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+  minor-latin">MongoDB Data Types</span></b><b style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:
+  minor-latin"><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="250" valign="top" style="width:150.25pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-size:12.0pt;mso-fareast-font-family:新細明體;mso-bidi-font-family:
+  Calibri;mso-bidi-theme-font:minor-latin;mso-font-kerning:0pt">Integer</span></b><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:
+  Calibri;mso-bidi-theme-font:minor-latin"><o:p></o:p></span></b></p>
+  </td>
+  <td width="250" valign="top" style="width:150.25pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Arrays<o:p></o:p></span></b></p>
+  </td>
+  <td width="251" valign="top" style="width:150.3pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Timestamp<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="250" valign="top" style="width:150.25pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Boolean<o:p></o:p></span></b></p>
+  </td>
+  <td width="250" valign="top" style="width:150.25pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Object<o:p></o:p></span></b></p>
+  </td>
+  <td width="251" valign="top" style="width:150.3pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Binary
+  data<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3">
+  <td width="250" valign="top" style="width:150.25pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Double<o:p></o:p></span></b></p>
+  </td>
+  <td width="250" valign="top" style="width:150.25pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Symbol<o:p></o:p></span></b></p>
+  </td>
+  <td width="251" valign="top" style="width:150.3pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Object
+  ID<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:4">
+  <td width="250" valign="top" style="width:150.25pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Min/Max
+  keys<o:p></o:p></span></b></p>
+  </td>
+  <td width="250" valign="top" style="width:150.25pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Null<o:p></o:p></span></b></p>
+  </td>
+  <td width="251" valign="top" style="width:150.3pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Regular
+  expression<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:5;mso-yfti-lastrow:yes">
+  <td width="250" valign="top" style="width:150.25pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">String<o:p></o:p></span></b></p>
+  </td>
+  <td width="250" valign="top" style="width:150.25pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Date<o:p></o:p></span></b></p>
+  </td>
+  <td width="251" valign="top" style="width:150.3pt;border-top:none;border-left:
+  none;border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="mso-bidi-font-family:Calibri;mso-bidi-theme-font:minor-latin">Code<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</tbody></table>
+<h2 id="robo-3t">Robo 3T</h2>
+<p><a href="https://robomongo.org/download" target="_blank" rel="noopener noreffer">Download</a></p>
+<blockquote>
+<p>參考資料
+<a href="https://matthung0807.blogspot.com/2019/08/mongodb-robo-3t.html" target="_blank" rel="noopener noreffer">MongoDB 使用Robo 3T建立資料庫</a></p>
+</blockquote>
+<h2 id="python">Python</h2>
+<h3 id="w3schoolshttpswwww3schoolscompythonpython_mongodb_getstartedasp"><a href="https://www.w3schools.com/python/python_mongodb_getstarted.asp" target="_blank" rel="noopener noreffer">w3schools</a></h3>
+<h4 id="1-pip-install">1 pip install</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-powershell" data-lang="powershell"><span class="n">pip</span> <span class="n">install</span> <span class="n">pymongo</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-import">2 import</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pymongo</span>
+<span class="n">myclient</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">&#34;mongodb://localhost:27017/&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-測試用文章">3 測試用文章</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#測試文章</span>
+<span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;盤中零股交易台積電最受歡迎 成交金額逼近200億元&#39;</span>
+<span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;台股攻上波段新高，連帶掀起零股交易熱潮，根據證交所統計，盤中零股交易自去年 10 月 26 日實施以來，截至今年 1 月 15 日止，單日平均成交金額達 8.73 億元，加上盤後交易，單日平均金額超過 10 億元，其中權值股王台積電 (2330-TW) 累計成交值逼近 200 億元，是最熱門的交易標的。根據證交所統計，盤中零股交易前 10 大熱門標首推台積電，交易金額比重高達 34%，其次分別為：大立光 (3008-TW)(12%)、聯發科 (2454-TW)(5%)、國巨 (2327-TW)(3%)、元大台灣 50(2%)、鴻海 (2317-TW)(2%)；另外，聯電 (2303-TW)、台達電 (2308-TW)、玉晶光 (3406-TW)、同欣電 (6271-TW) 交易金額也有 1% 的比重。以成交股數來看，台積電以占整體交易比重 8% 居冠，其他依序分別為：聯電、鴻海、元大高股息、玉山金 (2884-TW)、元大台灣 50、長榮、元晶、敦泰與第一金。以台積電來說，假設投資人在 10 月 26 日當天高點 455 元買進台積電續抱至今，以今天收盤價 627 元計算，期間股價約上漲 37%，其他包括聯電、鴻海股價在期間攻上歷史高點，同樣讓零股投資人賺進一筆收益。&#39;&#39;&#39;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4-create-db--collection-and-insert-document">4 Create DB,  Collection and Insert document</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mydb</span> <span class="o">=</span> <span class="n">myclient</span><span class="p">[</span><span class="s2">&#34;article&#34;</span><span class="p">]</span>
+<span class="n">mycol</span> <span class="o">=</span> <span class="n">mydb</span><span class="p">[</span><span class="s2">&#34;test&#34;</span><span class="p">]</span>
+<span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;Title&#34;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s2">&#34;text&#34;</span><span class="p">:</span> <span class="n">text</span> <span class="p">}</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">mycol</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">mydict</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src = "https://i.imgur.com/3gU1M88.jpg" width = "100%" />
+<img src = "https://i.imgur.com/NH2PNU2.jpg" width = "100%" /></p>
+<h4 id="5-印出所有db">5 印出所有DB</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">myclient</span><span class="o">.</span><span class="n">list_database_names</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="6-印出所有collection">6 印出所有collection</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="n">mydb</span><span class="o">.</span><span class="n">list_collection_names</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="python--bs4--鉅亨網">Python + bs4 + 鉅亨網</h3>
+<h4 id="1-def-get_texti">1 def get_text(i):</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_text</span><span class="p">(</span><span class="n">i</span><span class="p">):</span>
+    <span class="n">post_id</span> <span class="o">=</span> <span class="n">urls</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;/&#39;</span><span class="p">)[</span><span class="mi">5</span><span class="p">]</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;?&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">urls</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    
+    <span class="n">P</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+    <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">p</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">P</span><span class="p">)),</span><span class="n">P</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">&gt;=</span><span class="mi">4</span><span class="p">:</span>
+            <span class="n">text</span> <span class="o">=</span> <span class="n">text</span> <span class="o">+</span> <span class="n">p</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span>
+        <span class="n">i</span> <span class="o">+=</span> <span class="mi">1</span>
+
+    <span class="n">tags</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+    <span class="n">n_tags</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">tags</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;/tag/&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))):</span>
+            <span class="n">n_tags</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))[</span><span class="mi">5</span><span class="p">:</span><span class="nb">len</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">tag</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)))])</span>
+
+    <span class="n">title</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;h1&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">getText</span><span class="p">()</span>
+    <span class="n">T</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;time&#39;</span><span class="p">)</span>
+    <span class="n">Date</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">],</span> <span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2">T%H:%M:%S+08:00&#34;</span><span class="p">)</span>
+    
+    <span class="k">return</span><span class="p">(</span><span class="n">Date</span><span class="p">,</span><span class="n">post_id</span><span class="p">,</span><span class="n">title</span><span class="p">,</span><span class="n">n_tags</span><span class="p">,</span><span class="n">text</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="2-import套件">2 import套件</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pymongo</span>
+<span class="kn">import</span> <span class="nn">urllib</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">import</span> <span class="nn">regex</span> <span class="kn">as</span> <span class="nn">re</span>
+<span class="kn">import</span> <span class="nn">datetime</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="3-create-db--collection">3 Create DB,  Collection</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">myclient</span> <span class="o">=</span> <span class="n">pymongo</span><span class="o">.</span><span class="n">MongoClient</span><span class="p">(</span><span class="s2">&#34;mongodb://localhost:27017/&#34;</span><span class="p">)</span>
+<span class="n">mydb</span> <span class="o">=</span> <span class="n">myclient</span><span class="p">[</span><span class="s2">&#34;article&#34;</span><span class="p">]</span>
+<span class="n">mycol</span> <span class="o">=</span> <span class="n">mydb</span><span class="p">[</span><span class="s2">&#34;2021_鉅亨網&#34;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="4-insert-document">4 Insert document</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://news.cnyes.com/news/cat/tw_stock_news?exp=a&#39;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="n">hrefs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="n">urls</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://news.cnyes.com&#39;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">))</span> <span class="k">for</span> <span class="n">href</span> <span class="ow">in</span> <span class="n">hrefs</span> <span class="k">if</span> <span class="n">re</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="s1">&#39;/news/id/&#39;</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">href</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)))]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">urls</span><span class="p">)):</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">get_text</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;Date&#34;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="s2">&#34;post_id&#34;</span><span class="p">:</span><span class="n">data</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span><span class="s2">&#34;Title&#34;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="s2">&#34;Tags&#34;</span><span class="p">:</span><span class="n">data</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> <span class="p">,</span> <span class="s2">&#34;text&#34;</span><span class="p">:</span> <span class="n">data</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="p">}</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">mycol</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">mydict</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src = "https://i.imgur.com/IpoR1Fq.jpg" width = "100%" />
+<img src = "https://i.imgur.com/6Mkm8up.jpg" width = "100%" /></p>
+<h4 id="5-find">5 find</h4>
+<blockquote>
+<p>參考資料<br>
+<a href="https://api.mongodb.com/python/2.0.1/tutorial.html" target="_blank" rel="noopener noreffer">Tutorial — PyMongo v2.0.1 documentation</a><br>
+<a href="https://www.w3schools.com/python/python_mongodb_getstarted.asp" target="_blank" rel="noopener noreffer">w3schools</a><br>
+<a href="https://docs.mongodb.com/manual/reference/method/js-collection/" target="_blank" rel="noopener noreffer">Collection Methods</a><br>
+<a href="https://blog.mlab.com/2014/03/finding-duplicate-keys-with-the-mongodb-aggregation-framework/#:~:text=While%20MongoDB%20supports%20an%20option,then%20delete%20all%20subsequent%20values." target="_blank" rel="noopener noreffer">Finding duplicate keys with MongoDB’s aggregation framework</a></p>
+</blockquote>
+<h5 id="find">find({})</h5>
+<h6 id="全部">全部</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({}):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/sNXC0aF.jpg" width = "100%"/>
+<h5 id="findcount">find({}).count()</h5>
+<h6 id="計算全部數量">計算全部數量</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({})</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="findxxx">find({&ldquo;X&rdquo;:&ldquo;XX&rdquo;})</h5>
+<h6 id="特定資料">特定資料</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">&#34;Title&#34;</span><span class="p">:</span><span class="s2">&#34;宏泰人壽減資再增資 丟包袱223.9億元補虧損 2月底前現增19.5億元&#34;</span><span class="p">}):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/NeddeDj.jpg" width = "100%"/>
+<h5 id="findx-0036lt-xsortxx">find({&ldquo;X&rdquo;: {&quot;$lt&quot;: X}}).sort(&ldquo;XX&rdquo;)</h5>
+<h6 id="指定日期之前的所有資料sortdate">指定日期之前的所有資料.sort(&ldquo;Date&rdquo;)</h6>
+<table class="MsoTableGrid" border="1" cellspacing="0" cellpadding="0" style="border-collapse:collapse;border:none;mso-border-alt:solid #F2F2F2 .5pt;
+ mso-border-themecolor:background1;mso-border-themeshade:242;mso-yfti-tbllook:
+ 1184;mso-padding-alt:0cm 5.4pt 0cm 5.4pt;mso-border-insideh:.5pt solid #F2F2F2;
+ mso-border-insideh-themecolor:background1;mso-border-insideh-themeshade:242;
+ mso-border-insidev:.5pt solid #F2F2F2;mso-border-insidev-themecolor:background1;
+ mso-border-insidev-themeshade:242">
+ <tbody><tr style="mso-yfti-irow:0;mso-yfti-firstrow:yes">
+  <td width="751" colspan="4" style="width:450.8pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;mso-border-alt:
+  solid #F2F2F2 .5pt;mso-border-themecolor:background1;mso-border-themeshade:
+  242;background:#F2F2F2;mso-background-themecolor:background1;mso-background-themeshade:
+  242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:16.0pt;
+  mso-bidi-font-size:11.0pt">d = <span class="SpellE">datetime.datetime</span>(2021,
+  1, 21, 23)</span><span lang="EN-US"><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:1">
+  <td width="188" style="width:112.7pt;border:solid #F2F2F2 1.0pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;border-top:none;mso-border-top-alt:
+  solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;mso-border-top-themeshade:
+  242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:background1;
+  mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">Year<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">Month<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">Day<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">Hour<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:2">
+  <td width="188" style="width:112.7pt;border:solid #F2F2F2 1.0pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;border-top:none;mso-border-top-alt:
+  solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;mso-border-top-themeshade:
+  242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:background1;
+  mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">2021<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">1<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">21<o:p></o:p></span></b></p>
+  </td>
+  <td width="188" style="width:112.7pt;border-top:none;border-left:none;
+  border-bottom:solid #F2F2F2 1.0pt;mso-border-bottom-themecolor:background1;
+  mso-border-bottom-themeshade:242;border-right:solid #F2F2F2 1.0pt;mso-border-right-themecolor:
+  background1;mso-border-right-themeshade:242;mso-border-top-alt:solid #F2F2F2 .5pt;
+  mso-border-top-themecolor:background1;mso-border-top-themeshade:242;
+  mso-border-left-alt:solid #F2F2F2 .5pt;mso-border-left-themecolor:background1;
+  mso-border-left-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">23</span></b><b style="mso-bidi-font-weight:normal"><span style="font-size:14.0pt;mso-bidi-font-size:11.0pt;font-family:&quot;新細明體&quot;,serif;
+  mso-ascii-font-family:Calibri;mso-ascii-theme-font:minor-latin;mso-fareast-font-family:
+  新細明體;mso-fareast-theme-font:minor-fareast;mso-hansi-font-family:Calibri;
+  mso-hansi-theme-font:minor-latin">（整天）</span></b><b style="mso-bidi-font-weight:
+  normal"><span lang="EN-US" style="font-size:14.0pt;mso-bidi-font-size:11.0pt"><o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr style="mso-yfti-irow:3;mso-yfti-lastrow:yes">
+  <td width="751" colspan="4" style="width:450.8pt;border:solid #F2F2F2 1.0pt;
+  mso-border-themecolor:background1;mso-border-themeshade:242;border-top:none;
+  mso-border-top-alt:solid #F2F2F2 .5pt;mso-border-top-themecolor:background1;
+  mso-border-top-themeshade:242;mso-border-alt:solid #F2F2F2 .5pt;mso-border-themecolor:
+  background1;mso-border-themeshade:242;background:#F2F2F2;mso-background-themecolor:
+  background1;mso-background-themeshade:242;padding:0cm 5.4pt 0cm 5.4pt">
+  <p class="MsoNormal" align="center" style="text-align:center"><b style="mso-bidi-font-weight:normal"><span lang="EN-US" style="font-size:14.0pt;
+  mso-bidi-font-size:11.0pt">★hour must be in 0~23<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</tbody></table>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">d</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">23</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">&#34;Date&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$lt&#34;</span><span class="p">:</span> <span class="n">d</span><span class="p">}})</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&#34;Date&#34;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s2">&#34;Date&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$lt&#34;</span><span class="p">:</span> <span class="n">d</span><span class="p">}})</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&#34;Date&#34;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="finddate-0036gte-start0036lte-end">find({&lsquo;Date&rsquo;: {&quot;$gte&quot;: start,&quot;$lte&quot;: end}})</h5>
+<h6 id="找出一段時間的資料">找出一段時間的資料</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">start</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="mi">2021</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">22</span><span class="p">,</span> <span class="mi">20</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({</span><span class="s1">&#39;Date&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$gte&#34;</span><span class="p">:</span> <span class="n">start</span><span class="p">,</span><span class="s2">&#34;$lte&#34;</span><span class="p">:</span> <span class="n">end</span><span class="p">}})</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&#34;Date&#34;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="6-刪除重複資料">6 刪除重複資料</h4>
+<blockquote>
+<p>參考資料<br>
+<a href="https://segmentfault.com/a/1190000020056997" target="_blank" rel="noopener noreffer">mongo 删除重复数据</a><br>
+<a href="http://ldllidonglin.github.io/blog/2015/12/14/2015-12-14-mongodb%E5%8E%BB%E9%99%A4%E9%87%8D%E5%A4%8D%E6%95%B0%E6%8D%AE/" target="_blank" rel="noopener noreffer">pymongo去除重复数据</a><br>
+<a href="https://stackoverflow.com/questions/34722866/pymongo-remove-duplicates-map-reduce" target="_blank" rel="noopener noreffer">pymongo: remove duplicates (map reduce?)</a></p>
+</blockquote>
+<h5 id="mongodb執行">MongoDB執行</h5>
+<h6 id="準備重複資料">準備重複資料</h6>
+<img src = "https://i.imgur.com/T6o6ocf.jpg" width = "100%"/>
+<h6 id="執行程式碼sql">執行程式碼/SQL/</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-SQL" data-lang="SQL"><span class="n">db</span><span class="p">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">).</span><span class="k">aggregate</span><span class="p">([</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="k">group</span><span class="p">:</span><span class="err">{</span><span class="n">_id</span><span class="p">:</span><span class="err">{</span><span class="n">Title</span><span class="p">:</span><span class="s1">&#39;$Title&#39;</span><span class="err">}</span><span class="p">,</span><span class="k">count</span><span class="p">:</span><span class="err">{$</span><span class="k">sum</span><span class="p">:</span><span class="mi">1</span><span class="err">}</span><span class="p">,</span><span class="n">dups</span><span class="p">:</span><span class="err">{$</span><span class="n">addToSet</span><span class="p">:</span><span class="s1">&#39;$_id&#39;</span><span class="err">}}</span>
+    <span class="err">}</span><span class="p">,</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="k">match</span><span class="p">:</span><span class="err">{</span><span class="k">count</span><span class="p">:</span><span class="err">{$</span><span class="n">gt</span><span class="p">:</span><span class="mi">1</span><span class="err">}}</span>
+    <span class="err">}</span>
+
+    <span class="p">]).</span><span class="n">forEach</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">it</span><span class="p">)</span><span class="err">{</span>
+
+         <span class="n">it</span><span class="p">.</span><span class="n">dups</span><span class="p">.</span><span class="n">shift</span><span class="p">();</span>
+            <span class="n">db</span><span class="p">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">).</span><span class="n">remove</span><span class="p">(</span><span class="err">{</span><span class="n">_id</span><span class="p">:</span> <span class="err">{$</span><span class="k">in</span><span class="p">:</span> <span class="n">it</span><span class="p">.</span><span class="n">dups</span><span class="err">}}</span><span class="p">);</span>
+
+    <span class="err">}</span><span class="p">);</span><span class="n">db</span><span class="p">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">).</span><span class="k">aggregate</span><span class="p">([</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="k">group</span><span class="p">:</span><span class="err">{</span><span class="n">_id</span><span class="p">:</span><span class="err">{</span><span class="n">Title</span><span class="p">:</span><span class="s1">&#39;$Title&#39;</span><span class="err">}</span><span class="p">,</span><span class="k">count</span><span class="p">:</span><span class="err">{$</span><span class="k">sum</span><span class="p">:</span><span class="mi">1</span><span class="err">}</span><span class="p">,</span><span class="n">dups</span><span class="p">:</span><span class="err">{$</span><span class="n">addToSet</span><span class="p">:</span><span class="s1">&#39;$_id&#39;</span><span class="err">}}</span>
+    <span class="err">}</span><span class="p">,</span>
+    <span class="err">{</span>
+        <span class="err">$</span><span class="k">match</span><span class="p">:</span><span class="err">{</span><span class="k">count</span><span class="p">:</span><span class="err">{$</span><span class="n">gt</span><span class="p">:</span><span class="mi">1</span><span class="err">}}</span>
+    <span class="err">}</span>
+
+    <span class="p">]).</span><span class="n">forEach</span><span class="p">(</span><span class="k">function</span><span class="p">(</span><span class="n">it</span><span class="p">)</span><span class="err">{</span>
+
+         <span class="n">it</span><span class="p">.</span><span class="n">dups</span><span class="p">.</span><span class="n">shift</span><span class="p">();</span>
+            <span class="n">db</span><span class="p">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s2">&#34;test&#34;</span><span class="p">).</span><span class="n">remove</span><span class="p">(</span><span class="err">{</span><span class="n">_id</span><span class="p">:</span> <span class="err">{$</span><span class="k">in</span><span class="p">:</span> <span class="n">it</span><span class="p">.</span><span class="n">dups</span><span class="err">}}</span><span class="p">);</span>
+
+    <span class="err">}</span><span class="p">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/t7p0bjf.png" width = "100%"/>
+<h5 id="python執行">Python執行</h5>
+<h6 id="準備重複資料-1">準備重複資料</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
+    <span class="n">mydict</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">&#34;Title&#34;</span><span class="p">:</span> <span class="n">title</span><span class="p">,</span> <span class="s2">&#34;text&#34;</span><span class="p">:</span> <span class="n">text</span> <span class="p">}</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">mycol</span><span class="o">.</span><span class="n">insert_one</span><span class="p">(</span><span class="n">mydict</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/elKxfJ9.jpg" width = "100%"/>
+<h6 id="執行程式碼python">執行程式碼/Python/</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">cursor</span> <span class="o">=</span> <span class="n">mycol</span><span class="o">.</span><span class="n">aggregate</span><span class="p">(</span>
+    <span class="p">[</span>
+        <span class="p">{</span><span class="s2">&#34;$group&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;_id&#34;</span><span class="p">:</span> <span class="s2">&#34;$Title&#34;</span><span class="p">,</span> <span class="s2">&#34;unique_ids&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$addToSet&#34;</span><span class="p">:</span> <span class="s2">&#34;$_id&#34;</span><span class="p">},</span> <span class="s2">&#34;count&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$sum&#34;</span><span class="p">:</span> <span class="mi">1</span><span class="p">}}},</span>
+        <span class="p">{</span><span class="s2">&#34;$match&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;count&#34;</span><span class="p">:</span> <span class="p">{</span> <span class="s2">&#34;$gte&#34;</span><span class="p">:</span> <span class="mi">2</span> <span class="p">}}}</span>
+    <span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">response</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">doc</span> <span class="ow">in</span> <span class="n">cursor</span><span class="p">:</span>
+    <span class="k">del</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&#34;unique_ids&#34;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="nb">id</span> <span class="ow">in</span> <span class="n">doc</span><span class="p">[</span><span class="s2">&#34;unique_ids&#34;</span><span class="p">]:</span>
+        <span class="n">response</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">id</span><span class="p">)</span>
+
+<span class="n">mycol</span><span class="o">.</span><span class="n">remove</span><span class="p">({</span><span class="s2">&#34;_id&#34;</span><span class="p">:</span> <span class="p">{</span><span class="s2">&#34;$in&#34;</span><span class="p">:</span> <span class="n">response</span><span class="p">}})</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/sEj2NQS.jpg" width = "100%"/>
+<h4 id="7-orderbyhttpsdocsmongodbcommanualreferenceoperatormetaorderby">7 <a href="https://docs.mongodb.com/manual/reference/operator/meta/orderby/" target="_blank" rel="noopener noreffer">$orderby</a></h4>
+<blockquote>
+<p>參考資料<br>
+<a href="https://docs.mongodb.com/manual/reference/operator/meta/orderby/" target="_blank" rel="noopener noreffer">$orderby</a><br>
+<a href="https://docs.mongodb.com/manual/reference/method/cursor.sort/" target="_blank" rel="noopener noreffer">cursor.sort()</a></p>
+</blockquote>
+<img src= "https://i.imgur.com/2nnO2dz.jpg" width = "100%"/>
+<blockquote>
+<p>先複製collection，避免出錯</p>
+</blockquote>
+<h5 id="不改變原始資料">不改變原始資料</h5>
+<h6 id="執行程式碼sql-1">執行程式碼/SQL/</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="n">db</span><span class="p">.</span><span class="n">getCollection</span><span class="p">(</span><span class="s1">&#39;2021_鉅亨網_copy&#39;</span><span class="p">).</span><span class="n">find</span><span class="p">().</span><span class="n">sort</span><span class="p">(</span> <span class="err">{</span> <span class="nb">Date</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span> <span class="err">}</span> <span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>If MongoDB requires using <strong>more than 100 megabytes</strong> of system memory for the <strong>blocking sort operation</strong>, MongoDB returns an error unless the query specifies <a href="https://docs.mongodb.com/manual/reference/method/cursor.allowDiskUse/#cursor.allowDiskUse" target="_blank" rel="noopener noreffer"><code>cursor.allowDiskUse()</code></a> <strong>(New in MongoDB 4.4). </strong><code>allowDiskUse()</code> allows MongoDB to use temporary files on disk to store data exceeding the 100 megabyte system memory limit while processing a blocking sort operation.</p>
+ <p align="right">
+ 原文參考自：
+ <a href="https://docs.mongodb.com/manual/reference/operator/meta/orderby/" style="text-decoration:none;">$orderby</a>
+ </p>
+</blockquote>
+<h6 id="執行程式碼python-1">執行程式碼/Python/</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">mycol</span><span class="o">.</span><span class="n">find</span><span class="p">({})</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="s2">&#34;Date&#34;</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-01-19</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/twse-10-mongodb-python/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python" data-hashtags="Python,TWSE,MongoDB,NoSQL"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="http://hsiangjenli.github.io/twse-10-mongodb-python/" data-title="TWSE [10] MongoDB&#43;Python" data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/twse/">TWSE</a>,&nbsp;<a href="/tags/mongodb/">MongoDB</a>,&nbsp;<a href="/tags/nosql/">NoSQL</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/" class="prev" rel="prev" title="TWSE [9] Bs4 &#43; 鉅亨網"><i class="fas fa-angle-left fa-fw"></i>TWSE [9] Bs4 &#43; 鉅亨網</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="http://hsiangjenli.github.io/twse-10-mongodb-python/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=hsiangjenli&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":15},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":""}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
