@@ -4,7 +4,16 @@
         <link>http://hsiangjenli.github.io/tags/mongodb/</link>
         <description>MongoDB - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Tue, 19 Jan 2021 23:59:08 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/mongodb/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/mongodb/" rel="self" type="application/rss+xml" /><item>
+    <title>TWSE [11] Wordcloud &#43; MongoDB</title>
+    <link>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</link>
+    <pubDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/PGPDKuT.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>TWSE [10] MongoDB&#43;Python</title>
     <link>http://hsiangjenli.github.io/twse-10-mongodb-python/</link>
     <pubDate>Tue, 19 Jan 2021 23:59:08 &#43;0800</pubDate>

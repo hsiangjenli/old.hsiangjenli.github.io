@@ -4,7 +4,16 @@
         <link>http://hsiangjenli.github.io/posts/</link>
         <description>All Posts | HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Tue, 19 Jan 2021 23:59:08 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>TWSE [11] Wordcloud &#43; MongoDB</title>
+    <link>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</link>
+    <pubDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/PGPDKuT.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>TWSE [10] MongoDB&#43;Python</title>
     <link>http://hsiangjenli.github.io/twse-10-mongodb-python/</link>
     <pubDate>Tue, 19 Jan 2021 23:59:08 &#43;0800</pubDate>
@@ -82,15 +91,6 @@
     <guid>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/FEjSY9d.png" referrerpolicy="no-referrer">
-            </div>]]></description>
-</item><item>
-    <title>TWSE [2] 將DataFrame存入CSV檔 &amp; 抓取多筆資料</title>
-    <link>http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/</link>
-    <pubDate>Sat, 28 Nov 2020 16:57:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-2-%E5%B0%87dataframe%E5%AD%98%E5%85%A5csv%E6%AA%94/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/gnDD4XF.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item></channel>
 </rss>
