@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>TWSE [12] Efficient Frontier - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="TWSE [12] Efficient Frontier" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hsiangjenli.github.io/twse-12-efficient-frontier/" />
+<meta property="article:published_time" content="2021-01-27T13:48:04+08:00" />
+<meta property="article:modified_time" content="2021-01-27T13:48:04+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="TWSE [12] Efficient Frontier"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="HJL">
+<meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/twse-12-efficient-frontier/" /><link rel="prev" href="http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "TWSE [12] Efficient Frontier",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hsiangjenli.github.io\/twse-12-efficient-frontier\/"
+        },"genre": "posts","keywords": "Python, TWSE, Pandas","wordcount":  2070 ,
+        "url": "http:\/\/hsiangjenli.github.io\/twse-12-efficient-frontier\/","datePublished": "2021-01-27T13:48:04+08:00","dateModified": "2021-01-27T13:48:04+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "HJL"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/resume/"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HJL"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        data-srcset="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 1.5x, https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp 2x"
+        data-sizes="auto"
+        alt="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp"
+        title="https://www.gravatar.com/avatar/e5c26bc128637a6563959121706c379f?s=240&amp;d=mp" />HJL</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/resume/" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">TWSE [12] Efficient Frontier</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a>&nbsp;<a href="/categories/twse/"><i class="far fa-folder fa-fw"></i>TWSE</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-27">2021-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2070 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="https://i.imgur.com/3tkL1T2.png"
+        data-srcset="https://i.imgur.com/3tkL1T2.png, https://i.imgur.com/3tkL1T2.png 1.5x, https://i.imgur.com/3tkL1T2.png 2x"
+        data-sizes="auto"
+        alt="https://i.imgur.com/3tkL1T2.png"
+        title="https://i.imgur.com/3tkL1T2.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#sql-連接方法一">SQL 連接/方法一/</a>
+      <ul>
+        <li><a href="#報酬率">報酬率</a>
+          <ul>
+            <li><a href="#基本">基本</a>
+              <ul>
+                <li><a href="#今日--昨日">今日 &amp; 昨日</a></li>
+              </ul>
+            </li>
+            <li><a href="#pct_change">pct_change()</a></li>
+          </ul>
+        </li>
+        <li><a href="#變異數σ2">變異數$σ^2$</a>
+          <ul>
+            <li><a href="#varhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframevarhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html">var()</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#標準差σ">標準差$σ$</a>
+          <ul>
+            <li><a href="#stdhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframestdhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html">std()</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#共變異數σ_ab">共變異數$σ_{a,b}$</a>
+          <ul>
+            <li><a href="#covhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframecovhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html">cov()</a></a>
+              <ul>
+                <li><a href="#簡單實證">簡單實證</a></li>
+                <li><a href="#-σ_2330tw-">$ σ_{2330,TW} $</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#相關係數ρ_ab">相關係數$ρ_{a,b}$</a>
+          <ul>
+            <li><a href="#corrhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframecorrhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">corr()</a></a></li>
+          </ul>
+        </li>
+        <li><a href="#beta係數">$\beta$係數</a></li>
+      </ul>
+    </li>
+    <li><a href="#sql-連接方法二">SQL 連接/方法二/</a>
+      <ul>
+        <li><a href="#預期報酬er">預期報酬$E(r)$</a></li>
+        <li><a href="#權重w_i">權重$W_{i}$</a></li>
+        <li><a href="#投資組合報酬率r_p">投資組合報酬率$R_{P}$</a></li>
+      </ul>
+    </li>
+    <li><a href="#量化投資efficient-frontier">量化投資/Efficient Frontier/</a>
+      <ul>
+        <li><a href="#隨機權重w_i">隨機權重$W_{i}$</a></li>
+        <li><a href="#投資組合風險σ_p2">投資組合風險$σ_{P}^2$</a>
+          <ul>
+            <li><a href="#基本公式">基本公式</a></li>
+            <li><a href="#矩陣簡單計算">矩陣簡單計算</a></li>
+            <li><a href="#使用矩陣簡化σ_p2計算">使用矩陣簡化$σ_{P}^2$計算</a></li>
+            <li><a href="#用python表示">用Python表示</a>
+              <ul>
+                <li><a href="#方法一">方法一</a></li>
+                <li><a href="#方法二">方法二</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#隨機生成10000筆權重">隨機生成10000筆權重</a>
+          <ul>
+            <li><a href="#畫圖">畫圖</a>
+              <ul>
+                <li><a href="#fig-1">Fig 1</a></li>
+                <li><a href="#fig-2">Fig 2</a>
+                  <ul>
+                    <li><a href="#方法一-1">方法一</a></li>
+                    <li><a href="#方法二-1">方法二</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><a href="#scipyoptimizeminimizehttpsdocsscipyorgdocscipyreferencegeneratedscipyoptimizeminimizehtml"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html">scipy.optimize.minimize</a></a>
+          <ul>
+            <li><a href="#minσ_p">min($σ_{P}$)</a></li>
+          </ul>
+        </li>
+        <li><a href="#完整程式碼sql">完整程式碼/SQL/</a></li>
+        <li><a href="#完整程式碼免sql">完整程式碼/免SQL/</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<p><img src = "" width = "100%" /></p>
+<h1 id="python--投資學efficient-frontier">Python + 投資學/Efficient Frontier/</h1>
+<h2 id="sql-連接方法一">SQL 連接/方法一/</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="kn">as</span> <span class="nn">solver</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<span class="n">pw</span> <span class="o">=</span> <span class="s2">&#34;YourPassword&#34;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="s2">&#34;TWSE&#34;</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">))</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df_2330</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `每日收盤行情` WHERE `證券代號` = 2330 AND `日期` BETWEEN &#39;2020/10/20 00:00:00&#39; AND &#39;2021/1/10 23:59:59&#39; ORDER BY `日期`&#34;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">df_tw</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="s2">&#34;SELECT * FROM `發行量加權股價指數` WHERE `日期` BETWEEN &#39;2020/10/20 00:00:00&#39; AND &#39;2021/1/10 23:59:59&#39;&#34;</span><span class="p">,</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="報酬率">報酬率</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.pct_change.html" target="_blank" rel="noopener noreffer">pandas.DataFrame.pct_change</a>
+$$ Return = \frac{D_{1} - D_{0}}{D_{0}} $$</div>
+        </div>
+    </div>
+<h4 id="基本">基本</h4>
+<h5 id="今日--昨日">今日 &amp; 昨日</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">print</span><span class="p">(</span><span class="s1">&#39;今日  昨日&#39;</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">i</span><span class="p">,</span><span class="n">j</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">],</span><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span> <span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><img src = "https://i.imgur.com/7lkgNrl.jpg" width = "100%" /></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Return</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">((</span><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span>  <span class="o">-</span> <span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span><span class="o">/</span><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">Return</span> <span class="o">=</span> <span class="n">Return</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="s1">&#39;Return&#39;</span><span class="p">})</span>
+<span class="n">Return</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="pct_change">pct_change()</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">df_2330</span><span class="p">[</span><span class="s1">&#39;收盤價&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">())</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;TW&#39;</span><span class="p">]</span>  <span class="o">=</span> <span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="s1">&#39;2330&#39;</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="變異數σ2">變異數$σ^2$</h3>
+<h4 id="varhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframevarhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.var.html" target="_blank" rel="noopener noreffer">var()</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="標準差σ">標準差$σ$</h3>
+<h4 id="stdhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframestdhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.std.html" target="_blank" rel="noopener noreffer">std()</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+
+<span class="n">std</span> <span class="o">=</span> <span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">var</span><span class="p">()</span><span class="o">**</span><span class="p">(</span><span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="共變異數σ_ab">共變異數$σ_{a,b}$</h3>
+<h4 id="covhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframecovhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.cov.html" target="_blank" rel="noopener noreffer">cov()</a></h4>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考公式<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">$$cov_{x,y} = \frac{\sum{}^{} ({x_i} - \overline{x})({y_i} - \overline{y})}{N-1}$$</div>
+        </div>
+    </div>
+<h5 id="簡單實證">簡單實證</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df_test</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">([(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">)],</span>
+                  <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;dogs&#39;</span><span class="p">,</span> <span class="s1">&#39;cats&#39;</span><span class="p">])</span>
+<span class="n">df_test</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th style="text-align:center">$$dog$$</th>
+<th style="text-align:center">$$dog_i - \overline{dog} $$</th>
+<th style="text-align:center">$$cats$$</th>
+<th style="text-align:center">$$cat_i - \overline{cat} $$</th>
+<th style="text-align:center">$${Dev_{dog}}\times{Dev_{cat}}$$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>-1</strong></td>
+<td style="text-align:center"><strong>3</strong></td>
+<td style="text-align:center"><strong>1.5</strong></td>
+<td style="text-align:center"><strong>-1.5</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>-1.5</strong></td>
+<td style="text-align:center"><strong>-1.5</strong></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:center"><strong>-1</strong></td>
+<td style="text-align:center"><strong>0</strong></td>
+</tr>
+<tr>
+<td style="text-align:center">$$\overline{dog} = 1$$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$$\overline{cat} = 1.5$$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">$${\frac{\sum{}^{} ({Dev_{dog}}\times{Dev_{cat}})}{4-1}} = -1$$</td>
+</tr>
+</tbody>
+</table>
+<h5 id="-σ_2330tw-">$ σ_{2330,TW} $</h5>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>補充資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h1>$$ σ_{2330,TW} $$</h1>
+<p align = "right" ><a href="https://drive.google.com/file/d/1w_wYTHxTBQZzPiWNjn-eNIu6UjXAVzyb/view?usp=sharing" target="_blank" rel="noopener noreffer">Excel計算過程</a></div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="mf">0.000097</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="相關係數ρ_ab">相關係數$ρ_{a,b}$</h3>
+<h4 id="corrhttpspandaspydataorgpandas-docsstablereferenceapipandasdataframecorrhtml"><a href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html" target="_blank" rel="noopener noreffer">corr()</a></h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">df</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">2330</th>
+<th style="text-align:center">TW</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">2330</td>
+<td style="text-align:center">1.000000</td>
+<td style="text-align:center">0.895857</td>
+</tr>
+<tr>
+<td style="text-align:center">TW</td>
+<td style="text-align:center">0.895857</td>
+<td style="text-align:center">1.000000</td>
+</tr>
+</tbody>
+</table>
+<h3 id="beta係數">$\beta$係數</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考公式<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><h2>$${\beta} = \frac{σ_{i,m}}{σ^2}$$</h2>
+</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Beta</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">cov</span><span class="p">()[</span><span class="s1">&#39;TW&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="n">df_tw</span><span class="p">[</span><span class="s1">&#39;收盤指數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span><span class="o">.</span><span class="n">var</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="sql-連接方法二">SQL 連接/方法二/</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="kn">as</span> <span class="nn">solver</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<span class="n">pw</span> <span class="o">=</span> <span class="s2">&#34;YourPassword&#34;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="s2">&#34;TWSE&#34;</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">))</span>
+
+<span class="n">Start</span> <span class="o">=</span> <span class="s1">&#39;2020/10/20 00:00:00&#39;</span>
+<span class="n">End</span> <span class="o">=</span> <span class="s1">&#39;2021/1/10 23:59:59&#39;</span>
+
+<span class="n">SQL</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">SELECT `收盤價` FROM `{}` WHERE `證券代號` = &#39;{}&#39; AND `日期` BETWEEN &#39;{}&#39; AND &#39;{}&#39; ORDER BY `日期`
+</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">stock_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span><span class="s1">&#39;2317&#39;</span><span class="p">,</span><span class="s1">&#39;1234&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">getSQL</span><span class="p">(</span><span class="n">stock_code</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">SQL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;每日收盤行情&#39;</span><span class="p">,</span><span class="n">stock_code</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">),</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="k">def</span> <span class="nf">Tsql</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)):</span>
+        <span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getSQL</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">())</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">]})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">returns</span> <span class="o">=</span> <span class="n">Tsql</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src = "https://i.imgur.com/yUyf3O0.jpg" width = "100%">
+<h3 id="預期報酬er">預期報酬$E(r)$</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Expected_R</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="權重w_i">權重$W_{i}$</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.5</span><span class="p">,</span><span class="mf">0.3</span><span class="p">,</span><span class="mf">0.2</span><span class="p">])</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="投資組合報酬率r_p">投資組合報酬率$R_{P}$</h3>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考公式<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">$$R_{P} = \sum{W_{i}\times{R_{i}}}$$</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Portfolio_R</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">W</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="量化投資efficient-frontier">量化投資/Efficient Frontier/</h2>
+<h3 id="隨機權重w_i">隨機權重$W_{i}$</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))</span>
+<span class="n">W</span> <span class="o">=</span> <span class="n">W</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+<span class="n">W</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="投資組合風險σ_p2">投資組合風險$σ_{P}^2$</h3>
+<h4 id="基本公式">基本公式</h4>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考公式<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">$$σ_{P}^2 = \sum{{W_{i}^2}{σ_{i}^2} + \sum\sum{{W{i}W_{j}{σ_{i,j}}}}}$$
+$$σ_{P}^2 = \sum{{W_{i}^2}{σ_{i}^2} + \sum\sum{{W{i}W_{j}{ρ_{i,j}{σ_{i}{σ_{j}}}}}}}$$</div>
+        </div>
+    </div>
+<h4 id="矩陣簡單計算">矩陣簡單計算</h4>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://www.itread01.com/content/1543280103.html" target="_blank" rel="noopener noreffer">[work] 理解矩陣乘法</a>
+\[ \begin{bmatrix} 1&amp;2\\3&amp;4 \end{bmatrix} \times \begin{bmatrix} 4&amp;-6\\ -2&amp;3 \end{bmatrix} = \begin{bmatrix} A_1&amp;A_2\\B_1&amp;B_2  \end{bmatrix} = \begin{bmatrix} 0&amp;0\\4&amp; -6  \end{bmatrix}\]</div>
+        </div>
+    </div>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$A_{1} = 1\times4 + 2\times(-2) = 0$</td>
+<td>$A_{2} = 1\times(-6) + 2\times(3) = 0$</td>
+</tr>
+<tr>
+<td>$B_{1} = 3\times4 + 4\times(-2) = 4$</td>
+<td>$B_{2} = 3\times(-6) + 4\times(3) = -6$</td>
+</tr>
+</tbody>
+</table>
+<h4 id="使用矩陣簡化σ_p2計算">使用矩陣簡化$σ_{P}^2$計算</h4>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://www.masterlink.com.tw/about/riskmanagment/manage/market.aspx" target="_blank" rel="noopener noreffer">VaR 風險值衡量(Value at Risk；VaR)</a><br>
+<a href="https://kknews.cc/zh-tw/finance/lp3kr9g.html" target="_blank" rel="noopener noreffer">如何計算投資組合的風險和回報</a></p></p>
+<h3>
+$$σ_{P}^2 = \begin{bmatrix}W_1&W_2&W_3\end{bmatrix} \times \begin{bmatrix}σ_{1}^2&σ_{2,1}&σ_{3,1} \\\ σ_{1,2}&σ_{2}^2&σ_{3,2} \\\ σ_{1,3}&σ_{2,3}&σ_{3}^2\end{bmatrix} \times \begin{bmatrix}W_1\\\ W_2\\\ W_3\end{bmatrix}$$
+</h3>
+</div>
+        </div>
+    </div>
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+  font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-io4b{background-color:#efefef;border-color:inherit;color:#000000;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+</style>
+<table class="tg">
+<thead>
+  <tr>
+      <th class="tg-io4b" colspan="3"><h2>步驟一</h2></th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td class="tg-c3ow" colspan="3">$$\begin{bmatrix}W_1&W_2&W_3\end{bmatrix} \times \begin{bmatrix}σ_{1}^2&σ_{2,1}&σ_{3,1} \\\ σ_{1,2}&σ_{2}^2&σ_{3,2} \\\ σ_{1,3}&σ_{2,3}&σ_{3}^2\end{bmatrix}$$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$W_{1}σ_{1}^2 + W_{2}σ_{1,2}+ W_{3}σ_{1,3}$</td>
+    <td class="tg-0pky">$ W_{1}σ_{2,1}+ W_{2}σ_{2}^2+ W_{3}σ_{2,3}$</td>
+    <td class="tg-0pky">$ W_{1}σ_{3,1}+ W_{2}σ_{3,2}+ W_{3}σ_{3}^2$</td>
+  </tr>
+  <tr>
+      <td class="tg-io4b" colspan="3"><h2>步驟二</h2></td>
+  </tr>
+  <tr>
+    <td class="tg-c3ow" colspan="3">$$\begin{bmatrix} W_{1}σ_{1}^2 + W_{2}σ_{1,2}+ W_{3}σ_{1,3},& W_{1}σ_{2,1}+ W_{2}σ_{2}^2+ W_{3}σ_{2,3},& W_{1}σ_{3,1}+ W_{2}σ_{3,2}+ W_{3}σ_{3}^2\end{bmatrix} \times \begin{bmatrix}W_1\\\ W_2\\\ W_3\end{bmatrix}$$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$W_{1}^2σ_{1}^2$</td>
+    <td class="tg-0pky">$ W_{1}W_{2}σ_{2,1}$</td>
+    <td class="tg-0pky">$ W_{1}W_{2}σ_{3,1}$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$ W_{1} W_{2}σ_{1,2}$</td>
+    <td class="tg-0pky">$ W_{2}^2σ_{2}^2$</td>
+    <td class="tg-0pky">$ W_{2}W_{3}σ_{3,2}$</td>
+  </tr>
+  <tr>
+    <td class="tg-0pky">$ W_{1} W_{3}σ_{1,3}$</td>
+    <td class="tg-0pky">$ W_{2}W_{3}σ_{2,3}$</td>
+    <td class="tg-0pky">$ W_{3}^2σ_{3}^2$</td>
+  </tr>
+</tbody>
+</table>
+<h4 id="用python表示">用Python表示</h4>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://ycy-tw.github.io/2020/03/28/Python-%E7%B9%AA%E8%A3%BD%E6%95%88%E7%8E%87%E5%89%8D%E7%B7%A3%28Efficient%20Frontier%29/" target="_blank" rel="noopener noreffer">Python-繪製效率前緣(Efficient Frontier)</a><br>
+<a href="https://www.twblogs.net/a/5b7f57ea2b717767c6af118b" target="_blank" rel="noopener noreffer">Python金融大數據分析——第11章 統計學（2）投資組合優化 筆記</a></div>
+        </div>
+    </div>
+<h5 id="方法一">方法一</h5>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>以下程式碼來源，參考自：<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://ycy-tw.github.io/2020/03/28/Python-%E7%B9%AA%E8%A3%BD%E6%95%88%E7%8E%87%E5%89%8D%E7%B7%A3%28Efficient%20Frontier%29/" target="_blank" rel="noopener noreffer">Python-繪製效率前緣(Efficient Frontier)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Portfolio_risk</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">[</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span> <span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">]))</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h5 id="方法二">方法二</h5>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://www.w3schools.com/python/python_lambda.asp" target="_blank" rel="noopener noreffer">Python Lambda</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Portfolio_risk</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">c</span><span class="p">))</span>
+<span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h3 id="隨機生成10000筆權重">隨機生成10000筆權重</h3>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>以下程式碼來源，參考自：<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://ycy-tw.github.io/2020/03/28/Python-%E7%B9%AA%E8%A3%BD%E6%95%88%E7%8E%87%E5%89%8D%E7%B7%A3%28Efficient%20Frontier%29/" target="_blank" rel="noopener noreffer">Python-繪製效率前緣(Efficient Frontier)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">Expected_R</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
+<span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">*</span><span class="mi">252</span>
+<span class="n">all_Portfolio_risk</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_return</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">Expected_R</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stop</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">W</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+        <span class="n">all_return</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">Expected_R</span> <span class="o">*</span> <span class="n">W</span><span class="p">))</span>
+        <span class="n">all_Portfolio_risk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">reduce</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">,</span> <span class="p">[</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span> <span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">])))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="n">SR</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<h4 id="畫圖">畫圖</h4>
+<h5 id="fig-1">Fig 1</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_1.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src="https://i.imgur.com/k9uKXJg.png" width = "100%"/>
+<h5 id="fig-2">Fig 2</h5>
+<h6 id="方法一-1">方法一</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#基本設定</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">risk_free</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">SR</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">-</span><span class="n">risk_free</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+
+<span class="c1">#字體大小設定</span>
+<span class="n">label_size</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">tick_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Title_size</span> <span class="o">=</span> <span class="mi">40</span>
+
+<span class="c1">#Title</span>
+<span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Efficient Frontier&#39;</span>
+
+<span class="c1">#格線</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="c1">#散點圖</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1">#X,Y軸標籤</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;$σ_{P}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$E(R)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="c1">#X,Y軸字體設定</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">fontsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="c1">#color bar設定</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s1">&#39;$Sharpe$ $Ratio$&#39;</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+<span class="n">cbar_Title</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">label_size</span><span class="p">)</span>
+<span class="n">cbar_Title</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">Title_size</span><span class="p">,</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span><span class="n">ha</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+
+<span class="c1">#圖片儲存</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_2.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="方法二-1">方法二</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="n">label_size</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">tick_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Title_size</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Efficient Frontier&#39;</span>
+<span class="n">risk_free</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">SR</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">-</span><span class="n">risk_free</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+<span class="n">ax_main</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">Title_size</span><span class="p">,</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span><span class="n">ha</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$σ_{P}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$E(R)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+
+
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ax_main</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$Sharpe$ $Ratio$&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+<span class="n">cbar_Title</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">label_size</span><span class="p">)</span>
+<span class="n">cbar_Title</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_3.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src="https://i.imgur.com/Uog91y0.png" width = '100%'/>
+<h3 id="scipyoptimizeminimizehttpsdocsscipyorgdocscipyreferencegeneratedscipyoptimizeminimizehtml"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html" target="_blank" rel="noopener noreffer">scipy.optimize.minimize</a></h3>
+<h4 id="minσ_p">min($σ_{P}$)</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">standard_deviation</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>以下程式碼來源，參考自：<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://ycy-tw.github.io/2020/03/28/Python-%E7%B9%AA%E8%A3%BD%E6%95%88%E7%8E%87%E5%89%8D%E7%B7%A3%28Efficient%20Frontier%29/" target="_blank" rel="noopener noreffer">Python-繪製效率前緣(Efficient Frontier)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))]</span>
+
+<span class="n">bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)))</span>
+
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}]</span>
+
+<span class="n">min_Portfolio_risk</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+
+<span class="n">mvp_risk</span> <span class="o">=</span> <span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">fun</span>
+<span class="n">mvp_return</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合預期報酬率為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_return</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合風險為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>補充資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.minimize.html" target="_blank" rel="noopener noreffer">scipy.optimize.minimize</a></p>
+<img src="https://i.imgur.com/m2P2B2d.jpg" width = "100%"/></div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>以下程式碼來源，參考自：<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p><a href="https://ycy-tw.github.io/2020/03/28/Python-%E7%B9%AA%E8%A3%BD%E6%95%88%E7%8E%87%E5%89%8D%E7%B7%A3%28Efficient%20Frontier%29/" target="_blank" rel="noopener noreffer">Python-繪製效率前緣(Efficient Frontier)</a></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; 佔投資組合權重 : &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">format</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;.4f&#39;</span><span class="p">)))</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>$$SR = \frac{R_{P} - R_{f}}{σ_{P}}$$</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">risk_free</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">SR</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">-</span><span class="n">risk_free</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))]</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)))</span>
+
+<span class="n">efficient_fronter_return_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">),</span> <span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">),(</span><span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">))</span><span class="o">/</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">efficient_fronter_risk_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">efficient_fronter_return_range</span><span class="p">:</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">},</span>
+                   <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">}]</span>
+    <span class="n">efficient_fronter</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+    <span class="n">efficient_fronter_risk_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">efficient_fronter</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">label_size</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">tick_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Title_size</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Efficient Frontier&#39;</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">ax_main</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">Title_size</span><span class="p">,</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span><span class="n">ha</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$σ_{P}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$E(R)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">efficient_fronter_risk_list</span><span class="p">,</span> <span class="n">efficient_fronter_return_range</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#251f6b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span> <span class="n">mvp_return</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;#ed1313&#39;</span><span class="p">,</span>  <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ax_main</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$Sharpe$ $Ratio$&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+<span class="n">cbar_Title</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">label_size</span><span class="p">)</span>
+<span class="n">cbar_Title</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_4.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src="https://i.imgur.com/X2kXG6k.png" width = "100%"/>
+<h3 id="完整程式碼sql">完整程式碼/SQL/</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">  1
+</span><span class="lnt">  2
+</span><span class="lnt">  3
+</span><span class="lnt">  4
+</span><span class="lnt">  5
+</span><span class="lnt">  6
+</span><span class="lnt">  7
+</span><span class="lnt">  8
+</span><span class="lnt">  9
+</span><span class="lnt"> 10
+</span><span class="lnt"> 11
+</span><span class="lnt"> 12
+</span><span class="lnt"> 13
+</span><span class="lnt"> 14
+</span><span class="lnt"> 15
+</span><span class="lnt"> 16
+</span><span class="lnt"> 17
+</span><span class="lnt"> 18
+</span><span class="lnt"> 19
+</span><span class="lnt"> 20
+</span><span class="lnt"> 21
+</span><span class="lnt"> 22
+</span><span class="lnt"> 23
+</span><span class="lnt"> 24
+</span><span class="lnt"> 25
+</span><span class="lnt"> 26
+</span><span class="lnt"> 27
+</span><span class="lnt"> 28
+</span><span class="lnt"> 29
+</span><span class="lnt"> 30
+</span><span class="lnt"> 31
+</span><span class="lnt"> 32
+</span><span class="lnt"> 33
+</span><span class="lnt"> 34
+</span><span class="lnt"> 35
+</span><span class="lnt"> 36
+</span><span class="lnt"> 37
+</span><span class="lnt"> 38
+</span><span class="lnt"> 39
+</span><span class="lnt"> 40
+</span><span class="lnt"> 41
+</span><span class="lnt"> 42
+</span><span class="lnt"> 43
+</span><span class="lnt"> 44
+</span><span class="lnt"> 45
+</span><span class="lnt"> 46
+</span><span class="lnt"> 47
+</span><span class="lnt"> 48
+</span><span class="lnt"> 49
+</span><span class="lnt"> 50
+</span><span class="lnt"> 51
+</span><span class="lnt"> 52
+</span><span class="lnt"> 53
+</span><span class="lnt"> 54
+</span><span class="lnt"> 55
+</span><span class="lnt"> 56
+</span><span class="lnt"> 57
+</span><span class="lnt"> 58
+</span><span class="lnt"> 59
+</span><span class="lnt"> 60
+</span><span class="lnt"> 61
+</span><span class="lnt"> 62
+</span><span class="lnt"> 63
+</span><span class="lnt"> 64
+</span><span class="lnt"> 65
+</span><span class="lnt"> 66
+</span><span class="lnt"> 67
+</span><span class="lnt"> 68
+</span><span class="lnt"> 69
+</span><span class="lnt"> 70
+</span><span class="lnt"> 71
+</span><span class="lnt"> 72
+</span><span class="lnt"> 73
+</span><span class="lnt"> 74
+</span><span class="lnt"> 75
+</span><span class="lnt"> 76
+</span><span class="lnt"> 77
+</span><span class="lnt"> 78
+</span><span class="lnt"> 79
+</span><span class="lnt"> 80
+</span><span class="lnt"> 81
+</span><span class="lnt"> 82
+</span><span class="lnt"> 83
+</span><span class="lnt"> 84
+</span><span class="lnt"> 85
+</span><span class="lnt"> 86
+</span><span class="lnt"> 87
+</span><span class="lnt"> 88
+</span><span class="lnt"> 89
+</span><span class="lnt"> 90
+</span><span class="lnt"> 91
+</span><span class="lnt"> 92
+</span><span class="lnt"> 93
+</span><span class="lnt"> 94
+</span><span class="lnt"> 95
+</span><span class="lnt"> 96
+</span><span class="lnt"> 97
+</span><span class="lnt"> 98
+</span><span class="lnt"> 99
+</span><span class="lnt">100
+</span><span class="lnt">101
+</span><span class="lnt">102
+</span><span class="lnt">103
+</span><span class="lnt">104
+</span><span class="lnt">105
+</span><span class="lnt">106
+</span><span class="lnt">107
+</span><span class="lnt">108
+</span><span class="lnt">109
+</span><span class="lnt">110
+</span><span class="lnt">111
+</span><span class="lnt">112
+</span><span class="lnt">113
+</span><span class="lnt">114
+</span><span class="lnt">115
+</span><span class="lnt">116
+</span><span class="lnt">117
+</span><span class="lnt">118
+</span><span class="lnt">119
+</span><span class="lnt">120
+</span><span class="lnt">121
+</span><span class="lnt">122
+</span><span class="lnt">123
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="n">create_engine</span>
+
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">functools</span> <span class="kn">import</span> <span class="nb">reduce</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="kn">as</span> <span class="nn">solver</span>
+
+<span class="n">user</span> <span class="o">=</span> <span class="s1">&#39;root&#39;</span>
+<span class="n">pw</span> <span class="o">=</span> <span class="s2">&#34;YourPassword&#34;</span>
+<span class="n">db</span> <span class="o">=</span> <span class="s2">&#34;TWSE&#34;</span>
+<span class="n">engine</span> <span class="o">=</span> <span class="n">create_engine</span><span class="p">(</span><span class="s2">&#34;mysql+pymysql://{}:{}@localhost/{db}&#34;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">user</span><span class="p">,</span><span class="n">pw</span><span class="p">,</span><span class="n">db</span><span class="o">=</span><span class="n">db</span><span class="p">))</span>
+
+<span class="n">Start</span> <span class="o">=</span> <span class="s1">&#39;2020/10/20 00:00:00&#39;</span>
+<span class="n">End</span> <span class="o">=</span> <span class="s1">&#39;2021/1/10 23:59:59&#39;</span>
+
+<span class="n">SQL</span> <span class="o">=</span> <span class="s1">&#39;&#39;&#39;
+</span><span class="s1">SELECT `收盤價` FROM `{}` WHERE `證券代號` = &#39;{}&#39; AND `日期` BETWEEN &#39;{}&#39; AND &#39;{}&#39; ORDER BY `日期`
+</span><span class="s1">&#39;&#39;&#39;</span>
+
+<span class="n">stock_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span><span class="s1">&#39;2317&#39;</span><span class="p">,</span><span class="s1">&#39;1234&#39;</span><span class="p">]</span>
+
+<span class="k">def</span> <span class="nf">getSQL</span><span class="p">(</span><span class="n">stock_code</span><span class="p">):</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql</span><span class="p">(</span><span class="n">SQL</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;每日收盤行情&#39;</span><span class="p">,</span><span class="n">stock_code</span><span class="p">,</span> <span class="n">Start</span><span class="p">,</span> <span class="n">End</span><span class="p">),</span> <span class="n">engine</span><span class="p">,</span> <span class="n">coerce_float</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="k">def</span> <span class="nf">Tsql</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)):</span>
+        <span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">getSQL</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">())</span>
+            <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">columns</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;收盤價&#39;</span><span class="p">:</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">]})</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">df</span><span class="p">[</span><span class="s1">&#39;{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">])]</span> <span class="o">=</span> <span class="nb">globals</span><span class="p">()[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+    <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">replace</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="mi">0</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="n">returns</span> <span class="o">=</span> <span class="n">Tsql</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span>
+
+<span class="n">Expected_R</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
+<span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">*</span><span class="mi">252</span>
+
+<span class="n">Portfolio_risk</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">c</span><span class="p">))</span>
+<span class="n">all_Portfolio_risk</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_return</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">10000</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stop</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">W</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+        <span class="n">all_return</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">Expected_R</span> <span class="o">*</span> <span class="n">W</span><span class="p">))</span>
+        <span class="n">all_Portfolio_risk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">standard_deviation</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))]</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)))</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}]</span>
+
+<span class="n">min_Portfolio_risk</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="n">mvp_risk</span> <span class="o">=</span> <span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">fun</span>
+<span class="n">mvp_return</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合預期報酬率為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_return</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合風險為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; 佔投資組合權重 : &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">format</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;.4f&#39;</span><span class="p">)))</span>
+
+<span class="n">risk_free</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">SR</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">-</span><span class="n">risk_free</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">),</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">efficient_fronter_return_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,(</span><span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">))</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">efficient_fronter_risk_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">efficient_fronter_return_range</span><span class="p">:</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">},</span>
+                   <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">}]</span>
+    <span class="n">efficient_fronter</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+    <span class="n">efficient_fronter_risk_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">efficient_fronter</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+
+<span class="n">label_size</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">tick_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Title_size</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Efficient Frontier&#39;</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">ax_main</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">Title_size</span><span class="p">,</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span><span class="n">ha</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$σ_{P}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$E(R)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">efficient_fronter_risk_list</span><span class="p">,</span> <span class="n">efficient_fronter_return_range</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#251f6b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span> <span class="n">mvp_return</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;#ed1313&#39;</span><span class="p">,</span>  <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ax_main</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$Sharpe$ $Ratio$&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+<span class="n">cbar_Title</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">label_size</span><span class="p">)</span>
+<span class="n">cbar_Title</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_4.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="完整程式碼免sql">完整程式碼/免SQL/</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
+</span><span class="lnt">75
+</span><span class="lnt">76
+</span><span class="lnt">77
+</span><span class="lnt">78
+</span><span class="lnt">79
+</span><span class="lnt">80
+</span><span class="lnt">81
+</span><span class="lnt">82
+</span><span class="lnt">83
+</span><span class="lnt">84
+</span><span class="lnt">85
+</span><span class="lnt">86
+</span><span class="lnt">87
+</span><span class="lnt">88
+</span><span class="lnt">89
+</span><span class="lnt">90
+</span><span class="lnt">91
+</span><span class="lnt">92
+</span><span class="lnt">93
+</span><span class="lnt">94
+</span><span class="lnt">95
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="kn">as</span> <span class="nn">web</span>
+<span class="kn">import</span> <span class="nn">mplfinance</span> <span class="kn">as</span> <span class="nn">mpf</span>
+<span class="kn">import</span> <span class="nn">matplotlib</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">scipy.optimize</span> <span class="kn">as</span> <span class="nn">solver</span>
+<span class="n">stock_code</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span><span class="s1">&#39;3008&#39;</span><span class="p">,</span><span class="s1">&#39;6409&#39;</span><span class="p">,</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span><span class="s1">&#39;2337&#39;</span><span class="p">,</span><span class="s1">&#39;2412&#39;</span><span class="p">]</span>
+<span class="n">stock_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;{}.tw&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">stock_code</span><span class="p">]</span>
+
+<span class="n">savefig</span> <span class="o">=</span> <span class="s1">&#39;savefig_path.png&#39;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">,</span> <span class="s1">&#39;yahoo&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-05-01&#39;</span><span class="p">)</span>
+
+<span class="n">returns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
+<span class="n">Expected_R</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">*</span> <span class="mi">252</span>
+<span class="n">cov_matrix</span> <span class="o">=</span> <span class="n">returns</span><span class="o">.</span><span class="n">cov</span><span class="p">()</span><span class="o">*</span><span class="mi">252</span>
+
+<span class="n">Portfolio_risk</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">),</span><span class="n">c</span><span class="p">))</span>
+<span class="n">all_Portfolio_risk</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">all_return</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="n">stop</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="k">while</span> <span class="n">stop</span> <span class="o">&lt;</span> <span class="mi">50000</span><span class="p">:</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">stop</span> <span class="o">+=</span> <span class="mi">1</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))</span>
+        <span class="n">W</span> <span class="o">=</span> <span class="n">W</span><span class="o">/</span><span class="nb">sum</span><span class="p">(</span><span class="n">W</span><span class="p">)</span>
+        <span class="n">all_return</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">Expected_R</span> <span class="o">*</span> <span class="n">W</span><span class="p">))</span>
+        <span class="n">all_Portfolio_risk</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">))</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">standard_deviation</span><span class="p">(</span><span class="n">W</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">Portfolio_risk</span><span class="p">(</span><span class="n">W</span><span class="p">,</span> <span class="n">cov_matrix</span><span class="p">,</span><span class="n">W</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+
+<span class="n">x0</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="o">/</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">))]</span>
+<span class="n">bounds</span> <span class="o">=</span> <span class="nb">tuple</span><span class="p">((</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)))</span>
+<span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">}]</span>
+
+<span class="n">min_Portfolio_risk</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+<span class="n">mvp_risk</span> <span class="o">=</span> <span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">fun</span>
+<span class="n">mvp_return</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span>
+
+
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合預期報酬率為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_return</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+<span class="k">print</span><span class="p">(</span><span class="s1">&#39;風險最小化投資組合風險為:&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span><span class="mi">2</span><span class="p">)))</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">)):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; 佔投資組合權重 : &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">format</span><span class="p">(</span><span class="n">min_Portfolio_risk</span><span class="o">.</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="s1">&#39;.4f&#39;</span><span class="p">)))</span>
+
+<span class="n">risk_free</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">SR</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span><span class="o">-</span><span class="n">risk_free</span><span class="p">)</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">)</span>
+
+<span class="n">start</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">),</span><span class="mi">6</span><span class="p">)</span>
+<span class="n">end</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">),</span><span class="mi">4</span><span class="p">)</span>
+
+<span class="n">efficient_fronter_return_range</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,(</span><span class="nb">max</span><span class="p">(</span><span class="n">all_return</span><span class="p">)</span> <span class="o">-</span> <span class="nb">min</span><span class="p">(</span><span class="n">all_return</span><span class="p">))</span><span class="o">/</span><span class="mi">30</span><span class="p">)</span>
+<span class="n">efficient_fronter_risk_list</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">efficient_fronter_return_range</span><span class="p">:</span>
+    <span class="n">constraints</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">},</span>
+                   <span class="p">{</span><span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;eq&#39;</span><span class="p">,</span> <span class="s1">&#39;fun&#39;</span><span class="p">:</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="nb">sum</span><span class="p">(</span><span class="n">x</span> <span class="o">*</span> <span class="n">Expected_R</span><span class="p">)</span> <span class="o">-</span> <span class="n">i</span><span class="p">}]</span>
+    <span class="n">efficient_fronter</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">minimize</span><span class="p">(</span><span class="n">standard_deviation</span><span class="p">,</span> <span class="n">x0</span><span class="o">=</span><span class="n">x0</span><span class="p">,</span> <span class="n">constraints</span><span class="o">=</span><span class="n">constraints</span><span class="p">,</span> <span class="n">bounds</span><span class="o">=</span><span class="n">bounds</span><span class="p">)</span>
+    <span class="n">efficient_fronter_risk_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">efficient_fronter</span><span class="o">.</span><span class="n">fun</span><span class="p">)</span>
+
+<span class="n">label_size</span> <span class="o">=</span> <span class="mi">27</span>
+<span class="n">tick_size</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="n">Title_size</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="n">Title</span> <span class="o">=</span> <span class="s1">&#39;Efficient Frontier&#39;</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">ax</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">add_subplot</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="n">ax_main</span> <span class="o">=</span> <span class="n">ax</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">all_Portfolio_risk</span><span class="p">,</span> <span class="n">all_return</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">SR</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="n">Title</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">Title_size</span><span class="p">,</span><span class="n">family</span> <span class="o">=</span> <span class="s1">&#39;monospace&#39;</span><span class="p">,</span><span class="n">ha</span> <span class="o">=</span> <span class="s1">&#39;center&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s1">&#39;$σ_{P}$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s1">&#39;$E(R)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="n">label_size</span><span class="p">,</span> <span class="n">fontweight</span><span class="o">=</span><span class="s1">&#39;bold&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">efficient_fronter_risk_list</span><span class="p">,</span> <span class="n">efficient_fronter_return_range</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;#251f6b&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">mvp_risk</span><span class="p">,</span> <span class="n">mvp_return</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;r&#39;</span><span class="p">,</span> <span class="n">markerfacecolor</span><span class="o">=</span><span class="s1">&#39;#ed1313&#39;</span><span class="p">,</span>  <span class="n">markersize</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">colorbar</span><span class="p">(</span><span class="n">ax_main</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="n">ax</span><span class="p">,</span> <span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;$Sharpe$ $Ratio$&#39;</span><span class="p">)</span>
+<span class="n">cbar</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">ax</span>
+<span class="n">cbar</span><span class="o">.</span><span class="n">tick_params</span><span class="p">(</span><span class="n">labelsize</span><span class="o">=</span><span class="n">tick_size</span><span class="p">)</span> 
+<span class="n">cbar_Title</span> <span class="o">=</span> <span class="n">cbar</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">label</span>
+<span class="n">font</span> <span class="o">=</span> <span class="n">matplotlib</span><span class="o">.</span><span class="n">font_manager</span><span class="o">.</span><span class="n">FontProperties</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="n">label_size</span><span class="p">)</span>
+<span class="n">cbar_Title</span><span class="o">.</span><span class="n">set_font_properties</span><span class="p">(</span><span class="n">font</span><span class="p">)</span>
+<span class="n">fig</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Efficient_Frontier_4.png&#39;</span><span class="p">,</span><span class="n">dpi</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-01-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/twse-12-efficient-frontier/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier" data-hashtags="Python,TWSE,Pandas"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-hashtag="Python"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="http://hsiangjenli.github.io/twse-12-efficient-frontier/" data-title="TWSE [12] Efficient Frontier" data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/python/">Python</a>,&nbsp;<a href="/tags/twse/">TWSE</a>,&nbsp;<a href="/tags/pandas/">Pandas</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/twse-11-wordcloud-mongodb/" class="prev" rel="prev" title="TWSE [11] Wordcloud &#43; MongoDB"><i class="fas fa-angle-left fa-fw"></i>TWSE [11] Wordcloud &#43; MongoDB</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="http://hsiangjenli.github.io/twse-12-efficient-frontier/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=hsiangjenli&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":200},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":""}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -72,7 +72,7 @@ fig.update_layout(
     xaxis_rangeslider_visible=False)
 
 fig.write_html(r"C:\Users\User\Downloads\Python\3.html")                  
-#### fig.show()
+fig.show()
 ```
 ####　fig.show()
 
@@ -155,7 +155,7 @@ layout = go.Layout(yaxis2=dict(domain=[0, 0.3]),
                    hoverlabel_namelength = 0)
 fig = go.Figure(data=data, layout=layout)
 
-#### fig.show()
+fig.show()
 ```
 #### fig.show()
 <iframe src="https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_6.html" height="500" width="100%" style="border:none;"></iframe>
