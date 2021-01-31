@@ -4,9 +4,18 @@
         <link>http://hsiangjenli.github.io/</link>
         <description>Python &amp; Fintech</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</lastBuildDate>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 30 Jan 2021 21:09:30 &#43;0800</lastBuildDate>
             <atom:link href="http://hsiangjenli.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Linebot_1</title>
+    <link>http://hsiangjenli.github.io/linebot_1/</link>
+    <pubDate>Sat, 30 Jan 2021 21:09:30 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/linebot_1/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/wvO3r15.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>TWSE [11] Wordcloud &#43; MongoDB</title>
     <link>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</link>
     <pubDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</pubDate>
@@ -84,15 +93,6 @@
     <guid>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/zzwaCmc.png" referrerpolicy="no-referrer">
-            </div>]]></description>
-</item><item>
-    <title>TWSE [3] 資料存入SQLite</title>
-    <link>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</link>
-    <pubDate>Sat, 28 Nov 2020 22:57:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/FEjSY9d.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item></channel>
 </rss>

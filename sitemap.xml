@@ -2,14 +2,17 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://hsiangjenli.github.io/categories/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/categories/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/heroku/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/line-bot/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/linebot_1/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/posts/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/python/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/categories/python/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/</loc><lastmod>2021-01-30T21:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/mongodb/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/nosql/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/posts/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/python/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/categories/python/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/twse/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/categories/twse/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
@@ -20,11 +23,11 @@
             <loc>http://hsiangjenli.github.io/tags/html.parser/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/urllib/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/chart-studio/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/plotly/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-8-chartstudio-1/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/about-me/</loc><lastmod>2021-01-16T19:48:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>http://hsiangjenli.github.io/resume/</loc><lastmod>2021-01-16T19:48:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/chart-studio/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/plotly/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-8-chartstudio-1/</loc><lastmod>2021-01-16T22:11:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/about-me/</loc><lastmod>2021-01-16T19:48:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/resume/</loc><lastmod>2021-01-16T19:48:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>http://hsiangjenli.github.io/twse-7-interactive-candlestick-charts/</loc><lastmod>2020-12-05T21:55:51&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/dataframe/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/mplfinance/</loc><lastmod>2020-11-29T12:40:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
