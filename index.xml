@@ -4,9 +4,18 @@
         <link>http://hsiangjenli.github.io/</link>
         <description>Python &amp; Fintech</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Wed, 27 Jan 2021 13:48:04 &#43;0800</lastBuildDate>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</lastBuildDate>
             <atom:link href="http://hsiangjenli.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>TWSE [13] Selenium &#43; 鉅亨網</title>
+    <link>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
+    <pubDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/Jq2Iq7s.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>TWSE [12] Efficient Frontier</title>
     <link>http://hsiangjenli.github.io/twse-12-efficient-frontier/</link>
     <pubDate>Wed, 27 Jan 2021 13:48:04 &#43;0800</pubDate>
@@ -84,15 +93,6 @@
     <guid>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/bpLPbNK.png" referrerpolicy="no-referrer">
-            </div>]]></description>
-</item><item>
-    <title>TWSE [4] 資料存入MySQL及取出</title>
-    <link>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</link>
-    <pubDate>Sun, 29 Nov 2020 11:25:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/zzwaCmc.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item></channel>
 </rss>

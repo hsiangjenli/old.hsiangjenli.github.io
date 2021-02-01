@@ -713,7 +713,6 @@ import scipy.optimize as solver
 stock_code = ['2330','3008','6409','1234','2337','2412']
 stock_codes = ['{}.tw'.format(e) for e in stock_code]
 
-savefig = 'savefig_path.png'
 df = web.DataReader(stock_codes, 'yahoo', '2020-05-01')
 
 returns = df['Close'].pct_change()

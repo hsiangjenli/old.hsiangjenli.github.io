@@ -1,0 +1,17 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Selenium - Tag - HJL</title>
+        <link>http://hsiangjenli.github.io/tags/selenium/</link>
+        <description>Selenium - Tag - HJL</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/selenium/" rel="self" type="application/rss+xml" /><item>
+    <title>TWSE [13] Selenium &#43; 鉅亨網</title>
+    <link>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
+    <pubDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/Jq2Iq7s.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item></channel>
+</rss>

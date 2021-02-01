@@ -17,7 +17,7 @@
 <meta name="application-name" content="HJL">
 <meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/twse-12-efficient-frontier/" /><link rel="prev" href="http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/twse-12-efficient-frontier/" /><link rel="prev" href="http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/" /><link rel="next" href="http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/hsiangjenli.github.io\/twse-12-efficient-frontier\/"
-        },"genre": "posts","keywords": "Python, TWSE, Pandas","wordcount":  2086 ,
+        },"genre": "posts","keywords": "Python, TWSE, Pandas","wordcount":  2082 ,
         "url": "http:\/\/hsiangjenli.github.io\/twse-12-efficient-frontier\/","datePublished": "2021-01-27T13:48:04+08:00","dateModified": "2021-01-27T13:48:04+08:00","publisher": {
             "@type": "Organization",
             "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
@@ -117,7 +117,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">TWSE [12] Efficient Frontier</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a>&nbsp;<a href="/categories/twse/"><i class="far fa-folder fa-fw"></i>TWSE</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-27">2021-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2086 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-01-27">2021-01-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;2082 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;10 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -1554,7 +1554,6 @@ $$σ_{P}^2 = \begin{bmatrix}W_1&W_2&W_3\end{bmatrix} \times \begin{bmatrix}σ_{1
 </span><span class="lnt">92
 </span><span class="lnt">93
 </span><span class="lnt">94
-</span><span class="lnt">95
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas_datareader.data</span> <span class="kn">as</span> <span class="nn">web</span>
@@ -1568,7 +1567,6 @@ $$σ_{P}^2 = \begin{bmatrix}W_1&W_2&W_3\end{bmatrix} \times \begin{bmatrix}σ_{1
 <span class="n">stock_code</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;2330&#39;</span><span class="p">,</span><span class="s1">&#39;3008&#39;</span><span class="p">,</span><span class="s1">&#39;6409&#39;</span><span class="p">,</span><span class="s1">&#39;1234&#39;</span><span class="p">,</span><span class="s1">&#39;2337&#39;</span><span class="p">,</span><span class="s1">&#39;2412&#39;</span><span class="p">]</span>
 <span class="n">stock_codes</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;{}.tw&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">e</span><span class="p">)</span> <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">stock_code</span><span class="p">]</span>
 
-<span class="n">savefig</span> <span class="o">=</span> <span class="s1">&#39;savefig_path.png&#39;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">web</span><span class="o">.</span><span class="n">DataReader</span><span class="p">(</span><span class="n">stock_codes</span><span class="p">,</span> <span class="s1">&#39;yahoo&#39;</span><span class="p">,</span> <span class="s1">&#39;2020-05-01&#39;</span><span class="p">)</span>
 
 <span class="n">returns</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Close&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span>
@@ -1679,7 +1677,8 @@ $$σ_{P}^2 = \begin{bmatrix}W_1&W_2&W_3\end{bmatrix} \times \begin{bmatrix}σ_{1
         </section>
     </div>
 
-    <div class="post-nav"><a href="/twse-11-wordcloud-mongodb/" class="prev" rel="prev" title="TWSE [11] Wordcloud &#43; MongoDB"><i class="fas fa-angle-left fa-fw"></i>TWSE [11] Wordcloud &#43; MongoDB</a></div>
+    <div class="post-nav"><a href="/twse-11-wordcloud-mongodb/" class="prev" rel="prev" title="TWSE [11] Wordcloud &#43; MongoDB"><i class="fas fa-angle-left fa-fw"></i>TWSE [11] Wordcloud &#43; MongoDB</a>
+            <a href="/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/" class="next" rel="next" title="TWSE [13] Selenium &#43; 鉅亨網">TWSE [13] Selenium &#43; 鉅亨網<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 <div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
