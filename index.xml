@@ -4,16 +4,25 @@
         <link>http://hsiangjenli.github.io/</link>
         <description>Python &amp; Fintech</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</lastBuildDate>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Wed, 03 Feb 2021 00:23:39 &#43;0800</lastBuildDate>
             <atom:link href="http://hsiangjenli.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>NOTE [1] 對數報酬率</title>
+    <link>http://hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</link>
+    <pubDate>Wed, 03 Feb 2021 00:23:39 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/lpQrCoS.jpg" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>TWSE [13] Selenium &#43; 鉅亨網</title>
     <link>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
     <pubDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</pubDate>
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/Jq2Iq7s.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/6FbhBYa.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [12] Efficient Frontier</title>
@@ -22,7 +31,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-12-efficient-frontier/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/3tkL1T2.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/bsg8U37.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [11] Wordcloud &#43; MongoDB</title>
@@ -31,7 +40,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/PGPDKuT.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/3wFuNRm.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [10] MongoDB&#43;Python</title>
@@ -40,7 +49,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-10-mongodb-python/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/e9oP62W.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/EJofbyv.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [9] Bs4 &#43; 鉅亨網</title>
@@ -49,7 +58,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/e8JGJP8.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/zy6tEww.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [8] plotly | Chart Studio | 1</title>
@@ -58,7 +67,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-8-chartstudio-1/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/ew4ri40.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/RySBDge.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>About me</title>
@@ -74,7 +83,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-7-interactive-candlestick-charts/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/gCPqCli.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/jFJWr7x.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖</title>
@@ -83,16 +92,7 @@
     <author>Author</author>
     <guid>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</guid>
     <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/ydPTJCO.png" referrerpolicy="no-referrer">
-            </div>]]></description>
-</item><item>
-    <title>TWSE [5] mpl_finance K線圖</title>
-    <link>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</link>
-    <pubDate>Sun, 29 Nov 2020 12:05:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/bpLPbNK.png" referrerpolicy="no-referrer">
+                <img src="https://i.imgur.com/Bk5cA2p.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item></channel>
 </rss>
