@@ -173,6 +173,7 @@ from IPython.display import Image
 stock_code = '0050.tw'
 
 df = web.DataReader(stock_code, 'yahoo', '2020-11-01')
+df = df[['Open', 'High', 'Low', 'Close', 'Volume']]
 ```
 
 #### 基本
