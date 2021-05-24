@@ -37,7 +37,7 @@ pip install geopandas-0.9.0-py3-none-any.whl
 
 ```python
 import geopandas as gpd
-town_shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
+shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
 ```
 <img src="https://i.imgur.com/Vrxnazk.jpg" width = "100%"/>
 
@@ -46,7 +46,7 @@ town_shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
 ```python
 import matplotlib.pyplot as plt
 
-town_shp.plot(figsize=(20,20),cmap = 'Wistia')
+shp.plot(figsize=(20,20),cmap = 'Wistia')
 
 plt.tight_layout()
 plt.savefig('taiwan.png')
@@ -68,7 +68,7 @@ plt.savefig('taiwan.png')
 [地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計](https://data.gov.tw/dataset/120711)
 {{</admonition>}}
 
-### Figure
+### Figure 1
 #### 完整程式碼
 
 ```python
@@ -95,14 +95,12 @@ def crop(file_name):
 
     from IPython.display import display, Image
     display(Image(filename=file_name))
-
     
-#縣市界線資料----------------------------------------------------------------------------------------------   
+#縣市界線資料---------------------------------------------------------------------------------------------- 
 import geopandas as gpd
 
-town_shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
-town_shp.set_index('COUNTYNAME', inplace = True)
-
+shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
+shp.set_index('COUNTYNAME', inplace = True)
 
 import matplotlib.pyplot as plt
 plt.ioff()
@@ -127,10 +125,11 @@ df_GroupByCounty.rename(index={'台中市': '臺中市',
                                '台北市': '臺北市',
                                '台南市': '臺南市'},
                         inplace=True)
-##Merge資料表---------------------------------------------------------------------------------------------            
-town_shp['CName'] = town_shp.index
+
+##Merge資料表--------------------------------------------------------------------------------------------- 
+shp['CName'] = shp.index
 df_GroupByCounty['cname'] = df_GroupByCounty.index
-result =town_shp.merge(df_GroupByCounty, left_on=('CName'), right_on=('cname'))
+result =shp.merge(df_GroupByCounty, left_on=('CName'), right_on=('cname'))
 
 #畫圖----------------------------------------------------------------------------------------------------
 p2 = plot(data = result, plot_type = 'heatmap', column = '確定病例數', cmap = 'Reds', file_name = 'Heatmap_Taiwan')
@@ -139,7 +138,70 @@ crop(p2)
 
 <center><img src="https://i.imgur.com/dY6FzYa.png" width = "50%"/></center>
 
+### Figure 2
 
+#### 完整程式碼
+
+```python
+#縣市界線資料---------------------------------------------------------------------------------------------- 
+import geopandas as gpd
+
+town_shp = gpd.read_file(r'COUNTY_MOI_1090820.shp')
+town_shp.set_index('COUNTYNAME', inplace = True)
+
+#地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計----------------------------------------------------------
+import urllib.request, json
+
+url = 'https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json'
+
+with urllib.request.urlopen(url) as jsonfile:
+    data = json.loads(jsonfile.read().decode())
+
+##整理統計表----------------------------------------------------------------------------------------------
+import pandas as pd
+import datetime
+
+df = pd.DataFrame(data)
+df['確定病例數'] = df['確定病例數'].apply(lambda x:int(x))
+df['個案研判日'] = [datetime.datetime.strptime(d, "%Y/%m/%d") for d in df['個案研判日']]
+df_GroupByCounty = df.groupby(['縣市']).sum()
+df_GroupByCounty.drop('空值',inplace = True)
+df_GroupByCounty.rename(index={'台中市': '臺中市', 
+                               '台北市': '臺北市',
+                               '台南市': '臺南市'},
+                        inplace=True)
+
+##Merge資料表---------------------------------------------------------------------------------------------
+town_shp['CName'] = town_shp.index
+df_GroupByCounty['cname'] = df_GroupByCounty.index
+
+result =town_shp.merge(df_GroupByCounty, left_on=('CName'), right_on=('cname'))
+result = result.set_index('CName')
+
+#畫圖----------------------------------------------------------------------------------------------------
+import plotly.express as px
+
+fig = px.choropleth_mapbox(result,
+                           geojson=result['geometry'],
+                           locations=result.index,
+                           color_continuous_scale="Reds",
+                           color=result['確定病例數'],
+                           center={"lat": 23.5, "lon": 121},
+                           mapbox_style="open-street-map",
+                           zoom=6,
+                           title = 'Covid-19 Taiwan')
+fig.show()
+fig.write_html("Python [1] Covid-19 + geopandas-2021-05-24.html")
+```
+
+<iframe src="https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-05-24.html" height="500" width="100%" style="border:none;"></iframe>
+
+{{<admonition note "choropleth_mapbox">}}
+
+1. [plotly.express.choropleth_mapbox](https://plotly.github.io/plotly.py-docs/generated/plotly.express.html#module-plotly.express)
+2. [Built-in Continuous Color Scales in Python](https://plotly.com/python/builtin-colorscales/)
+
+{{</admonition>}}
 
 {{<admonition info "參考資料">}}
 
