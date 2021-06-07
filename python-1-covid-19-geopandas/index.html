@@ -26,7 +26,7 @@
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/hsiangjenli.github.io\/python-1-covid-19-geopandas\/"
-        },"genre": "posts","keywords": "geopandas","wordcount":  510 ,
+        },"genre": "posts","keywords": "geopandas","wordcount":  1104 ,
         "url": "http:\/\/hsiangjenli.github.io\/python-1-covid-19-geopandas\/","datePublished": "2021-05-23T15:03:27+08:00","dateModified": "2021-05-23T15:03:27+08:00","publisher": {
             "@type": "Organization",
             "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
@@ -117,8 +117,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Python [1]  Covid-19  &#43; geopandas</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/python/"><i class="far fa-folder fa-fw"></i>Python</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-23">2021-05-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;510 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-05-23">2021-05-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1104 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;6 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -144,6 +144,12 @@
         <li><a href="#解壓縮5個檔案">解壓縮5個檔案</a></li>
       </ul>
     </li>
+    <li><a href="#鄉鎮界線資料httpsdatagovtwdataset7441"><a href="https://data.gov.tw/dataset/7441">鄉鎮界線資料</a></a>
+      <ul>
+        <li><a href="#下載shp-1">下載SHP</a></li>
+        <li><a href="#解壓縮檔案">解壓縮檔案</a></li>
+      </ul>
+    </li>
     <li><a href="#basic">Basic</a>
       <ul>
         <li><a href="#figure">Figure</a></li>
@@ -157,9 +163,19 @@
             <li><a href="#完整程式碼">完整程式碼</a></li>
           </ul>
         </li>
-        <li><a href="#figure-2">Figure 2</a>
+        <li><a href="#figure-2httpshsiangjenligithubiohtml_filespython20120covid-192020geopandas-2021-06-07-countyhtml"><a href="https://hsiangjenli.github.io/html_files/Python%20%5B1%5D%20Covid-19%20+%20geopandas-2021-06-07-COUNTY.html">Figure 2</a></a>
           <ul>
             <li><a href="#完整程式碼-1">完整程式碼</a></li>
+          </ul>
+        </li>
+        <li><a href="#figure-3">Figure 3</a>
+          <ul>
+            <li><a href="#完整程式碼-2">完整程式碼</a></li>
+          </ul>
+        </li>
+        <li><a href="#figure-4httpshsiangjenligithubiohtml_filespython20120covid-192020geopandas-2021-06-07-townhtml"><a href="https://hsiangjenli.github.io/html_files/Python%20%5B1%5D%20Covid-19%20+%20geopandas-2021-06-07-TOWN.html">Figure 4</a></a>
+          <ul>
+            <li><a href="#完整程式碼-3">完整程式碼</a></li>
           </ul>
         </li>
       </ul>
@@ -221,15 +237,36 @@
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
-<span class="n">shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#縣市界線資料---------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+<span class="n">C_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
+<span class="n">C_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><img src="https://i.imgur.com/Vrxnazk.jpg" width = "100%"/>
-<h2 id="basic">Basic</h2>
-<h3 id="figure">Figure</h3>
+</div><img src="https://i.imgur.com/8evsp19.jpg" width = "100%"/>
+<h2 id="鄉鎮界線資料httpsdatagovtwdataset7441"><a href="https://data.gov.tw/dataset/7441" target="_blank" rel="noopener noreffer">鄉鎮界線資料</a></h2>
+<h3 id="下載shp-1">下載SHP</h3>
+<img src="https://i.imgur.com/a6ymjG7.jpg" width = "100%"/>
+<h3 id="解壓縮檔案">解壓縮檔案</h3>
+<img src="https://i.imgur.com/UQE3ZWK.jpg" width = "100%"/>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>Danger<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><center>
+<h2 id="缺少cpg檔會造成亂碼">缺少CPG檔會造成亂碼</h2>
+<h2 id="5個檔案檔名都要一樣">5個檔案檔名都要一樣</h2>
+</center>
+</div>
+        </div>
+    </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
@@ -237,18 +274,51 @@
 </span><span class="lnt">3
 </span><span class="lnt">4
 </span><span class="lnt">5
-</span><span class="lnt">6
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#鄉鎮界線資料---------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 
-<span class="n">shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Wistia&#39;</span><span class="p">)</span>
-
-<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;taiwan.png&#39;</span><span class="p">)</span>
+<span class="n">t_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;TOWN_MOI_1100415.shp&#39;</span><span class="p">)</span>
+<span class="n">t_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOWNNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><div class="details admonition note open">
+</div><h2 id="basic">Basic</h2>
+<h3 id="figure">Figure</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#縣市界線資料---------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+<span class="n">C_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
+<span class="n">C_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1">#畫圖---------------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+
+<span class="n">C_shp</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">20</span><span class="p">),</span><span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Wistia&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Taiwan_County.png&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src="https://i.imgur.com/3umlPDT.png" width = "100%"/>
+<div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw"></i>其他顏色<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
@@ -256,10 +326,45 @@
             <div class="admonition-content"><a href="https://matplotlib.org/stable/tutorials/colors/colormaps.html" target="_blank" rel="noopener noreffer">cmap</a></div>
         </div>
     </div>
-<img src="https://i.imgur.com/3umlPDT.png" width = "100%"/>
 <h2 id="covid-19-heatmap">Covid-19 Heatmap</h2>
 <h3 id="covid-19-taiwan-open-data">Covid-19 Taiwan Open Data</h3>
-<div class="details admonition note open">
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">get_covid19_data</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
+
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw"></i>Covid-19 Taiwan Open Data<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
@@ -333,24 +438,55 @@
 </span><span class="lnt">60
 </span><span class="lnt">61
 </span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span><span class="lnt">71
+</span><span class="lnt">72
+</span><span class="lnt">73
+</span><span class="lnt">74
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#畫圖&amp;裁切------------------------------------------------------------------------------------------------</span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Covid-19 Data-------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">get_covid19_data</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
+
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1">#畫圖&amp;裁切------------------------------------------------------------------------------------------------</span>
 <span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
-    <span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="mi">100</span>
     <span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span> <span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">),</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span> <span class="p">)</span>
     <span class="k">elif</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;heatmap&#39;</span><span class="p">:</span>
-        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">),</span><span class="n">column</span> <span class="o">=</span> <span class="n">column</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">),</span><span class="n">column</span> <span class="o">=</span> <span class="n">column</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">)</span>
 
     <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;Plot_{file_name}.png&#34;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;Plot_{file_name}.png&#34;</span>
+
 <span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">cv2</span>
     <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
     
     <span class="c1">#裁切範圍</span>
-    <span class="n">crop_image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">1800</span><span class="p">:</span><span class="mi">2500</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">crop_image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">1300</span><span class="p">:</span><span class="mi">2500</span><span class="p">,</span> <span class="p">:]</span>
     
     <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&#34;Cropped&#34;</span><span class="p">,</span> <span class="n">crop_image</span><span class="p">)</span>
     <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">crop_image</span><span class="p">)</span>
@@ -362,45 +498,38 @@
 <span class="c1">#縣市界線資料---------------------------------------------------------------------------------------------- </span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 
-<span class="n">shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
-<span class="n">shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">C_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
+<span class="n">C_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 
 <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
 
 <span class="c1">#地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計----------------------------------------------------------</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
-<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
-
-<span class="c1">##整理統計表----------------------------------------------------------------------------------------------</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y/%m/</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
-<span class="n">df_GroupByCounty</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;縣市&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_GroupByCounty</span> <span class="o">=</span> <span class="n">get_covid19_data</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;縣市&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;空值&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;台中市&#39;</span><span class="p">:</span> <span class="s1">&#39;臺中市&#39;</span><span class="p">,</span> 
                                <span class="s1">&#39;台北市&#39;</span><span class="p">:</span> <span class="s1">&#39;臺北市&#39;</span><span class="p">,</span>
                                <span class="s1">&#39;台南市&#39;</span><span class="p">:</span> <span class="s1">&#39;臺南市&#39;</span><span class="p">},</span>
                         <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
-<span class="c1">##Merge資料表--------------------------------------------------------------------------------------------- </span>
-<span class="n">shp</span><span class="p">[</span><span class="s1">&#39;CName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">shp</span><span class="o">.</span><span class="n">index</span>
+<span class="c1">##Merge資料表---------------------------------------------------------------------------------------------</span>
+<span class="n">C_shp</span><span class="p">[</span><span class="s1">&#39;CName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_shp</span><span class="o">.</span><span class="n">index</span>
 <span class="n">df_GroupByCounty</span><span class="p">[</span><span class="s1">&#39;cname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">index</span>
-<span class="n">result</span> <span class="o">=</span><span class="n">shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByCounty</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;CName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;cname&#39;</span><span class="p">))</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">C_result</span> <span class="o">=</span> <span class="n">C_shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByCounty</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;CName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;cname&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">])</span>
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#畫圖----------------------------------------------------------------------------------------------------</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">result</span><span class="p">,</span> <span class="n">plot_type</span> <span class="o">=</span> <span class="s1">&#39;heatmap&#39;</span><span class="p">,</span> <span class="n">column</span> <span class="o">=</span> <span class="s1">&#39;確定病例數&#39;</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">file_name</span> <span class="o">=</span> <span class="s1">&#39;Heatmap_Taiwan&#39;</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">C_result</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;heatmap&#39;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;Heatmap_Taiwan_COUNTY&#39;</span><span class="p">)</span>
 <span class="n">crop</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><center><img src="https://i.imgur.com/dY6FzYa.png" width = "50%"/></center>
-<h3 id="figure-2">Figure 2</h3>
+</div><center><img src="https://i.imgur.com/0yK2tFN.png" width = "50%"/></center>
+<h3 id="figure-2httpshsiangjenligithubiohtml_filespython20120covid-192020geopandas-2021-06-07-countyhtml"><a href="https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20&#43;%20geopandas-2021-06-07-COUNTY.html" target="_blank" rel="noopener noreffer">Figure 2</a></h3>
 <h4 id="完整程式碼-1">完整程式碼</h4>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -453,30 +582,53 @@
 </span><span class="lnt">47
 </span><span class="lnt">48
 </span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#縣市界線資料---------------------------------------------------------------------------------------------- </span>
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Covid-19 Data-------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">get_covid19_data</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
+
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1">#縣市界線資料---------------------------------------------------------------------------------------------- </span>
 <span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
 
-<span class="n">town_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
-<span class="n">town_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+<span class="n">C_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;COUNTY_MOI_1090820.shp&#39;</span><span class="p">)</span>
+<span class="n">C_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
 
 <span class="c1">#地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計----------------------------------------------------------</span>
-<span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
-
-<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
-
-<span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
-    <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
-
-<span class="c1">##整理統計表----------------------------------------------------------------------------------------------</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
-<span class="kn">import</span> <span class="nn">datetime</span>
-
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y/%m/</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
-<span class="n">df_GroupByCounty</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;縣市&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_GroupByCounty</span> <span class="o">=</span> <span class="n">get_covid19_data</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;縣市&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
 <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;空值&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
 <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="n">index</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;台中市&#39;</span><span class="p">:</span> <span class="s1">&#39;臺中市&#39;</span><span class="p">,</span> 
                                <span class="s1">&#39;台北市&#39;</span><span class="p">:</span> <span class="s1">&#39;臺北市&#39;</span><span class="p">,</span>
@@ -484,29 +636,322 @@
                         <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 
 <span class="c1">##Merge資料表---------------------------------------------------------------------------------------------</span>
-<span class="n">town_shp</span><span class="p">[</span><span class="s1">&#39;CName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">town_shp</span><span class="o">.</span><span class="n">index</span>
+<span class="n">C_shp</span><span class="p">[</span><span class="s1">&#39;CName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_shp</span><span class="o">.</span><span class="n">index</span>
 <span class="n">df_GroupByCounty</span><span class="p">[</span><span class="s1">&#39;cname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_GroupByCounty</span><span class="o">.</span><span class="n">index</span>
 
-<span class="n">result</span> <span class="o">=</span><span class="n">town_shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByCounty</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;CName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;cname&#39;</span><span class="p">))</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">result</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;CName&#39;</span><span class="p">)</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">C_result</span> <span class="o">=</span> <span class="n">C_shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByCounty</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;CName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;cname&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">])</span>
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="c1">#畫圖----------------------------------------------------------------------------------------------------</span>
 <span class="kn">import</span> <span class="nn">plotly.express</span> <span class="kn">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">C_result</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;CName&#39;</span><span class="p">]</span>
 
-<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth_mapbox</span><span class="p">(</span><span class="n">result</span><span class="p">,</span>
-                           <span class="n">geojson</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">],</span>
-                           <span class="n">locations</span><span class="o">=</span><span class="n">result</span><span class="o">.</span><span class="n">index</span><span class="p">,</span>
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth_mapbox</span><span class="p">(</span><span class="n">C_result</span><span class="p">,</span>
+                           <span class="n">geojson</span><span class="o">=</span><span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">],</span>
+                           <span class="n">locations</span><span class="o">=</span><span class="n">C_result</span><span class="o">.</span><span class="n">CName</span><span class="p">,</span>
                            <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&#34;Reds&#34;</span><span class="p">,</span>
-                           <span class="n">color</span><span class="o">=</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">],</span>
+                           <span class="n">color</span><span class="o">=</span><span class="n">C_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span>
+                           <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;CName&#39;</span><span class="p">,</span>
+                           <span class="n">hover_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                         <span class="s1">&#39;CName&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                         <span class="s1">&#39;確定病例數&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">},</span>
                            <span class="n">center</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;lat&#34;</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">,</span> <span class="s2">&#34;lon&#34;</span><span class="p">:</span> <span class="mi">121</span><span class="p">},</span>
                            <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&#34;open-street-map&#34;</span><span class="p">,</span>
-                           <span class="n">zoom</span><span class="o">=</span><span class="mi">6</span><span class="p">,</span>
+                           <span class="n">zoom</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span>
                            <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Covid-19 Taiwan&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&#34;Python [1] Covid-19 + geopandas-2021-06-07-COUNTY.html&#34;</span><span class="p">)</span>
 <span class="n">fig</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
-<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&#34;Python [1] Covid-19 + geopandas-2021-05-24.html&#34;</span><span class="p">)</span>
 </code></pre></td></tr></table>
 </div>
-</div><iframe src="https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-05-24.html" height="500" width="100%" style="border:none;"></iframe>
+</div><iframe src="https://hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-COUNTY.html" height="500" width="100%" style="border:none;"></iframe>
+<h3 id="figure-3">Figure 3</h3>
+<h4 id="完整程式碼-2">完整程式碼</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span><span class="lnt">63
+</span><span class="lnt">64
+</span><span class="lnt">65
+</span><span class="lnt">66
+</span><span class="lnt">67
+</span><span class="lnt">68
+</span><span class="lnt">69
+</span><span class="lnt">70
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Covid-19 Data-------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">get_covid19_data</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
+
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+
+<span class="c1">#畫圖&amp;裁切------------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">plot</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">plot_type</span><span class="p">,</span> <span class="n">column</span><span class="p">,</span> <span class="n">cmap</span><span class="p">,</span> <span class="n">file_name</span><span class="p">):</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="n">w</span> <span class="o">=</span> <span class="mi">100</span>
+    <span class="k">if</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;normal&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">),</span><span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span> <span class="p">)</span>
+    <span class="k">elif</span> <span class="n">plot_type</span> <span class="o">==</span> <span class="s1">&#39;heatmap&#39;</span><span class="p">:</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="n">w</span><span class="p">,</span><span class="n">h</span><span class="p">),</span><span class="n">column</span> <span class="o">=</span> <span class="n">column</span><span class="p">,</span> <span class="n">cmap</span> <span class="o">=</span> <span class="n">cmap</span><span class="p">)</span>
+
+    <span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="n">f</span><span class="s2">&#34;Plot_{file_name}.png&#34;</span><span class="p">,</span> <span class="n">bbox_inches</span><span class="o">=</span><span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">f</span><span class="s2">&#34;Plot_{file_name}.png&#34;</span>
+
+<span class="k">def</span> <span class="nf">crop</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">cv2</span>
+    <span class="n">image</span> <span class="o">=</span> <span class="n">cv2</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="n">file_name</span><span class="p">)</span>
+    
+    <span class="c1">#裁切範圍</span>
+    <span class="n">crop_image</span> <span class="o">=</span> <span class="n">image</span><span class="p">[</span><span class="mi">300</span><span class="p">:</span><span class="mi">1700</span><span class="p">,</span> <span class="mi">1300</span><span class="p">:</span><span class="mi">2500</span><span class="p">,</span> <span class="p">:]</span>
+    
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="s2">&#34;Cropped&#34;</span><span class="p">,</span> <span class="n">crop_image</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">imwrite</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span><span class="n">crop_image</span><span class="p">)</span>
+    <span class="n">cv2</span><span class="o">.</span><span class="n">destroyAllWindows</span><span class="p">()</span>
+
+    <span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span><span class="p">,</span> <span class="n">Image</span>
+    <span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="n">file_name</span><span class="p">))</span>
+    
+<span class="c1">#鄉鎮界線資料---------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+<span class="n">t_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;TOWN_MOI_1100415.shp&#39;</span><span class="p">)</span>
+<span class="n">t_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOWNNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+
+<span class="c1">#地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計----------------------------------------------------------</span>
+<span class="n">df_GroupByTOWN</span> <span class="o">=</span> <span class="n">get_covid19_data</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;鄉鎮&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_GroupByTOWN</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;空值&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1">##Merge資料表---------------------------------------------------------------------------------------------</span>
+<span class="n">t_shp</span><span class="p">[</span><span class="s1">&#39;TName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_shp</span><span class="o">.</span><span class="n">index</span>
+<span class="n">df_GroupByTOWN</span><span class="p">[</span><span class="s1">&#39;tname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_GroupByTOWN</span><span class="o">.</span><span class="n">index</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">t_result</span> <span class="o">=</span> <span class="n">t_shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByTOWN</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;TName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;tname&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">])</span>
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#畫圖----------------------------------------------------------------------------------------------------</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">t_result</span><span class="p">,</span> <span class="n">plot_type</span><span class="o">=</span><span class="s1">&#39;heatmap&#39;</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;color&#39;</span><span class="p">,</span> <span class="n">cmap</span><span class="o">=</span><span class="s1">&#39;Reds&#39;</span><span class="p">,</span> <span class="n">file_name</span><span class="o">=</span><span class="s1">&#39;Heatmap_Taiwan_TOWN&#39;</span><span class="p">)</span>
+<span class="n">crop</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><center><img src="https://i.imgur.com/tgsNNnW.png" width = "50%"/></center>
+<h3 id="figure-4httpshsiangjenligithubiohtml_filespython20120covid-192020geopandas-2021-06-07-townhtml"><a href="https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20&#43;%20geopandas-2021-06-07-TOWN.html" target="_blank" rel="noopener noreffer">Figure 4</a></h3>
+<h4 id="完整程式碼-3">完整程式碼</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span><span class="lnt">49
+</span><span class="lnt">50
+</span><span class="lnt">51
+</span><span class="lnt">52
+</span><span class="lnt">53
+</span><span class="lnt">54
+</span><span class="lnt">55
+</span><span class="lnt">56
+</span><span class="lnt">57
+</span><span class="lnt">58
+</span><span class="lnt">59
+</span><span class="lnt">60
+</span><span class="lnt">61
+</span><span class="lnt">62
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1">#Covid-19 Data-------------------------------------------------------------------------------------------</span>
+<span class="k">def</span> <span class="nf">get_covid19_data</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">urllib.request</span><span class="o">,</span> <span class="nn">json</span>
+    <span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+    <span class="kn">import</span> <span class="nn">datetime</span>
+    
+    <span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://od.cdc.gov.tw/eic/Day_Confirmation_Age_County_Gender_19CoV.json&#39;</span>
+
+    <span class="k">with</span> <span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="n">url</span><span class="p">)</span> <span class="k">as</span> <span class="n">jsonfile</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">jsonfile</span><span class="o">.</span><span class="n">read</span><span class="p">()</span><span class="o">.</span><span class="n">decode</span><span class="p">())</span>
+
+    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span><span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+    <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y%m</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;個案研判日&#39;</span><span class="p">]]</span>
+    
+    <span class="k">return</span> <span class="n">df</span>
+    
+<span class="c1">#鄉鎮界線資料---------------------------------------------------------------------------------------------- </span>
+<span class="kn">import</span> <span class="nn">geopandas</span> <span class="kn">as</span> <span class="nn">gpd</span>
+
+<span class="n">t_shp</span> <span class="o">=</span> <span class="n">gpd</span><span class="o">.</span><span class="n">read_file</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;TOWN_MOI_1100415.shp&#39;</span><span class="p">)</span>
+<span class="n">t_shp</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s1">&#39;TOWNNAME&#39;</span><span class="p">,</span> <span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ioff</span><span class="p">()</span>
+
+<span class="c1">#地區年齡性別統計表-嚴重特殊傳染性肺炎-依個案研判日統計----------------------------------------------------------</span>
+<span class="n">df_GroupByTOWN</span> <span class="o">=</span> <span class="n">get_covid19_data</span><span class="p">()</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;鄉鎮&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+<span class="n">df_GroupByTOWN</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;空值&#39;</span><span class="p">,</span><span class="n">inplace</span> <span class="o">=</span> <span class="bp">True</span><span class="p">)</span>
+
+<span class="c1">##Merge資料表---------------------------------------------------------------------------------------------</span>
+<span class="n">t_shp</span><span class="p">[</span><span class="s1">&#39;TName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_shp</span><span class="o">.</span><span class="n">index</span>
+<span class="n">df_GroupByTOWN</span><span class="p">[</span><span class="s1">&#39;tname&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_GroupByTOWN</span><span class="o">.</span><span class="n">index</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">t_result</span> <span class="o">=</span> <span class="n">t_shp</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df_GroupByTOWN</span><span class="p">,</span> <span class="n">left_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;TName&#39;</span><span class="p">),</span> <span class="n">right_on</span><span class="o">=</span><span class="p">(</span><span class="s1">&#39;tname&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;left&#39;</span><span class="p">)</span>
+
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">])</span>
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;確定病例數&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+
+<span class="c1">#畫圖----------------------------------------------------------------------------------------------------</span>
+<span class="kn">import</span> <span class="nn">plotly.express</span> <span class="kn">as</span> <span class="nn">px</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;COUNTYNAME&#39;</span><span class="p">]</span><span class="o">+</span><span class="s1">&#39; &#39;</span><span class="o">+</span><span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;TName&#39;</span><span class="p">]</span>
+<span class="n">t_result</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span>
+
+<span class="n">fig</span> <span class="o">=</span> <span class="n">px</span><span class="o">.</span><span class="n">choropleth_mapbox</span><span class="p">(</span><span class="n">t_result</span><span class="p">,</span>
+                           <span class="n">geojson</span><span class="o">=</span><span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;geometry&#39;</span><span class="p">],</span>
+                           <span class="n">locations</span><span class="o">=</span><span class="n">t_result</span><span class="o">.</span><span class="n">Name</span><span class="p">,</span>
+                           <span class="n">color_continuous_scale</span><span class="o">=</span><span class="s2">&#34;Reds&#34;</span><span class="p">,</span>
+                           <span class="n">color</span><span class="o">=</span><span class="n">t_result</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span>
+                           <span class="n">hover_name</span><span class="o">=</span><span class="s1">&#39;Name&#39;</span><span class="p">,</span>
+                           <span class="n">hover_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;color&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                         <span class="s1">&#39;Name&#39;</span><span class="p">:</span><span class="bp">False</span><span class="p">,</span>
+                                         <span class="s1">&#39;確定病例數&#39;</span><span class="p">:</span><span class="bp">True</span><span class="p">},</span>
+                           <span class="n">center</span><span class="o">=</span><span class="p">{</span><span class="s2">&#34;lat&#34;</span><span class="p">:</span> <span class="mf">23.5</span><span class="p">,</span> <span class="s2">&#34;lon&#34;</span><span class="p">:</span> <span class="mi">121</span><span class="p">},</span>
+                           <span class="n">mapbox_style</span><span class="o">=</span><span class="s2">&#34;open-street-map&#34;</span><span class="p">,</span>
+                           <span class="n">zoom</span><span class="o">=</span><span class="mf">5.5</span><span class="p">,</span>
+                           <span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;Covid-19 Taiwan&#39;</span><span class="p">)</span>
+
+<span class="n">fig</span><span class="o">.</span><span class="n">write_html</span><span class="p">(</span><span class="s2">&#34;Python [1] Covid-19 + geopandas-2021-06-07-TOWN.html&#34;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><iframe src="https://hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-TOWN.html" height="500" width="100%" style="border:none;"></iframe>
 <div class="details admonition note open">
         <div class="details-summary admonition-title">
             <i class="icon fas fa-pencil-alt fa-fw"></i>choropleth_mapbox<i class="details-icon fas fa-angle-right fa-fw"></i>
@@ -531,8 +976,7 @@
 <p><a href="http://viml.nchc.org.tw/blog/paper_info.php?CLASS_ID=1&amp;SUB_ID=1&amp;PAPER_ID=687" target="_blank" rel="noopener noreffer">Python 練習: 以地圖顯示癌症死因資料(II)</a></p>
 <p><a href="https://blog.yeshuanova.com/2017/10/python-visulization-folium/" target="_blank" rel="noopener noreffer">Python 地圖視覺化 - 使用 Folium</a></p>
 <p><a href="https://geopandas.org/getting_started/install.html" target="_blank" rel="noopener noreffer">install geopandas</a></p>
-<p><a href="https://towardsdatascience.com/geopandas-installation-the-easy-way-for-windows-31a666b3610f" target="_blank" rel="noopener noreffer">Geopandas Installation— the easy way for Windows!</a></p>
-<p><a href="https://blog.csdn.net/Summer_Horse/article/details/113488809" target="_blank" rel="noopener noreffer">Python打开shp文件报错：Set SHAPE_RESTORE_SHX config option to YES to restore or create it.</a></p>
+<p><a href="https://stackoverflow.com/questions/53645882/pandas-merging-101" target="_blank" rel="noopener noreffer">Pandas Merging 101</a><a href="https://blog.csdn.net/Summer_Horse/article/details/113488809">https://blog.csdn.net/Summer_Horse/article/details/113488809</a>)</p>
 </div>
         </div>
     </div></div><div class="post-footer" id="post-footer">
