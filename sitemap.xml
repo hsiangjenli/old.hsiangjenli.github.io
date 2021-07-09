@@ -2,13 +2,24 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://hsiangjenli.github.io/categories/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/geopandas/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/posts/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/categories/python/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>http://hsiangjenli.github.io/tags/</loc><lastmod>2021-05-23T15:03:27&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/</loc><lastmod>2021-07-09T00:51:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/</loc><lastmod>2021-07-09T00:51:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/-to-do-list/</loc><lastmod>2021-07-09T00:51:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/note/</loc><lastmod>2021-07-09T00:28:00&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/%E6%95%B8%E5%AD%B8%E6%95%99%E4%BD%A0%E4%B8%8D%E7%8A%AF%E9%8C%AF-%E4%B8%8B%E5%86%8A-%E6%90%9E%E5%AE%9A%E6%9C%9F%E6%9C%9B%E5%80%BC%E8%AA%8D%E6%B8%85%E8%BF%B4%E6%AD%B8%E8%B6%A8%E5%8B%A2%E5%BC%84%E6%87%82%E5%AD%98%E5%9C%A8%E6%80%A7/</loc><lastmod>2021-07-09T00:27:17&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/%F0%93%80%AC-%E6%9C%89%E8%B6%A3%E7%9A%84%E5%85%A7%E5%AE%B9/</loc><lastmod>2021-06-26T17:19:24&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/web-scraping-challenge/</loc><lastmod>2021-06-25T15:37:17&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/gogo-google-form/</loc><lastmod>2021-06-25T15:22:37&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/n/</loc><lastmod>2021-06-25T00:25:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/regression/</loc><lastmod>2021-06-25T00:25:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/</loc><lastmod>2021-06-25T00:25:10&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/linearr/</loc><lastmod>2021-06-23T10:50:45&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/notes/async/</loc><lastmod>2021-06-23T09:58:57&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
+            <loc>http://hsiangjenli.github.io/categories/</loc><lastmod>2021-05-23T07:03:27&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://hsiangjenli.github.io/tags/geopandas/</loc><lastmod>2021-05-23T07:03:27&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://hsiangjenli.github.io/posts/</loc><lastmod>2021-05-23T07:03:27&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://hsiangjenli.github.io/categories/python/</loc><lastmod>2021-05-23T07:03:27&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</loc><lastmod>2021-05-23T07:03:27&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/log-return/</loc><lastmod>2021-02-03T00:23:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/categories/note/</loc><lastmod>2021-02-03T00:23:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</loc><lastmod>2021-02-03T00:23:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -27,7 +38,7 @@
             <loc>http://hsiangjenli.github.io/tags/nosql/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/word-cloud/</loc><lastmod>2021-01-26T20:53:39&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>http://hsiangjenli.github.io/twse-10-mongodb-python/</loc><lastmod>2021-01-19T23:59:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>http://hsiangjenli.github.io/twse-10-mongodb-python/</loc><lastmod>2021-01-19T23:54:08&#43;00:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/beautifulsoup/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/tags/html.parser/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</loc><lastmod>2021-01-19T23:48:24&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>

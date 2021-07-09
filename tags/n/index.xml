@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>n - Tag - HJL</title>
+        <link>http://hsiangjenli.github.io/tags/n/</link>
+        <description>n - Tag - HJL</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Fri, 25 Jun 2021 00:25:10 &#43;0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/n/" rel="self" type="application/rss+xml" /><item>
+    <title>Regression</title>
+    <link>http://hsiangjenli.github.io/notes/regression/</link>
+    <pubDate>Fri, 25 Jun 2021 00:25:10 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/notes/regression/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>XXXXXXXXLinear Regression</title>
+    <link>http://hsiangjenli.github.io/notes/linearr/</link>
+    <pubDate>Wed, 23 Jun 2021 10:50:45 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/notes/linearr/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Async</title>
+    <link>http://hsiangjenli.github.io/notes/async/</link>
+    <pubDate>Wed, 23 Jun 2021 09:58:57 &#43;0000</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/notes/async/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

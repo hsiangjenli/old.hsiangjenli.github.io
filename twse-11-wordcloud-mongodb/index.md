@@ -133,7 +133,7 @@ import numpy as np
 import jieba
 import nltk
 ```
-### Read *.txt
+### Read *.txt*
 
 |<h2> [test_text.txt](https://drive.google.com/file/d/1jLms-N-OUATzar8btI6OBcc-AM9McL9Y/view?usp=sharing)</h2>|
 | :----------------------------------------------------------: |

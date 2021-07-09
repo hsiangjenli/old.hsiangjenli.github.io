@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Notes on HJL</title>
+    <link>http://hsiangjenli.github.io/notes/</link>
+    <description>Recent content in Notes on HJL</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+    <webMaster>hsiangjenli@gmail.com (HJL)</webMaster>
+    <lastBuildDate>Fri, 09 Jul 2021 00:51:00 +0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>✅ To do list</title>
+      <link>http://hsiangjenli.github.io/notes/-to-do-list/</link>
+      <pubDate>Fri, 09 Jul 2021 00:51:00 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/-to-do-list/</guid>
+      <description>✅ To do list
+Icons made by Freepik from www.flaticon.com 待辦事項 💻 Python 🌐 hsiangjenli.github.io py網站 + [ ] [[💻 Django]] Project  [[Heroku]] [[股票網站]]   + [ ] [[FastAPI]] + [ ] [[streamlit]]  Machine Learning + [ ] [[sci-kit learn]] + [ ] [[機器學習的數學基礎 : AI、深度學習打底必讀]]  資料視覺化 + [ ] [[Power BI]] + [x] [[OREILLY｜資料視覺化]]  其他 + [ ] [[asyncio]] + [ ] [[talib]] + [ ] [[Tkinter Designer]]  🃏 演算法 + [ ] [[河內塔｜Tower of Hanoi]]  💣 Python 函數 Python Built-in Functions Python3内置函数汇总</description>
+    </item>
+    
+    <item>
+      <title>note</title>
+      <link>http://hsiangjenli.github.io/notes/note/</link>
+      <pubDate>Fri, 09 Jul 2021 00:28:00 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/note/</guid>
+      <description>note 🐲 Dictionary Get key by value in dictionary
+1 2  def getKeyByValue(mydict, value): return list(mydict.keys())[list(mydict.values()).index(value)]   1 2  def getKeyByValue(mydict, value): return [k for k, v in mydict.items() if v == value]   請問兩個dcit要合併(有條件的合併，不一定是要新的蓋掉舊的)---🦁 List  🐺 The Python Profilers  A profile is a set of statistics that describes how often and for how long various parts of the program executed.</description>
+    </item>
+    
+    <item>
+      <title>數學教你不犯錯 ꞉ 下冊, ꞉ 搞定期望值、認清迴歸趨勢、弄懂存在性</title>
+      <link>http://hsiangjenli.github.io/notes/%E6%95%B8%E5%AD%B8%E6%95%99%E4%BD%A0%E4%B8%8D%E7%8A%AF%E9%8C%AF-%E4%B8%8B%E5%86%8A-%E6%90%9E%E5%AE%9A%E6%9C%9F%E6%9C%9B%E5%80%BC%E8%AA%8D%E6%B8%85%E8%BF%B4%E6%AD%B8%E8%B6%A8%E5%8B%A2%E5%BC%84%E6%87%82%E5%AD%98%E5%9C%A8%E6%80%A7/</link>
+      <pubDate>Fri, 09 Jul 2021 00:27:17 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/%E6%95%B8%E5%AD%B8%E6%95%99%E4%BD%A0%E4%B8%8D%E7%8A%AF%E9%8C%AF-%E4%B8%8B%E5%86%8A-%E6%90%9E%E5%AE%9A%E6%9C%9F%E6%9C%9B%E5%80%BC%E8%AA%8D%E6%B8%85%E8%BF%B4%E6%AD%B8%E8%B6%A8%E5%8B%A2%E5%BC%84%E6%87%82%E5%AD%98%E5%9C%A8%E6%80%A7/</guid>
+      <description>數學教你不犯錯 ꞉ 下冊, ꞉ 搞定期望值、認清迴歸趨勢、弄懂存在性 樂透組合  完全競爭市場  橢圓、雙曲線、拋物線 ![[attachments/Clipboard_2021-06-29-02-46-11.png]]
+ 相關性  無界 </description>
+    </item>
+    
+    <item>
+      <title>𓀬 有趣的內容</title>
+      <link>http://hsiangjenli.github.io/notes/%F0%93%80%AC-%E6%9C%89%E8%B6%A3%E7%9A%84%E5%85%A7%E5%AE%B9/</link>
+      <pubDate>Sat, 26 Jun 2021 17:19:24 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/%F0%93%80%AC-%E6%9C%89%E8%B6%A3%E7%9A%84%E5%85%A7%E5%AE%B9/</guid>
+      <description>𓀬 有趣的內容  Unicodes Manim  </description>
+    </item>
+    
+    <item>
+      <title>Web scraping challenge</title>
+      <link>http://hsiangjenli.github.io/notes/web-scraping-challenge/</link>
+      <pubDate>Fri, 25 Jun 2021 15:37:17 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/web-scraping-challenge/</guid>
+      <description>Web scraping challenge  Anue｜鉅亨網  </description>
+    </item>
+    
+    <item>
+      <title>gogo google form</title>
+      <link>http://hsiangjenli.github.io/notes/gogo-google-form/</link>
+      <pubDate>Fri, 25 Jun 2021 15:22:37 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/gogo-google-form/</guid>
+      <description>gogo google form  找出欄跟列 列出每個選項的人數 畫圖  </description>
+    </item>
+    
+    <item>
+      <title>Regression</title>
+      <link>http://hsiangjenli.github.io/notes/regression/</link>
+      <pubDate>Fri, 25 Jun 2021 00:25:10 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/regression/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>XXXXXXXXLinear Regression</title>
+      <link>http://hsiangjenli.github.io/notes/linearr/</link>
+      <pubDate>Wed, 23 Jun 2021 10:50:45 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/linearr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Async</title>
+      <link>http://hsiangjenli.github.io/notes/async/</link>
+      <pubDate>Wed, 23 Jun 2021 09:58:57 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/async/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

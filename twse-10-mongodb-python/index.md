@@ -1,5 +1,7 @@
 # TWSE [10] MongoDB+Python
 
+
+
 <!--more-->
 
 <div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
@@ -560,7 +562,7 @@ mycol.remove({"_id": {"$in": response}})
 > [$orderby](https://docs.mongodb.com/manual/reference/operator/meta/orderby/)<br>
 > [cursor.sort()](https://docs.mongodb.com/manual/reference/method/cursor.sort/)
 
-<img src= "https://i.imgur.com/2nnO2dz.jpg" width = "100%"/>
+<img src = "https://i.imgur.com/2nnO2dz.jpg" width = "100%"/>
 
 > 先複製collection，避免出錯
 
@@ -584,3 +586,4 @@ db.getCollection('2021_鉅亨網_copy').find().sort( { Date: -1 } )
 for x in mycol.find({}).sort("Date"):
     print(x)
 ```
+
