@@ -8,11 +8,38 @@
     <language>en</language>
     <managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
     <webMaster>hsiangjenli@gmail.com (HJL)</webMaster>
-    <lastBuildDate>Fri, 09 Jul 2021 00:51:00 +0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 10 Jul 2021 14:18:26 +0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/notes/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Anaconda 重新安裝</title>
+      <link>http://hsiangjenli.github.io/notes/anaconda-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/</link>
+      <pubDate>Sat, 10 Jul 2021 14:18:26 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/anaconda-%E9%87%8D%E6%96%B0%E5%AE%89%E8%A3%9D/</guid>
+      <description>Anaconda 重新安裝 1  pip freeze &amp;gt; requirements.txt   Download </description>
+    </item>
+    
+    <item>
+      <title>orange</title>
+      <link>http://hsiangjenli.github.io/notes/orange/</link>
+      <pubDate>Sat, 10 Jul 2021 14:03:29 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/orange/</guid>
+      <description>orange </description>
+    </item>
+    
+    <item>
+      <title>Untitled</title>
+      <link>http://hsiangjenli.github.io/notes/untitled/</link>
+      <pubDate>Fri, 09 Jul 2021 14:43:07 +0000</pubDate>
+      <author>hsiangjenli@gmail.com (HJL)</author>
+      <guid>http://hsiangjenli.github.io/notes/untitled/</guid>
+      <description>Untitled 1 2  graph LR Start --&amp;gt; End   1 2 3 4 5 6 7 8 9 10 11 12  gantt title MyGantt dateFormat YYYY-MM-DD section Section A 任務A-1:a1,2014-01-01,30d 任務A-2:after a1, 20d section Section B 任務B-1:2014-01-12,12d 任務B-2:24d   </description>
+    </item>
+    
     <item>
       <title>✅ To do list</title>
       <link>http://hsiangjenli.github.io/notes/-to-do-list/</link>
-      <pubDate>Fri, 09 Jul 2021 00:51:00 +0000</pubDate>
+      <pubDate>Fri, 09 Jul 2021 14:36:41 +0000</pubDate>
       <author>hsiangjenli@gmail.com (HJL)</author>
       <guid>http://hsiangjenli.github.io/notes/-to-do-list/</guid>
       <description>✅ To do list
