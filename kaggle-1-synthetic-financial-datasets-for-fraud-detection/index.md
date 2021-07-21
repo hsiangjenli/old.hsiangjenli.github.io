@@ -7,7 +7,21 @@
 
 # Synthetic Financial Datasets For Fraud Detection
 
+{{<admonition bug "statement">}}
+
+單純紀錄個人學習過程
+
+{{</admonition>}}
+
+
+{{<admonition info "參考資料">}}
+
+[Machine-Learning-for-Finance](https://nbviewer.jupyter.org/github/PacktPublishing/Machine-Learning-for-Finance/blob/master/2%20structured%20data.ipynb)
+
+{{</admonition>}}
+
 ## pd.read_csv
+
 ```python
 import pandas as pd
 
