@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Kaggle [2] - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="Kaggle [2]" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" />
+<meta property="article:published_time" content="2021-07-28T16:18:26+08:00" />
+<meta property="article:modified_time" content="2021-07-28T16:18:26+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kaggle [2]"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="HJL">
+<meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" /><link rel="prev" href="http://hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/" /><link rel="next" href="http://hsiangjenli.github.io/process/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Kaggle [2]",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hsiangjenli.github.io\/kaggle-2-web-traffic-time-series-forecasting\/"
+        },"genre": "posts","keywords": "Kaggle","wordcount":  457 ,
+        "url": "http:\/\/hsiangjenli.github.io\/kaggle-2-web-traffic-time-series-forecasting\/","datePublished": "2021-07-28T16:18:26+08:00","dateModified": "2021-07-28T16:18:26+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "HJL"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HJL">HJL</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about%20me/"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HJL">HJL</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about%20me/" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Kaggle [2]</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/kaggle/"><i class="far fa-folder fa-fw"></i>Kaggle</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-28">2021-07-28</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;457 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../image_files/kaggle-2.png"
+        data-srcset="../image_files/kaggle-2.png, ../image_files/kaggle-2.png 1.5x, ../image_files/kaggle-2.png 2x"
+        data-sizes="auto"
+        alt="../image_files/kaggle-2.png"
+        title="../image_files/kaggle-2.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#input-data">Input Data</a></li>
+    <li><a href="#整理資料">整理資料</a>
+      <ul>
+        <li><a href="#解析page的資料">解析Page的資料</a>
+          <ul>
+            <li><a href="#將所有資料套用parse_page">將所有資料套用parse_page</a></li>
+            <li><a href="#parse_page有哪些資訊">parse_page有哪些資訊</a></li>
+            <li><a href="#將parse_page的資料畫成長條圖">將parse_page的資料畫成長條圖</a></li>
+          </ul>
+        </li>
+        <li><a href="#解析subpage的資料">解析SubPage的資料</a>
+          <ul>
+            <li><a href="#取出國家代碼">取出國家代碼</a></li>
+            <li><a href="#計算每個subpage國家的瀏覽數量日">計算每個SubPage（國家）的瀏覽數量（日）</a>
+              <ul>
+                <li><a href="#日期轉換">日期轉換</a></li>
+                <li><a href="#fig_1">Fig_1</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<h1 style = "font-family: Verdana;font-weight: 600;">Web Traffic Time Series Forecasting</h1>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>statement<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">單純紀錄個人學習過程</div>
+        </div>
+    </div>
+<h2 id="input-data">Input Data</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="kn">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="kn">as</span> <span class="nn">sns</span>
+<span class="kn">import</span> <span class="nn">re</span>
+<span class="o">%</span><span class="n">matplotlib</span> <span class="n">inline</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">rc</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;axes.facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">,</span> <span class="s1">&#39;figure.facecolor&#39;</span><span class="p">:</span><span class="s1">&#39;white&#39;</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;Data/ch4/train_1.csv&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th style="text-align:right"></th>
+<th style="text-align:left">Page</th>
+<th style="text-align:right">2015-07-01</th>
+<th style="text-align:right">2015-07-02</th>
+<th style="text-align:right">2015-07-03</th>
+<th style="text-align:right">2016-12-29</th>
+<th style="text-align:right">2016-12-30</th>
+<th style="text-align:right">2016-12-31</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:right">0</td>
+<td style="text-align:left">2NE1_zh.wikipedia.org_all-access_spider</td>
+<td style="text-align:right">18</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">19</td>
+<td style="text-align:right">18</td>
+<td style="text-align:right">20</td>
+</tr>
+<tr>
+<td style="text-align:right">1</td>
+<td style="text-align:left">2PM_zh.wikipedia.org_all-access_spider</td>
+<td style="text-align:right">11</td>
+<td style="text-align:right">14</td>
+<td style="text-align:right">15</td>
+<td style="text-align:right">45</td>
+<td style="text-align:right">26</td>
+<td style="text-align:right">20</td>
+</tr>
+<tr>
+<td style="text-align:right">2</td>
+<td style="text-align:left">3C_zh.wikipedia.org_all-access_spider</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1</td>
+<td style="text-align:right">3</td>
+<td style="text-align:right">4</td>
+<td style="text-align:right">17</td>
+</tr>
+<tr>
+<td style="text-align:right">3</td>
+<td style="text-align:left">4minute_zh.wikipedia.org_all-access_spider</td>
+<td style="text-align:right">35</td>
+<td style="text-align:right">13</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">19</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">11</td>
+</tr>
+<tr>
+<td style="text-align:right">4</td>
+<td style="text-align:left">52_Hz_I_Love_You_zh.wikipedia.org_all-access_spider</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">nan</td>
+<td style="text-align:right">13</td>
+<td style="text-align:right">36</td>
+<td style="text-align:right">10</td>
+</tr>
+</tbody>
+</table>
+<h2 id="整理資料">整理資料</h2>
+<h3 id="解析page的資料">解析Page的資料</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">parse_page</span><span class="p">(</span><span class="n">page</span><span class="p">):</span>
+    <span class="n">l</span> <span class="o">=</span> <span class="n">page</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;_&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="s1">&#39; &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">l</span><span class="p">[:</span><span class="o">-</span><span class="mi">3</span><span class="p">]),</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">],</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">],</span> <span class="n">l</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">parse_page</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">Page</span><span class="p">[</span><span class="mi">1462</span><span class="p">])</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="p">(</span><span class="s1">&#39;六花的勇者&#39;</span><span class="p">,</span> <span class="s1">&#39;zh.wikipedia.org&#39;</span><span class="p">,</span> <span class="s1">&#39;all-access&#39;</span><span class="p">,</span> <span class="s1">&#39;spider&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="將所有資料套用parse_page">將所有資料套用parse_page</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">list_parse_page</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">Page</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">parse_page</span><span class="p">))</span>
+<span class="n">df_parse_page</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">list_parse_page</span><span class="p">)</span>
+<span class="n">df_parse_page</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Subject&#39;</span><span class="p">,</span> <span class="s1">&#39;Sub_page&#39;</span><span class="p">,</span> <span class="s1">&#39;Access&#39;</span><span class="p">,</span> <span class="s1">&#39;Agent&#39;</span><span class="p">]</span>
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">df_parse_page</span><span class="p">],</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="k">del</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;Page&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="parse_page有哪些資訊">parse_page有哪些資訊</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">df_parse_page</span><span class="o">.</span><span class="n">keys</span><span class="p">()[</span><span class="mi">1</span><span class="p">:</span><span class="mi">4</span><span class="p">]:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">df_parse_page</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">(),</span> <span class="n">end</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n\n</span><span class="s1">&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="p">[</span><span class="s1">&#39;zh.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;fr.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;en.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;commons.wikimedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;ru.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;www.mediawiki.org&#39;</span><span class="p">,</span><span class="s1">&#39;de.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;ja.wikipedia.org&#39;</span><span class="p">,</span><span class="s1">&#39;es.wikipedia.org&#39;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="s1">&#39;all-access&#39;</span><span class="p">,</span><span class="s1">&#39;desktop&#39;</span><span class="p">,</span><span class="s1">&#39;mobile-web&#39;</span><span class="p">]</span>
+
+<span class="p">[</span><span class="s1">&#39;spider&#39;</span><span class="p">,</span><span class="s1">&#39;all-agents&#39;</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+
+<span class="n">Counter</span><span class="p">(</span><span class="n">train</span><span class="o">.</span><span class="n">Sub_page</span><span class="p">)</span>
+
+<span class="o">&gt;&gt;&gt;</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;zh.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">17229</span><span class="p">,</span>
+             <span class="s1">&#39;fr.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">17802</span><span class="p">,</span>
+             <span class="s1">&#39;en.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">24108</span><span class="p">,</span>
+             <span class="s1">&#39;commons.wikimedia.org&#39;</span><span class="p">:</span> <span class="mi">10555</span><span class="p">,</span>
+             <span class="s1">&#39;ru.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">15022</span><span class="p">,</span>
+             <span class="s1">&#39;www.mediawiki.org&#39;</span><span class="p">:</span> <span class="mi">7300</span><span class="p">,</span>
+             <span class="s1">&#39;de.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">18547</span><span class="p">,</span>
+             <span class="s1">&#39;ja.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">20431</span><span class="p">,</span>
+             <span class="s1">&#39;es.wikipedia.org&#39;</span><span class="p">:</span> <span class="mi">14069</span><span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><a href="https://docs.python.org/zh-tw/3/library/collections.html" target="_blank" rel="noopener noreffer">collections &mdash; 容器資料型態</a></li>
+<li><a href="https://blog.csdn.net/sinat_28576553/article/details/99131954#:~:text=Python%20collections.Counter%E7%94%A8%E6%B3%95%E8%AF%A6%E8%A7%A3,%E5%85%83%E7%B4%A0%EF%BC%88element%EF%BC%89%E7%9A%84%E6%95%B0%E9%87%8F%E3%80%82" target="_blank" rel="noopener noreffer">Python計數器collections.Counter用法詳解</a></li>
+</ol>
+</div>
+        </div>
+    </div>
+<h4 id="將parse_page的資料畫成長條圖">將parse_page的資料畫成長條圖</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">annotate</span><span class="p">(</span><span class="n">plot_name</span><span class="p">):</span>
+    <span class="n">list_bar_height</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">i</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">plot_name</span><span class="o">.</span><span class="n">patches</span><span class="p">])</span>
+    <span class="n">bar_height_mean</span> <span class="o">=</span> <span class="n">list_bar_height</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">bar</span> <span class="ow">in</span> <span class="n">plot_name</span><span class="o">.</span><span class="n">patches</span><span class="p">:</span>
+        <span class="n">plot_name</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="s1">&#39;{:.0f} ({:.2f})&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">(),</span><span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()</span><span class="o">/</span><span class="n">bar_height_mean</span><span class="p">),</span> 
+                           <span class="p">(</span><span class="n">bar</span><span class="o">.</span><span class="n">get_x</span><span class="p">()</span> <span class="o">+</span> <span class="n">bar</span><span class="o">.</span><span class="n">get_width</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">,</span> 
+                            <span class="n">bar</span><span class="o">.</span><span class="n">get_height</span><span class="p">()),</span> <span class="n">ha</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span> <span class="n">va</span><span class="o">=</span><span class="s1">&#39;center&#39;</span><span class="p">,</span>
+                           <span class="n">size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span>
+                           <span class="n">textcoords</span><span class="o">=</span><span class="s1">&#39;offset points&#39;</span><span class="p">)</span>    
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Sub_page&#39;</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">train</span><span class="p">,</span><span class="n">order</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;Sub_page&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">annotate</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Image/Chapter4_countplot_subpage.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span> <span class="o">=</span> <span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">7</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Access&#39;</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">train</span><span class="p">,</span><span class="n">order</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;Access&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">annotate</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="s1">&#39;Agent&#39;</span><span class="p">,</span><span class="n">data</span> <span class="o">=</span> <span class="n">train</span><span class="p">,</span><span class="n">order</span> <span class="o">=</span> <span class="n">train</span><span class="p">[</span><span class="s1">&#39;Agent&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">index</span><span class="p">,</span> <span class="n">palette</span><span class="o">=</span><span class="s1">&#39;RdBu_r&#39;</span><span class="p">)</span>
+<span class="n">annotate</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Image/Chapter4_countplot_Access_Agent.png&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span> <span class="o">=</span> <span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><center><img src="https://i.imgur.com/ddYETmA.png" width = "100%"/></center>
+<center><img src="https://i.imgur.com/cmG0XVG.png" width = "100%"/></center>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>SubPage<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li>en.wikipedia.org 擁有最多的網頁，比平均多50%</li>
+<li>ja.wikipedia.org 比平均多27%</li>
+<li>de.wikipedia.org 比平均多15%</li>
+</ol>
+</div>
+        </div>
+    </div>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><a href="https://stackoverflow.com/questions/46623583/seaborn-countplot-order-categories-by-count" target="_blank" rel="noopener noreffer">Seaborn.countplot : order categories by count?</a></li>
+</ol>
+</div>
+        </div>
+    </div>
+<h3 id="解析subpage的資料">解析SubPage的資料</h3>
+<h4 id="取出國家代碼">取出國家代碼</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="k">def</span> <span class="nf">parse_subpage_lan</span><span class="p">(</span><span class="n">sub_page</span><span class="p">):</span>
+    <span class="n">lan</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="s1">&#39;[a-z][a-z].wikipedia.org&#39;</span><span class="p">,</span><span class="n">sub_page</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">lan</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">lan</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">list_lan</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">train</span><span class="p">[</span><span class="s1">&#39;Sub_page&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">parse_subpage_lan</span><span class="p">))</span>
+<span class="n">df_lan</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">list_lan</span><span class="p">)</span>
+<span class="n">df_lan</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;lan&#39;</span><span class="p">]</span>
+
+<span class="n">train</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">train</span><span class="p">,</span> <span class="n">df_lan</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="計算每個subpage國家的瀏覽數量日">計算每個SubPage（國家）的瀏覽數量（日）</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">mycolor</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;#326599&#39;</span><span class="p">,</span><span class="s1">&#39;#538FB3&#39;</span><span class="p">,</span><span class="s1">&#39;#9AC1D4&#39;</span><span class="p">,</span><span class="s1">&#39;#8F9A9F&#39;</span><span class="p">,</span><span class="s1">&#39;#E5A98F&#39;</span><span class="p">,</span><span class="s1">&#39;#B2836F&#39;</span><span class="p">,</span><span class="s1">&#39;#AAA9A9&#39;</span><span class="p">,</span><span class="s1">&#39;#C56C5E&#39;</span><span class="p">,</span><span class="s1">&#39;#9D2B39&#39;</span><span class="p">]</span>
+
+<span class="n">df_lan_day</span> <span class="o">=</span> <span class="n">train</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;lan&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span><span class="o">.</span><span class="n">T</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="日期轉換">日期轉換</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="nn">datetime</span>
+
+<span class="n">df_lan_day</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="o">.</span><span class="n">strptime</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="s2">&#34;%Y-%m-</span><span class="si">%d</span><span class="s2">&#34;</span><span class="p">)</span> <span class="k">for</span> <span class="n">d</span> <span class="ow">in</span> <span class="n">df_lan_day</span><span class="o">.</span><span class="n">index</span><span class="p">]</span>
+</code></pre></td></tr></table>
+</div>
+</div><h5 id="fig_1">Fig_1</h5>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df_lan_day</span><span class="p">,</span><span class="n">mycolor</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_lan_day</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_lan_day</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Image/Chapter4_不同國家的線圖&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span> <span class="o">=</span> <span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><center><img src="https://i.imgur.com/9sm7ofH.png" width = "100%"/></center>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">key</span><span class="p">,</span><span class="n">c</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">df_lan_day</span><span class="p">,</span><span class="n">mycolor</span><span class="p">):</span>
+    <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_lan_day</span><span class="p">,</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_lan_day</span><span class="o">.</span><span class="n">index</span><span class="p">,</span><span class="n">y</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span><span class="n">label</span> <span class="o">=</span> <span class="n">key</span><span class="p">,</span> <span class="n">linewidth</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span><span class="n">color</span> <span class="o">=</span> <span class="n">c</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">yscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">savefig</span><span class="p">(</span><span class="s1">&#39;Image/Chapter4_不同國家的線圖_log&#39;</span><span class="p">,</span> <span class="n">bbox_inches</span> <span class="o">=</span> <span class="s1">&#39;tight&#39;</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><center><img src="https://i.imgur.com/GyOAaZv.png" width = "100%"/></center>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>plt.yscale(&#39;log&#39;)<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"></div>
+        </div>
+    </div>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>ooo<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>考量到en的網頁數量比其他還要多，理論上觀看數本來就會比較多。所以</p>
+<p>比較特別的是ru跟en在2016的7月到9月間同時產生峰值</p>
+</div>
+        </div>
+    </div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-07-28</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/kaggle-2-web-traffic-time-series-forecasting/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]" data-hashtags="Kaggle"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-hashtag="Kaggle"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/" data-title="Kaggle [2]" data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/kaggle/">Kaggle</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/kaggle-1-synthetic-financial-datasets-for-fraud-detection/" class="prev" rel="prev" title="Kaggle [1] Synthetic Financial Datasets For Fraud Detection "><i class="fas fa-angle-left fa-fw"></i>Kaggle [1] Synthetic Financial Datasets For Fraud Detection </a>
+            <a href="/process/" class="next" rel="next" title="Process">Process<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="./about%20me/fontawesome-free-5.15.3-web/css/all.css"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=hsiangjenli&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":200},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":""}},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

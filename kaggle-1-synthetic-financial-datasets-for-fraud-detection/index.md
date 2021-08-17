@@ -4,8 +4,9 @@
 
 <div style="text-align: right" Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
+<h1 style = "font-family: Verdana;font-weight: 600;">Synthetic Financial Datasets For Fraud Detection
+</h1>
 
-# Synthetic Financial Datasets For Fraud Detection
 
 {{<admonition bug "statement">}}
 
@@ -646,6 +647,8 @@ plot_confusion_matrix(cm,['Genuine','Fraud'],title='Confusion matrix',plot_name=
 ```
 
 <center><img src="https://i.imgur.com/9eYc0Qo.png" width = "70%"/></center>
+
+</span>
 
 
 

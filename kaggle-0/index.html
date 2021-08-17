@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Kaggle [0] - HJL</title><meta name="Description" content="Python &amp; Fintech"><meta property="og:title" content="Kaggle [0]" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://hsiangjenli.github.io/kaggle-0/" />
+<meta property="article:published_time" content="2021-07-23T19:49:51+08:00" />
+<meta property="article:modified_time" content="2021-07-27T19:49:51+08:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Kaggle [0]"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="HJL">
+<meta name="apple-mobile-web-app-title" content="HJL"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://hsiangjenli.github.io/kaggle-0/" /><link rel="prev" href="http://hsiangjenli.github.io/process/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"><link rel="stylesheet" href="/lib/animate/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Kaggle [0]",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/hsiangjenli.github.io\/kaggle-0\/"
+        },"genre": "posts","keywords": "Kaggle","wordcount":  146 ,
+        "url": "http:\/\/hsiangjenli.github.io\/kaggle-0\/","datePublished": "2021-07-23T19:49:51+08:00","dateModified": "2021-07-27T19:49:51+08:00","publisher": {
+            "@type": "Organization",
+            "name": "Hsiang-Jen Li","logo": "http:\/\/hsiangjenli.github.io\/logo.png"},"author": {
+                "@type": "Person",
+                "name": "HJL"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="HJL">HJL</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about%20me/"> About me </a><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="HJL">HJL</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about%20me/" title="">About me</a><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Kaggle [0]</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>HJL</a></span>&nbsp;<span class="post-category">included in <a href="/categories/kaggle/"><i class="far fa-folder fa-fw"></i>Kaggle</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-07-23">2021-07-23</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;146 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="../image_files/kaggle-0.png"
+        data-srcset="../image_files/kaggle-0.png, ../image_files/kaggle-0.png 1.5x, ../image_files/kaggle-0.png 2x"
+        data-sizes="auto"
+        alt="../image_files/kaggle-0.png"
+        title="../image_files/kaggle-0.png" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#table">Table</a>
+      <ul>
+        <li><a href="#details">Details</a>
+          <ul>
+            <li><a href="#titanic">Titanic</a></li>
+            <li><a href="#web-traffic-time-series-forecasting">Web Traffic Time Series Forecasting</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#gantt">Gantt</a>
+      <ul>
+        <li><a href="#kaggle-competition">Kaggle Competition</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><div style = " text-align : right;"Icons made by ><a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<h2 id="table">Table</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Datasets</th>
+<th style="text-align:center">Date</th>
+<th style="text-align:center">Public Score</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>Titanic</strong></td>
+<td style="text-align:center">2021-07-23</td>
+<td style="text-align:center">0.7655</td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>Web Traffic Time Series Forecasting</strong></td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="details">Details</h3>
+<div class="w3-container" style = "font-family: Verdana;">
+  <div class="w3-light-grey" style="padding:1px;text-align: center;">
+<h4 id="titanic">Titanic</h4>
+  </div>
+  <div class="w3-bar w3-light-grey">
+    <button class="w3-bar-item w3-button tablink w3-grey" onclick="openTab(event,'2021-07-23')">2021-07-23</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Paris')">Paris</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Tokyo')">Tokyo</button>
+  </div>
+  <div id="2021-07-23" class="w3-container w3-border sdate">
+    <br>
+    <div class="w3-tag w3-round" style="padding:10px; background-color:#2266AA;">
+        # Public Score : 0.76
+    </div><br>
+      <h4>分析方式</h4>
+      <h4>檢討</h4>
+      <h4>心得</h4>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><a href="https://www.kaggle.com/fatmakursun/titanic-classification-models" target="_blank" rel="noopener noreffer">Fatma Kurşun (2021) Titanic (Classification Regression)</a></li>
+</ol>
+</div>
+        </div>
+    </div>
+  </div>
+  <div id="Paris" class="w3-container w3-border sdate" style="display:none;">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p> 
+  </div>
+  <div id="Tokyo" class="w3-container w3-border sdate" style="display:none">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+</div><br>
+<div class="w3-container" style = "font-family: 'Verdana">
+  <div class="w3-light-grey" style="padding:1px;text-align: center;">
+<h4 id="web-traffic-time-series-forecasting">Web Traffic Time Series Forecasting</h4>
+  </div>
+  <div class="w3-bar w3-light-grey">
+    <button class="w3-bar-item w3-button tablink w3-grey" onclick="openTab(event,'2021-07-26')">2021-07-26</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Paris')">Paris</button>
+    <button class="w3-bar-item w3-button tablink" onclick="openTab(event,'Tokyo')">Tokyo</button>
+  </div>
+  <div id="2021-07-26" class="w3-container w3-border sdate">
+    <br>
+    <div class="w3-tag w3-round" style="padding:10px; background-color:#2266AA;">
+        # Public Score : 
+    </div><br>
+      <h4>分析方式</h4>
+      <h4>特殊名詞</h4>
+<div>
+<ol>
+<li>Fast Fourier Transform</li>
+<li>ARIMA</li>
+<li>Kalman filters</li>
+<li>滯後特徵（lagged features）</li>
+<li>前視偏差</li>
+</ol>
+</div>
+      <h4>學習重點</h4>
+<div>
+<ol>
+<li>Fast Fourier Transform
+fft amplitude $\to$ magtitude
+$\sqrt{x^2+y^2}$</li>
+<li>ARIMA</li>
+</ol>
+</div>
+      <h4>檢討</h4>
+      <h4>心得</h4>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>參考資料<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><ol>
+<li><a href="https://nbviewer.jupyter.org/github/PacktPublishing/Machine-Learning-for-Finance/blob/master/4.1%20EDA%20%26%20Classic%20methods.ipynb" target="_blank" rel="noopener noreffer">Jannes Klaas (2018) EDA &amp; Classic methods</a></li>
+<li><a href="https://www.kaggle.com/muonneutrino/wikipedia-traffic-data-exploration" target="_blank" rel="noopener noreffer">MuonNeutrino (2017) Wikipedia Traffic Data Exploration</a></li>
+<li><a href="https://alan23273850.gitbook.io/signals-and-systems/" target="_blank" rel="noopener noreffer">alan23273850（2019），從傅立葉轉換到數位訊號處理</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/19763358" target="_blank" rel="noopener noreffer">韩昊（2014），傅里葉分析之掐死教程（完整版）更新於2014.06.06</a></li>
+<li><a href="https://hackmd.io/@sysprog/fourier-transform" target="_blank" rel="noopener noreffer">@sysprog（2018），圖解傅立葉分析</a></li>
+<li><a href="https://www.youtube.com/watch?v=spUNpyF58BY" target="_blank" rel="noopener noreffer">3Blue1Brown (2018) But what is the Fourier Transform? A visual introduction.</a></li>
+</ol>
+</div>
+        </div>
+    </div>
+  </div>
+  <div id="Paris" class="w3-container w3-border sdate" style="display:none;">
+    <h2>Paris</h2>
+    <p>Paris is the capital of France.</p> 
+  </div>
+  <div id="Tokyo" class="w3-container w3-border sdate" style="display:none">
+    <h2>Tokyo</h2>
+    <p>Tokyo is the capital of Japan.</p>
+  </div>
+</div>
+<h2 id="gantt">Gantt</h2>
+<h3 id="kaggle-competition">Kaggle Competition</h3>
+<div class="mermaid" id="id-1"></div>
+<script>
+function openTab(evt, submit_date) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("sdate");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-grey", "");
+  }
+  document.getElementById(submit_date).style.display = "block";
+  evt.currentTarget.className += " w3-grey";
+}
+</script></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-07-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/kaggle-0/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]" data-hashtags="Kaggle"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://hsiangjenli.github.io/kaggle-0/" data-hashtag="Kaggle"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]" data-web><i class="fab fa-whatsapp fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]"><i data-svg-src="/lib/simple-icons/icons/line.min.svg"></i></a><a href="javascript:void(0);" title="Share on Blogger" data-sharer="blogger" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]" data-description=""><i class="fab fa-blogger fa-fw"></i></a><a href="javascript:void(0);" title="Share on Evernote" data-sharer="evernote" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]"><i class="fab fa-evernote fa-fw"></i></a><a href="javascript:void(0);" title="Share on Trello" data-sharer="trello" data-url="http://hsiangjenli.github.io/kaggle-0/" data-title="Kaggle [0]" data-description=""><i class="fab fa-trello fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/kaggle/">Kaggle</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/process/" class="prev" rel="prev" title="Process"><i class="fas fa-angle-left fa-fw"></i>Process</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript><div id="fb-root" class="comment"></div>
+            <div
+                class="fb-comments"
+                data-href="http://hsiangjenli.github.io/kaggle-0/"
+                data-width="100%"
+                data-numposts="10"
+            ></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://developers.facebook.com/docs/plugins/comments/"></a>Facebook</a>.
+            </noscript><div id="commento"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://commento.io/">Commento</a>.
+            </noscript><div id="utterances"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://utteranc.es/">Utterances</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Hsiang-Jen Li</div><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.78.2">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2020 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">HJL</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/lightgallery/lightgallery.min.css"><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/katex/copy-tex.min.css"><link rel="stylesheet" href="/lib/mermaid/mermaid.min.css"><link rel="stylesheet" href="./about%20me/fontawesome-free-5.15.3-web/css/all.css"><link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"><script type="text/javascript" src="https://.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&amp;version=v5.0&amp;appId=hsiangjenli&amp;autoLogAppEvents=1" defer></script><script type="text/javascript" src="https://cdn.commento.io/js/commento.js" defer></script><script type="text/javascript" src="/lib/smooth-scroll/smooth-scroll.min.js"></script><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lightgallery.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-thumbnail.min.js"></script><script type="text/javascript" src="/lib/lightgallery/lg-zoom.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/mhchem.min.js"></script><script type="text/javascript" src="/lib/mermaid/mermaid.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":200},"comment":{"utterances":{"darkTheme":"github-dark","issueTerm":"pathname","label":"","lightTheme":"github-light","repo":""}},"data":{"id-1":"gantt\ndateFormat YYYY-MM-DD\n\nexcludes    weekends\n\ntitle 2021 July\ntodayMarker off\n\nsection Titanic\n    Public Score：0.76555\t\t:\t\tdone,\tt1,\t2021-07-22,\t2d\n\nsection Web Traffic Time Series Forecasting\n\tPublic Score：None\t\t\t  :\t\tactivate,\t2021-07-23,\t2021-08-01"},"lightGallery":{"actualSize":false,"exThumbImage":"data-thumbnail","hideBarsDelay":2000,"selector":".lightgallery","speed":400,"thumbContHeight":80,"thumbWidth":80,"thumbnail":true},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

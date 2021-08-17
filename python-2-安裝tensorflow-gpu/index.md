@@ -3,8 +3,8 @@
 <!--more-->
 
 <div style="text-align: right" Icons made by <a href="" title="surang">surang</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<h1 style = "font-family: Verdana;font-weight: 600;">安裝Tensorflow（MX150）</h1>
 
-# 安裝Tensorflow（MX150）
 
 ## [CUDA](https://developer.nvidia.com/cuda-toolkit-archive)
 {{<admonition note "cuda_11.4.0_471.11_win10">}}

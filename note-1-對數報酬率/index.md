@@ -3,8 +3,8 @@
 <!--more-->
 
 <div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+<h1 style = "font-family: Verdana;font-weight: 600;">報酬率</h1>
 
-# 報酬率
 
 ## 算數平均報酬率 **Arithmetic mean**
 

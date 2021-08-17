@@ -4,7 +4,9 @@
 
 <div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-# [plotly | Chart Studio](https://chart-studio.plotly.com/feed/#/)
+<h1 style = "font-family: Verdana;font-weight: 600;">[plotly | Chart Studio](https://chart-studio.plotly.com/feed/#/)
+</h1>
+
 ## 每日收盤行情
 
 ### 1 註冊帳號

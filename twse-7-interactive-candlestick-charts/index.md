@@ -3,7 +3,8 @@
 <!--more-->
 <div style="text-align: right" Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
 
-# Interactive Candlestick Charts
+<h1 style = "font-family: Verdana;font-weight: 600;">Interactive Candlestick Charts
+</h1>
 
 ## Plotly
 

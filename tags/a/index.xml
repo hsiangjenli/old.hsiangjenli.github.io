@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>a - Tag - HJL</title>
+        <link>http://hsiangjenli.github.io/tags/a/</link>
+        <description>a - Tag - HJL</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Fri, 30 Jul 2021 13:04:29 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/a/" rel="self" type="application/rss+xml" /><item>
+    <title>Process</title>
+    <link>http://hsiangjenli.github.io/process/</link>
+    <pubDate>Fri, 30 Jul 2021 13:04:29 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/process/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
