@@ -4,7 +4,16 @@
         <link>http://hsiangjenli.github.io/tags/python/</link>
         <description>Python - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Mon, 19 Jul 2021 22:37:01 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 21 Aug 2021 11:29:33 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/python/" rel="self" type="application/rss+xml" /><item>
+    <title>NOTE [3] Sublime Text &#43; Python</title>
+    <link>http://hsiangjenli.github.io/note-3-sublime-text-python/</link>
+    <pubDate>Sat, 21 Aug 2021 11:29:33 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>http://hsiangjenli.github.io/note-3-sublime-text-python/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="https://i.imgur.com/nBvDwOo.png" referrerpolicy="no-referrer">
+            </div>]]></description>
+</item><item>
     <title>Kaggle [1] Synthetic Financial Datasets For Fraud Detection </title>
     <link>http://hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/</link>
     <pubDate>Mon, 19 Jul 2021 22:37:01 &#43;0800</pubDate>
@@ -84,15 +93,6 @@
     <guid>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/KrPHSG5.jpg" referrerpolicy="no-referrer">
-            </div>]]></description>
-</item><item>
-    <title>TWSE [3] 資料存入SQLite</title>
-    <link>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</link>
-    <pubDate>Sat, 28 Nov 2020 22:57:26 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-3-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5sqlite/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="https://i.imgur.com/53cOWcC.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item></channel>
 </rss>
