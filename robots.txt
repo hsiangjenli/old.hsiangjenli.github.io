@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://hsiangjenli.github.io/sitemap/sitemap-index.xml
+Host: https://hsiangjenli.github.io
