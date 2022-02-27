@@ -1,4 +1,170 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of RN]]></title><description><![CDATA[ ]]></description><link>https://hsiangjenli.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sat, 19 Feb 2022 14:57:00 GMT</lastBuildDate><item><title><![CDATA[😶 About]]></title><description><![CDATA[李享紝 🎓 國立高雄科技大學 金融系（2022） ✉️ hsiangjenli@gmail.com 🔧 Python, Flask, HTML, CSS, MySQL 🌐 TOEIC 725 證照 Microsoft-Azure AI Fundamentals…]]></description><link>https://hsiangjenli.github.io/About/</link><guid isPermaLink="false">https://hsiangjenli.github.io/About/</guid><pubDate>Mon, 07 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;strong&gt;李享紝&lt;/strong&gt;&lt;/h2&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[RSS Feed of RN]]></title><description><![CDATA[ ]]></description><link>https://hsiangjenli.github.io</link><generator>GatsbyJS</generator><lastBuildDate>Sun, 27 Feb 2022 02:47:21 GMT</lastBuildDate><item><title><![CDATA[💼 Projects]]></title><description><![CDATA[🕷️ Web-Scraping TWSE｜台灣證券交易所爬蟲 ANUE｜鉅亨網爬蟲 Dcard API 串接 🤖 Artifical Intelligence ⚙️ Machine Learning 🦗 Mini Projects]]></description><link>https://hsiangjenli.github.io/projects/</link><guid isPermaLink="false">https://hsiangjenli.github.io/projects/</guid><pubDate>Tue, 22 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;🕷️ Web-Scraping&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;TWSE｜台灣證券交易所爬蟲&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ANUE｜鉅亨網爬蟲&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Dcard API 串接&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🤖 Artifical Intelligence&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2&gt;⚙️ Machine Learning&lt;/h2&gt;
+&lt;hr&gt;
+&lt;h2&gt;🦗 Mini Projects&lt;/h2&gt;</content:encoded></item><item><title><![CDATA[📓 Online Course]]></title><description><![CDATA[🧋 Taiwan 中華開放平台 Ewant 🪙 Free Coursera Step 1 Financial aid Image Step 2 Image Step 3 Image Step 4 理由: 150個英文字 Image Udemy StudyCamp…]]></description><link>https://hsiangjenli.github.io/OCW/</link><guid isPermaLink="false">https://hsiangjenli.github.io/OCW/</guid><pubDate>Sun, 20 Feb 2022 11:04:08 GMT</pubDate><content:encoded>&lt;h2&gt;🧋 Taiwan&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.openedu.tw/&quot;&gt;中華開放平台&lt;/a&gt;&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.ewant.org/&quot;&gt;Ewant&lt;/a&gt;&lt;/h3&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2&gt;🪙 Free&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.coursera.org/&quot;&gt;Coursera&lt;/a&gt;&lt;/h3&gt;
+&lt;details&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 1 Financial aid&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/Nb822V0.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 2&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/ZrycTFo.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nWYZnZo.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Step 4 理由: &lt;strong&gt;150&lt;/strong&gt;個英文字&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/p9Uvhag.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;/details&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.udemy.com/&quot;&gt;Udemy&lt;/a&gt;&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://vip.studycamp.tw/c/udemy/udemy-free-coupon-code&quot;&gt;StudyCamp 台灣線上學習論壇&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;IBM&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://cognitiveclass.ai/&quot;&gt;cognitive class.ai&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://skillsbuild.org/students&quot;&gt;Open P-TECH&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Coursera&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://university.mongodb.com/&quot;&gt;MongoDB University&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提供中文&lt;strong&gt;字幕&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.aws.training/Certification&quot;&gt;aws training and certification&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提供中文&lt;strong&gt;字幕&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h3&gt;&lt;a href=&quot;https://www.nvidia.com/zh-tw/training/&quot;&gt;NVIDIA 深度學習機構&lt;/a&gt;&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;p&gt;提供中文&lt;strong&gt;教學&lt;/strong&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;⚠️ 其他資料&lt;/strong&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://acad.nkust.edu.tw/p/404-1004-27716-1.php&quot;&gt;NKUST&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.classcentral.com/report/ocw-courses/&quot;&gt;6000+ OpenCourseWare (OCW) Courses and Where to Find Them&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[🖥️ Visual Studio Code + Imgur]]></title><description><![CDATA[註冊Imgur API Image VScode 輸入Client_id Client_secret  Image 使用  +  +  Image 參考資料 VS Code – Markdwon 利器 vscode-imgur]]></description><link>https://hsiangjenli.github.io/VSCode-imgur/</link><guid isPermaLink="false">https://hsiangjenli.github.io/VSCode-imgur/</guid><pubDate>Sun, 20 Feb 2022 09:35:08 GMT</pubDate><content:encoded>&lt;h2&gt;註冊&lt;a href=&quot;https://api.imgur.com/oauth2/addclient&quot;&gt;Imgur API&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/BZshbmf.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;VScode 輸入Client_id Client_secret&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;h4&gt;&lt;code class=&quot;language-text&quot;&gt;File/Preference/Setting/收尋 Client&lt;/code&gt;&lt;/h4&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/rO4Rmb6.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2&gt;使用&lt;/h2&gt;
+&lt;h3&gt;&lt;code class=&quot;language-text&quot;&gt;Ctrl&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;Alt&lt;/code&gt; + &lt;code class=&quot;language-text&quot;&gt;V&lt;/code&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/nzgUE82.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;參考資料&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://turn2easy.com/2019/05/18/vs-code-markdwon-%E5%88%A9%E5%99%A8-vscode-imgur/&quot;&gt;VS Code – Markdwon 利器 vscode-imgur&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[🖥️ C-Set up Visual Studio Code]]></title><description><![CDATA[安裝 Update pkg Image Open MSYS2 MSY Image Open MSYS2 MinGWx64 Image
+4. gcc version Image
+5. Install gdb debugger Variable Path Search Edit…]]></description><link>https://hsiangjenli.github.io/C-1/</link><guid isPermaLink="false">https://hsiangjenli.github.io/C-1/</guid><pubDate>Sat, 19 Feb 2022 23:46:08 GMT</pubDate><content:encoded>&lt;h2&gt;安裝&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Update pkg&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pacman -Syu&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/f1JTNWE.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;2&quot;&gt;
+&lt;li&gt;Open MSYS2 MSY&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pacman -Su&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/MdWcJE9.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;ol start=&quot;3&quot;&gt;
+&lt;li&gt;Open MSYS2 MinGWx64&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pacman -S mingw-w64-x86_64-gcc&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/No7dPmu.png&quot; alt=&quot;Image&quot;&gt;
+4. gcc version&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;gcc --version&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/2qsaXMi.png&quot; alt=&quot;Image&quot;&gt;
+5. Install gdb debugger&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pacman -S mingw-w64-x86_64-gdb&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ol start=&quot;6&quot;&gt;
+&lt;li&gt;Variable Path&lt;/li&gt;
+&lt;/ol&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;C:&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;msys64&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;mingw64&lt;span class=&quot;token punctuation&quot;&gt;\&lt;/span&gt;bin&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;Search &lt;strong&gt;Edit the system environment variable&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Environments Variable&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Open &lt;strong&gt;path&lt;/strong&gt; at system variable&lt;/li&gt;
+&lt;li&gt;Click new button and paste the path&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/UmYMQLw.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;VSC-extension&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;Search &lt;strong&gt;c c++&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.imgur.com/fnG61dT.png&quot; alt=&quot;Image&quot;&gt;
+2. Search &lt;strong&gt;code runner&lt;/strong&gt;
+&lt;img src=&quot;https://i.imgur.com/XCd8yQI.png&quot; alt=&quot;Image&quot;&gt;
+3. Run in Terminal
+&lt;img src=&quot;https://i.imgur.com/KfL4irU.png&quot; alt=&quot;Image&quot;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;參考資料&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=0HD0pqVtsmw&quot;&gt;How to Download and Install C Cpp Toolset ( gcc g++ gdb ) in Windows 10 using mingw-w64 and msys2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://youtu.be/77v-Poud_io&quot;&gt;How to Set up Visual Studio Code for C and C++ Programming&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;</content:encoded></item><item><title><![CDATA[😶 About]]></title><description><![CDATA[李享紝 🎓 國立高雄科技大學 金融系（2022） ✉️ hsiangjenli@gmail.com 🔧 Python, Flask, HTML, CSS, MySQL 🌐 TOEIC 725 證照 Microsoft-Azure AI Fundamentals…]]></description><link>https://hsiangjenli.github.io/About/</link><guid isPermaLink="false">https://hsiangjenli.github.io/About/</guid><pubDate>Mon, 07 Feb 2022 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;&lt;strong&gt;李享紝&lt;/strong&gt;&lt;/h2&gt;
 &lt;p&gt;🎓 &lt;strong&gt;國立高雄科技大學 金融系（2022）&lt;/strong&gt;&lt;br&gt;
 ✉️ &lt;strong&gt;&lt;a href=&quot;mailto:hsiangjenli@gmail.com&quot;&gt;hsiangjenli@gmail.com&lt;/a&gt;&lt;/strong&gt;&lt;br&gt;
 🔧 &lt;strong&gt;Python, Flask, HTML, CSS, MySQL&lt;/strong&gt;&lt;br&gt;
@@ -13,12 +179,7 @@
 &lt;/ol&gt;
 &lt;h2&gt;&lt;strong&gt;經歷&lt;/strong&gt;&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;2021.09 ~ 2022.01-國立高雄科技大學-高瞻科技不分系-資料科學 助教&lt;/strong&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Micro Project --Web Scraping &amp;#x26; WordCloud&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;使用Google Colab + Github&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2021.09 ~ 2022.01-國立高雄科技大學-高瞻科技不分系-資料科學 助教&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2&gt;&lt;strong&gt;競賽經驗&lt;/strong&gt;&lt;/h2&gt;
 &lt;ol&gt;
@@ -35,29 +196,21 @@
 &lt;/ol&gt;
 &lt;h2&gt;&lt;strong&gt;Project&lt;/strong&gt;&lt;/h2&gt;
 &lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;2022-比特幣價格/漲跌預測&lt;/strong&gt; 🔗
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;處理20萬筆的資料&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;&lt;a href=&quot;&quot;&gt;📄 教學文章&lt;/a&gt;&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;strong&gt;TWSE｜台灣證券交易所爬蟲&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;strong&gt;ANUE｜鉅亨網爬蟲&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;2022-比特幣價格/漲跌預測&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;TWSE｜台灣證券交易所爬蟲&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ANUE｜鉅亨網爬蟲&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;📱2020-LINE BOT&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&quot;https://colab.research.google.com/github/hsiangjenli/NKUST/blob/main/Data-Mining-Introduction/NKUST-DM-Final--1.ipynb&quot;&gt;&lt;strong&gt;🎲2022-Teachable Machine --Tic-Tac-Toe&lt;/strong&gt;&lt;/a&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;使用Google提供的服務&lt;a href=&quot;https://teachablemachine.withgoogle.com/&quot;&gt;Teachable Machine&lt;/a&gt;來訓練Model&lt;/strong&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;🎲2022-Teachable Machine --Tic-Tac-Toe&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h2&gt;修課經歷&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;高科-財管碩-量化投資與程式交易&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;高科-電機系-人工智慧&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;高科-工管系-資料探勘導論&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高科-博雅教育中心-程式設計教學助教培訓-推動大學{程式設計}教學&lt;/strong&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;hr&gt;
 &lt;ol&gt;
@@ -65,7 +218,7 @@
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;Coursera-IBM-Supervised Machine Learning - Regression&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;&lt;strong&gt;AWS-Math for Machine Learning&lt;/strong&gt;&lt;/em&gt;&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;&lt;em&gt;NVIDIA&lt;/em&gt;-深度學習基礎理論與實踐&lt;/strong&gt;&lt;/li&gt;
-&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-13-Selenium + 鉅亨網]]></title><description><![CDATA[Selenium + 鉅亨網 + MonogoDB 參考資料 高级爬虫: 让 Selenium 控制你的浏览器帮你爬 在Windows上安裝Python & Selenium + 簡易教學 Selenium Record and Playback tool Selenium…]]></description><link>https://hsiangjenli.github.io/TWSE-13/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-13/</guid><pubDate>Mon, 01 Feb 2021 04:22:54 GMT</pubDate><content:encoded>&lt;h1&gt;Selenium + 鉅亨網 + MonogoDB&lt;/h1&gt;
+&lt;/ol&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-13-Selenium + 鉅亨網]]></title><description><![CDATA[Selenium + 鉅亨網 + MonogoDB 參考資料 高级爬虫: 让 Selenium 控制你的浏览器帮你爬 在Windows上安裝Python & Selenium + 簡易教學 Selenium Record and Playback tool Selenium…]]></description><link>https://hsiangjenli.github.io/TWSE-13/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-13/</guid><pubDate>Mon, 01 Feb 2021 04:22:54 GMT</pubDate><content:encoded>&lt;h1&gt;Selenium + 鉅亨網 + MonogoDB&lt;/h1&gt;
 &lt;blockquote&gt;
 &lt;p&gt;參考資料&lt;/p&gt;
 &lt;ol&gt;
@@ -341,7 +494,7 @@ response &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span cl
     &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; doc&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;unique_ids&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
         response&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;append&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 
-mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;$in&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-12-Efficient Frontier]]></title><description><![CDATA[Python + 投資學/Efficient Frontier/ SQL 連接/方法一/ 報酬率 參考資料
+mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;remove&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;$in&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; response&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-12-Efficient Frontier]]></title><description><![CDATA[Python + 投資學/Efficient Frontier/ SQL 連接/方法一/ 報酬率 參考資料
 pandas.DataFrame.pct_change 基本 今日 & 昨日 pct_change() 變異數 var() 標準差 std() 共變異數 cov…]]></description><link>https://hsiangjenli.github.io/TWSE-12/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-12/</guid><pubDate>Wed, 27 Jan 2021 05:48:04 GMT</pubDate><content:encoded>&lt;h1&gt;Python + 投資學/Efficient Frontier/&lt;/h1&gt;
 &lt;h2&gt;SQL 連接/方法一/&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; sqlalchemy &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; create_engine
@@ -1060,7 +1213,7 @@ cbar&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tick_params&lt
 cbar_Title &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cbar&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;yaxis&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;label
 font &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; matplotlib&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;font_manager&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;FontProperties&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;size&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;label_size&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 cbar_Title&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;set_font_properties&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;font&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-fig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;savefig&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Efficient_Frontier_4.png&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dpi&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bbox_inches&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;tight&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-11-Wordcloud + MongoDB]]></title><description><![CDATA[Wordcloud + MongoDB img  MongoDB連線 import 抓出文章內容 Wordcloud圖 fig 1 fig 2 存到了一些無關緊要的資料 重複性高的開頭、形容詞     將符號移除 自建詞 userdict  中文斷詞 jieba…]]></description><link>https://hsiangjenli.github.io/TWSE-11/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-11/</guid><pubDate>Tue, 26 Jan 2021 12:53:39 GMT</pubDate><content:encoded>&lt;h1&gt;Wordcloud + MongoDB&lt;/h1&gt;
+fig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;savefig&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;Efficient_Frontier_4.png&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;dpi&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; bbox_inches&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;tight&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-11-Wordcloud + MongoDB]]></title><description><![CDATA[Wordcloud + MongoDB img  MongoDB連線 import 抓出文章內容 Wordcloud圖 fig 1 fig 2 存到了一些無關緊要的資料 重複性高的開頭、形容詞     將符號移除 自建詞 userdict  中文斷詞 jieba…]]></description><link>https://hsiangjenli.github.io/TWSE-11/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-11/</guid><pubDate>Tue, 26 Jan 2021 12:53:39 GMT</pubDate><content:encoded>&lt;h1&gt;Wordcloud + MongoDB&lt;/h1&gt;
 &lt;h2&gt;img&lt;/h2&gt;
 &lt;h2&gt;&lt;a href=&quot;https://drive.google.com/file/d/1Id-SEIc5kHHZx0Q62JnI6moJH4BWIWPu/view?usp=sharing&quot;&gt;&lt;code class=&quot;language-text&quot;&gt;wordcloud.jpg&lt;/code&gt;&lt;/a&gt;&lt;/h2&gt;
 &lt;h2&gt;MongoDB連線&lt;/h2&gt;
@@ -1172,7 +1325,7 @@ wordcloud &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; WordCloud&
 plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;figure&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;figsize&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;20&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;imshow&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;wordcloud&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;axis&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;off&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;show&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-10-4-MongoDB+Python]]></title><description><![CDATA[找出一段時間的資料 6 刪除重複資料 參考資料
+plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;show&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-10-4-MongoDB+Python]]></title><description><![CDATA[找出一段時間的資料 6 刪除重複資料 參考資料
 mongo 删除重复数据
 pymongo去除重复数据
 pymongo: remove duplicates (map reduce?) MongoDB執行 準備重複資料 執行程式碼/SQL/ Python…]]></description><link>https://hsiangjenli.github.io/TWSE-10-4/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-10-4/</guid><pubDate>Wed, 20 Jan 2021 00:56:08 GMT</pubDate><content:encoded>&lt;h5&gt;&lt;code class=&quot;language-text&quot;&gt;find({&apos;Date&apos;: {&quot;$&amp;amp;#0036;gte&quot;: start,&quot;$&amp;amp;#0036;lte&quot;: end}})&lt;/code&gt;&lt;/h5&gt;
@@ -1265,7 +1418,7 @@ mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;remove&lt;spa
 &lt;/blockquote&gt;
 &lt;h6&gt;執行程式碼/Python/&lt;/h6&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-10-3-MongoDB+Python]]></title><description><![CDATA[5  參考資料
+    &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-10-3-MongoDB+Python]]></title><description><![CDATA[5  參考資料
 Tutorial — PyMongo v2.0.1 documentation
 w3schools
 Collection Methods
@@ -1295,7 +1448,7 @@ Finding duplicate keys with MongoDB’s aggregation framework…]]></description
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;d &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; datetime&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;datetime&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2021&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;21&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;23&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;for&lt;/span&gt; x &lt;span class=&quot;token keyword&quot;&gt;in&lt;/span&gt; mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;$lt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
     &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;$lt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-10-2-MongoDB+Python]]></title><description><![CDATA[Python + bs4 + 鉅亨網 1 def get_text(i): 2 import套件 3 Create DB,  Collection 4 Insert document]]></description><link>https://hsiangjenli.github.io/TWSE-10-2/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-10-2/</guid><pubDate>Wed, 20 Jan 2021 00:54:08 GMT</pubDate><content:encoded>&lt;h3&gt;Python + bs4 + 鉅亨網&lt;/h3&gt;
+&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;$lt&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; d&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sort&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;count&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-10-2-MongoDB+Python]]></title><description><![CDATA[Python + bs4 + 鉅亨網 1 def get_text(i): 2 import套件 3 Create DB,  Collection 4 Insert document]]></description><link>https://hsiangjenli.github.io/TWSE-10-2/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-10-2/</guid><pubDate>Wed, 20 Jan 2021 00:54:08 GMT</pubDate><content:encoded>&lt;h3&gt;Python + bs4 + 鉅亨網&lt;/h3&gt;
 &lt;h4&gt;1 def get_text(i):&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;token function&quot;&gt;get_text&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
     post_id &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; urls&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;i&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;/&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;split&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;?&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
@@ -1338,7 +1491,7 @@ urls &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=
     mydict &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Date&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;post_id&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Title&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;Tags&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;token string&quot;&gt;&quot;text&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
     x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mycol&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;insert_one&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mydict&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/IpoR1Fq.jpg&quot; alt=&quot;&quot;&gt;
-&lt;img src=&quot;https://i.imgur.com/6Mkm8up.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-10-1-MongoDB+Python]]></title><description><![CDATA[NoSQL MonogoDB + Python MonogoDB  參考資料
+&lt;img src=&quot;https://i.imgur.com/6Mkm8up.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-10-1-MongoDB+Python]]></title><description><![CDATA[NoSQL MonogoDB + Python MonogoDB  參考資料
 Windows MongoDB 下載與安裝教學
 關於 MongoDB 的 _id 欄位
 MongoDB的_id和ObjectId怎麼理解？同樣是程式設計師，用心你就超前了
@@ -1387,7 +1540,7 @@ x &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; mycol&lt;span clas
 &lt;h4&gt;5 印出所有DB&lt;/h4&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;myclient&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;list_database_names&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4&gt;6 印出所有collection&lt;/h4&gt;
-&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mydb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;list_collection_names&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-9-Bs4 + 鉅亨網]]></title><description><![CDATA[BeautifulSoup + 鉅亨網 原始碼 文章網址 找到  regex  多個URL存成List 多個URL的文章解析 找出文章的標題 找到 找出文章的tags 找到    tags存成list 文章內文 找到  取的內文  包裝成def]]></description><link>https://hsiangjenli.github.io/TWSE-9/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-9/</guid><pubDate>Tue, 19 Jan 2021 15:48:24 GMT</pubDate><content:encoded>&lt;h1&gt;BeautifulSoup + 鉅亨網&lt;/h1&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;mydb&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;list_collection_names&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-9-Bs4 + 鉅亨網]]></title><description><![CDATA[BeautifulSoup + 鉅亨網 原始碼 文章網址 找到  regex  多個URL存成List 多個URL的文章解析 找出文章的標題 找到 找出文章的tags 找到    tags存成list 文章內文 找到  取的內文  包裝成def]]></description><link>https://hsiangjenli.github.io/TWSE-9/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-9/</guid><pubDate>Tue, 19 Jan 2021 15:48:24 GMT</pubDate><content:encoded>&lt;h1&gt;BeautifulSoup + 鉅亨網&lt;/h1&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; urllib
 &lt;span class=&quot;token keyword&quot;&gt;from&lt;/span&gt; bs4 &lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; BeautifulSoup
 
@@ -1464,7 +1617,7 @@ soup &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; BeautifulSoup&l
 
     title &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; soup&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;find&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;h1&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;getText&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
     
-    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;n_tags&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-8-plotly | Chart Studio | 1]]></title><description><![CDATA[plotly | Chart Studio 每日收盤行情 1 註冊帳號  2 點選SQL Query  3 下載Falcon SQL Client  4 登入SQL 輸入MySQL的帳號, 密碼  5 點選QUERY 確認有確實讀到資料庫  6 點選SCHEDULE…]]></description><link>https://hsiangjenli.github.io/TWSE-8/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-8/</guid><pubDate>Sat, 16 Jan 2021 14:11:30 GMT</pubDate><content:encoded>&lt;h1&gt;&lt;a href=&quot;https://chart-studio.plotly.com/feed/#/&quot;&gt;plotly | Chart Studio&lt;/a&gt;&lt;/h1&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;title&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;n_tags&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;text&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-8-plotly | Chart Studio | 1]]></title><description><![CDATA[plotly | Chart Studio 每日收盤行情 1 註冊帳號  2 點選SQL Query  3 下載Falcon SQL Client  4 登入SQL 輸入MySQL的帳號, 密碼  5 點選QUERY 確認有確實讀到資料庫  6 點選SCHEDULE…]]></description><link>https://hsiangjenli.github.io/TWSE-8/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-8/</guid><pubDate>Sat, 16 Jan 2021 14:11:30 GMT</pubDate><content:encoded>&lt;h1&gt;&lt;a href=&quot;https://chart-studio.plotly.com/feed/#/&quot;&gt;plotly | Chart Studio&lt;/a&gt;&lt;/h1&gt;
 &lt;h2&gt;每日收盤行情&lt;/h2&gt;
 &lt;h3&gt;1 註冊帳號&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/tUGwuzY.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
@@ -1499,7 +1652,7 @@ soup &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; BeautifulSoup&l
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/NOi9HkA.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;h3&gt;10 點選Live DataSet&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;https://i.imgur.com/3tk0jJk.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;iframe width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plotly.com/~hsiangjenli/15.embed?share_key=FaqYt8fEA36u4olYzePnwm&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-7-Interactive Candlestick Charts]]></title><description><![CDATA[Interactive Candlestick Charts Plotly 個股月成交資訊 SQL連線 Fig1 Basic fig.show() Fig2 xaxis_rangeslider_visible=False fig.show() Fig3 Color & Title…]]></description><link>https://hsiangjenli.github.io/TWSE-7/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-7/</guid><pubDate>Sat, 05 Dec 2020 13:55:51 GMT</pubDate><content:encoded>&lt;h1&gt;Interactive Candlestick Charts&lt;/h1&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plotly.com/~hsiangjenli/15.embed?share_key=FaqYt8fEA36u4olYzePnwm&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-7-Interactive Candlestick Charts]]></title><description><![CDATA[Interactive Candlestick Charts Plotly 個股月成交資訊 SQL連線 Fig1 Basic fig.show() Fig2 xaxis_rangeslider_visible=False fig.show() Fig3 Color & Title…]]></description><link>https://hsiangjenli.github.io/TWSE-7/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-7/</guid><pubDate>Sat, 05 Dec 2020 13:55:51 GMT</pubDate><content:encoded>&lt;h1&gt;Interactive Candlestick Charts&lt;/h1&gt;
 &lt;h2&gt;Plotly&lt;/h2&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;shell&quot;&gt;&lt;pre class=&quot;language-shell&quot;&gt;&lt;code class=&quot;language-shell&quot;&gt;pip &lt;span class=&quot;token function&quot;&gt;install&lt;/span&gt; plotly&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h2&gt;個股月成交資訊&lt;/h2&gt;
@@ -1627,7 +1780,7 @@ fig &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; go&lt;span class
 
 fig&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;show&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;h4&gt;fig.show()&lt;/h4&gt;
-&lt;iframe src=&quot;https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_6.html&quot; height=&quot;500&quot; width=&quot;100%&quot; style=&quot;border:none;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-6-MySQL to Dataframe & mplfinance K線圖]]></title><description><![CDATA[SQL連線 讀取資料庫Table至Dataframe 1 取出指定col值 2 取出指定index值 3 取出指定index and col值 4 取出多個col值 5 欄位名稱 6 資料 7 欄位Type 8 index值 9 重新命名 # 實作 讀取指定index…]]></description><link>https://hsiangjenli.github.io/TWSE-6/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-6/</guid><pubDate>Sun, 29 Nov 2020 04:40:15 GMT</pubDate><content:encoded>&lt;div style=&quot;text-align: right&quot; Icons made by &lt;a href=&quot;https://www.flaticon.com/authors/freepik&quot; title=&quot;Freepik&quot;&gt;Freepik&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
+&lt;iframe src=&quot;https://d2xihcnwdmcz6tzstvzuow-on.drv.tw/WEB/Plotly.fig_6.html&quot; height=&quot;500&quot; width=&quot;100%&quot; style=&quot;border:none;&quot;&gt;&lt;/iframe&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-6-MySQL to Dataframe & mplfinance K線圖]]></title><description><![CDATA[SQL連線 讀取資料庫Table至Dataframe 1 取出指定col值 2 取出指定index值 3 取出指定index and col值 4 取出多個col值 5 欄位名稱 6 資料 7 欄位Type 8 index值 9 重新命名 # 實作 讀取指定index…]]></description><link>https://hsiangjenli.github.io/TWSE-6/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-6/</guid><pubDate>Sun, 29 Nov 2020 04:40:15 GMT</pubDate><content:encoded>&lt;div style=&quot;text-align: right&quot; Icons made by &lt;a href=&quot;https://www.flaticon.com/authors/freepik&quot; title=&quot;Freepik&quot;&gt;Freepik&lt;/a&gt; from &lt;a href=&quot;https://www.flaticon.com/&quot; title=&quot;Flaticon&quot;&gt;www.flaticon.com&lt;/a&gt;&lt;/div&gt;
 &lt;h1 style = &quot;font-family: Verdana;font-weight: 600;&quot;&gt;MySQL to Dataframe
 &lt;/h1&gt;
 &lt;h2&gt;SQL連線&lt;/h2&gt;
@@ -1883,7 +2036,7 @@ ax1&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=
 ax2&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;frame_on&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 ax3&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;frame_on&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token boolean&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 plt&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;savefig&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;test_3.png&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; dpi&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;300&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;img src=&apos;https://i.imgur.com/JS50WZs.png&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-5-mpl_finance K線圖]]></title><description><![CDATA[mpl_finance [舊版] SQL連線 個股月成交資訊 mpl_finance 基本設定 完整程式碼]]></description><link>https://hsiangjenli.github.io/TWSE-5/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-5/</guid><pubDate>Sun, 29 Nov 2020 04:05:26 GMT</pubDate><content:encoded>&lt;h1&gt;mpl_finance [舊版]&lt;/h1&gt;
+&lt;img src=&apos;https://i.imgur.com/JS50WZs.png&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-5-mpl_finance K線圖]]></title><description><![CDATA[mpl_finance [舊版] SQL連線 個股月成交資訊 mpl_finance 基本設定 完整程式碼]]></description><link>https://hsiangjenli.github.io/TWSE-5/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-5/</guid><pubDate>Sun, 29 Nov 2020 04:05:26 GMT</pubDate><content:encoded>&lt;h1&gt;mpl_finance [舊版]&lt;/h1&gt;
 &lt;h2&gt;SQL連線&lt;/h2&gt;
 &lt;h3&gt;個股月成交資訊&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MySQLdb
@@ -1951,7 +2104,7 @@ ax&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;set_xticks&lt;sp
 ax&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;set_xticklabels&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;D&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;round&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token builtin&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;D&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;7&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 mpf&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;candlestick2_ochl&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;ax&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; op&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; cp&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; h&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
 l&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; width&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;0.6&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colorup&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;r&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; colordown&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;g&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; alpha&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;img src=&apos;https://i.imgur.com/pSXpsdo.png&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-4-資料存入MySQL及取出]]></title><description><![CDATA[TWSE的資料存入MySQL SQL連線 1 基本設定 2 不使用中文 3 可使用中文 / charset='utf8' / create_engine pymysql sqlalchemy 個股月成交資訊/en…]]></description><link>https://hsiangjenli.github.io/TWSE-4/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-4/</guid><pubDate>Sun, 29 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;TWSE的資料存入MySQL&lt;/h1&gt;
+&lt;img src=&apos;https://i.imgur.com/pSXpsdo.png&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-4-資料存入MySQL及取出]]></title><description><![CDATA[TWSE的資料存入MySQL SQL連線 1 基本設定 2 不使用中文 3 可使用中文 / charset='utf8' / create_engine pymysql sqlalchemy 個股月成交資訊/en…]]></description><link>https://hsiangjenli.github.io/TWSE-4/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-4/</guid><pubDate>Sun, 29 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;TWSE的資料存入MySQL&lt;/h1&gt;
 &lt;h2&gt;SQL連線&lt;/h2&gt;
 &lt;h3&gt;1 基本設定&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; MySQLdb
@@ -2125,7 +2278,7 @@ result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cursor&lt;spa
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;cursor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;SELECT `Opening Price` FROM `twse` WHERE `Stock Code` = 2330 AND `Date` BETWEEN &apos;2019/10/10 00:00:00&apos; AND &apos;2020/1/10 23:59:59&apos;&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 result &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; cursor&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;fetchall&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;result&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;img src=&apos;https://i.imgur.com/yFeVTEB.jpg&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-3-TWSE的資料存入SQLite]]></title><description><![CDATA[TWSE的資料存入SQLite 個股月成交資訊 1 SQLite連線 2 建立Table 3 刪除Table # 完整程式碼 資料庫資料重複問題解決 1 選出沒有重複的資料 2 TWSE_tempt當作緩存 將TWSE改成TWSE_tempt當作緩存 ，再新增一個TWSE…]]></description><link>https://hsiangjenli.github.io/TWSE-3/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-3/</guid><pubDate>Sat, 28 Nov 2020 04:05:26 GMT</pubDate><content:encoded>&lt;h1&gt;TWSE的資料存入SQLite&lt;/h1&gt;
+&lt;img src=&apos;https://i.imgur.com/yFeVTEB.jpg&apos; width=&apos;100%&apos;&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-3-TWSE的資料存入SQLite]]></title><description><![CDATA[TWSE的資料存入SQLite 個股月成交資訊 1 SQLite連線 2 建立Table 3 刪除Table # 完整程式碼 資料庫資料重複問題解決 1 選出沒有重複的資料 2 TWSE_tempt當作緩存 將TWSE改成TWSE_tempt當作緩存 ，再新增一個TWSE…]]></description><link>https://hsiangjenli.github.io/TWSE-3/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-3/</guid><pubDate>Sat, 28 Nov 2020 04:05:26 GMT</pubDate><content:encoded>&lt;h1&gt;TWSE的資料存入SQLite&lt;/h1&gt;
 &lt;h2&gt;個股月成交資訊&lt;/h2&gt;
 &lt;h3&gt;1 SQLite連線&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;import&lt;/span&gt; sqlite3
@@ -2226,7 +2379,7 @@ c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span c
 c&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;execute&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;DROP TABLE TWSE_tempt&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;Done&quot;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
 conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;commit&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-2-將DataFrame存入CSV檔 & 抓取多筆資料]]></title><description><![CDATA[DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 2 絕對路徑 3 取得路徑 4 df.to_csv 使用 1 以"/"隔開 2 將檔案重複寫入 3 替換空值 4 小數4位 5 不保留列名header 6 不保留引索值index…]]></description><link>https://hsiangjenli.github.io/TWSE-2/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-2/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;DataFrame存入CSV檔&lt;/h1&gt;
+conn&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;close&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-2-將DataFrame存入CSV檔 & 抓取多筆資料]]></title><description><![CDATA[DataFrame存入CSV檔 個股月成交資訊 1 相對路徑 2 絕對路徑 3 取得路徑 4 df.to_csv 使用 1 以"/"隔開 2 將檔案重複寫入 3 替換空值 4 小數4位 5 不保留列名header 6 不保留引索值index…]]></description><link>https://hsiangjenli.github.io/TWSE-2/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-2/</guid><pubDate>Sat, 28 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h1&gt;DataFrame存入CSV檔&lt;/h1&gt;
 &lt;h2&gt;個股月成交資訊&lt;/h2&gt;
 &lt;h3&gt;1 相對路徑&lt;/h3&gt;
 &lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;python&quot;&gt;&lt;pre class=&quot;language-python&quot;&gt;&lt;code class=&quot;language-python&quot;&gt;df&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;to_csv&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;檔案名稱.csv&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
@@ -2314,7 +2467,7 @@ n &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&qu
            time&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;sleep&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token number&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
        &lt;span class=&quot;token keyword&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt;
            &lt;span class=&quot;token keyword&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;data&lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&apos;stat&apos;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
-       date &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; date &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; datetime&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;days &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[🗠 TWSE-1-json檔解析]]></title><description><![CDATA[TWSE股票資料 1 個股月成交資訊 個股月成交資訊以台積電2330為例 點選 列印/HTML 更改 html 為 jsn 更改 20200813為 20200713，即可找到7月資料 更改 stockNo=2330 為 stockNo=1234，即可找到黑松交易資 https…]]></description><link>https://hsiangjenli.github.io/TWSE-1/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-1/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;TWSE股票資料&lt;/h2&gt;
+       date &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; date &lt;span class=&quot;token operator&quot;&gt;-&lt;/span&gt; datetime&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;timedelta&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;days &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</content:encoded></item><item><title><![CDATA[📈 TWSE-1-json檔解析]]></title><description><![CDATA[TWSE股票資料 1 個股月成交資訊 個股月成交資訊以台積電2330為例 點選 列印/HTML 更改 html 為 jsn 更改 20200813為 20200713，即可找到7月資料 更改 stockNo=2330 為 stockNo=1234，即可找到黑松交易資 https…]]></description><link>https://hsiangjenli.github.io/TWSE-1/</link><guid isPermaLink="false">https://hsiangjenli.github.io/TWSE-1/</guid><pubDate>Fri, 27 Nov 2020 00:00:00 GMT</pubDate><content:encoded>&lt;h2&gt;TWSE股票資料&lt;/h2&gt;
 &lt;h3&gt;1 個股月成交資訊&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;
