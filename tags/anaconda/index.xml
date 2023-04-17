@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Anaconda - Tag - HJL</title>
-        <link>http://hsiangjenli.github.io/tags/anaconda/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/anaconda/</link>
         <description>Anaconda - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 11 Jul 2021 12:16:36 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/anaconda/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 11 Jul 2021 12:16:36 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/anaconda/" rel="self" type="application/rss+xml" /><item>
     <title>Python [2] 安裝tensorflow-gpu</title>
-    <link>http://hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</link>
     <pubDate>Sun, 11 Jul 2021 12:16:36 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/HEZ35Ed.png" referrerpolicy="no-referrer">
             </div>]]></description>

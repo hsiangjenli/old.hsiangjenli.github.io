@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>About me - Tag - HJL</title>
-        <link>http://hsiangjenli.github.io/tags/about-me/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/about-me/</link>
         <description>About me - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 16 Jan 2021 19:48:38 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/about-me/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 16 Jan 2021 19:48:38 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/about-me/" rel="self" type="application/rss+xml" /><item>
     <title>About me</title>
-    <link>http://hsiangjenli.github.io/resume/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/resume/</link>
     <pubDate>Sat, 16 Jan 2021 19:48:38 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/resume/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/resume/</guid>
     <description><![CDATA[]]></description>
 </item></channel>
 </rss>

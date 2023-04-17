@@ -216,7 +216,7 @@ crop(p2)
 
 <center><img src="https://i.imgur.com/0yK2tFN.png" width = "50%"/></center>
 
-### [Figure 2](https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-06-07-COUNTY.html)
+### [Figure 2](https://hsiangjenli.github.io/old.hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-06-07-COUNTY.html)
 
 #### 完整程式碼
 
@@ -289,7 +289,7 @@ fig.write_html("Python [1] Covid-19 + geopandas-2021-06-07-COUNTY.html")
 fig.show()
 ```
 
-<iframe src="https://hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-COUNTY.html" height="500" width="100%" style="border:none;"></iframe>
+<iframe src="https://hsiangjenli.github.io/old.hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-COUNTY.html" height="500" width="100%" style="border:none;"></iframe>
 
 ### Figure 3
 
@@ -372,7 +372,7 @@ crop(p3)
 
 
 
-### [Figure 4](https://hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-06-07-TOWN.html)
+### [Figure 4](https://hsiangjenli.github.io/old.hsiangjenli.github.io/html_files/Python%20[1]%20Covid-19%20+%20geopandas-2021-06-07-TOWN.html)
 
 #### 完整程式碼
 
@@ -440,7 +440,7 @@ fig = px.choropleth_mapbox(t_result,
 
 fig.write_html("Python [1] Covid-19 + geopandas-2021-06-07-TOWN.html")
 ```
-<iframe src="https://hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-TOWN.html" height="500" width="100%" style="border:none;"></iframe>
+<iframe src="https://hsiangjenli.github.io/old.hsiangjenli.github.io/html_files/Python [1] Covid-19 + geopandas-2021-06-07-TOWN.html" height="500" width="100%" style="border:none;"></iframe>
 
 
 {{<admonition note "choropleth_mapbox">}}

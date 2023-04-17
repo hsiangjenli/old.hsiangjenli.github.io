@@ -1,24 +1,24 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Kaggle - Tag - HJL</title>
-        <link>http://hsiangjenli.github.io/tags/kaggle/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/kaggle/</link>
         <description>Kaggle - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Wed, 28 Jul 2021 16:18:26 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/kaggle/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Wed, 28 Jul 2021 16:18:26 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/kaggle/" rel="self" type="application/rss+xml" /><item>
     <title>Kaggle [0]</title>
-    <link>http://hsiangjenli.github.io/kaggle-0/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-0/</link>
     <pubDate>Fri, 23 Jul 2021 19:49:51 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/kaggle-0/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-0/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/image_files/kaggle-0.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>Kaggle [2]</title>
-    <link>http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/</link>
     <pubDate>Wed, 28 Jul 2021 16:18:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-2-web-traffic-time-series-forecasting/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/image_files/kaggle-2.png" referrerpolicy="no-referrer">
             </div>]]></description>

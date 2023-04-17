@@ -1,96 +1,96 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Python - Category - HJL</title>
-        <link>http://hsiangjenli.github.io/categories/python/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/categories/python/</link>
         <description>Python - Category - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 21 Aug 2021 11:29:33 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sat, 21 Aug 2021 11:29:33 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/categories/python/" rel="self" type="application/rss+xml" /><item>
     <title>NOTE [3] Sublime Text &#43; Python</title>
-    <link>http://hsiangjenli.github.io/note-3-sublime-text-python/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/note-3-sublime-text-python/</link>
     <pubDate>Sat, 21 Aug 2021 11:29:33 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/note-3-sublime-text-python/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/note-3-sublime-text-python/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/nBvDwOo.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>Kaggle [1] Synthetic Financial Datasets For Fraud Detection </title>
-    <link>http://hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/</link>
     <pubDate>Mon, 19 Jul 2021 22:37:01 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/kaggle-1-synthetic-financial-datasets-for-fraud-detection/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/emsPMC0.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>Python [2] 安裝tensorflow-gpu</title>
-    <link>http://hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</link>
     <pubDate>Sun, 11 Jul 2021 12:16:36 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-2-%E5%AE%89%E8%A3%9Dtensorflow-gpu/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/HEZ35Ed.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>Python [1]  Covid-19  &#43; geopandas</title>
-    <link>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-1-covid-19-geopandas/</link>
     <pubDate>Sun, 23 May 2021 07:03:27 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-1-covid-19-geopandas/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/mXHrvCa.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>NOTE [1] 對數報酬率</title>
-    <link>http://hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</link>
     <pubDate>Wed, 03 Feb 2021 00:23:39 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/note-1-%E5%B0%8D%E6%95%B8%E5%A0%B1%E9%85%AC%E7%8E%87/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/utuqaOV.png" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [13] Selenium &#43; 鉅亨網</title>
-    <link>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
     <pubDate>Mon, 01 Feb 2021 12:22:54 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-13-selenium-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/6FbhBYa.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [12] Efficient Frontier</title>
-    <link>http://hsiangjenli.github.io/twse-12-efficient-frontier/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-12-efficient-frontier/</link>
     <pubDate>Wed, 27 Jan 2021 13:48:04 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-12-efficient-frontier/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-12-efficient-frontier/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/bsg8U37.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [11] Wordcloud &#43; MongoDB</title>
-    <link>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-11-wordcloud-mongodb/</link>
     <pubDate>Tue, 26 Jan 2021 20:53:39 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-11-wordcloud-mongodb/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-11-wordcloud-mongodb/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/3wFuNRm.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [10] MongoDB&#43;Python</title>
-    <link>http://hsiangjenli.github.io/twse-10-mongodb-python/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-10-mongodb-python/</link>
     <pubDate>Tue, 19 Jan 2021 23:54:08 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-10-mongodb-python/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-10-mongodb-python/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/EJofbyv.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [9] Bs4 &#43; 鉅亨網</title>
-    <link>http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</link>
     <pubDate>Tue, 19 Jan 2021 23:48:24 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-9-bs4-%E9%89%85%E4%BA%A8%E7%B6%B2/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/zy6tEww.jpg" referrerpolicy="no-referrer">
             </div>]]></description>

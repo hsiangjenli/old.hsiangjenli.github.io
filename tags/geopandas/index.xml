@@ -1,15 +1,15 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>geopandas - Tag - HJL</title>
-        <link>http://hsiangjenli.github.io/tags/geopandas/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/geopandas/</link>
         <description>geopandas - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 23 May 2021 07:03:27 &#43;0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/geopandas/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 23 May 2021 07:03:27 &#43;0000</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/geopandas/" rel="self" type="application/rss+xml" /><item>
     <title>Python [1]  Covid-19  &#43; geopandas</title>
-    <link>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-1-covid-19-geopandas/</link>
     <pubDate>Sun, 23 May 2021 07:03:27 &#43;0000</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/python-1-covid-19-geopandas/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/python-1-covid-19-geopandas/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/mXHrvCa.png" referrerpolicy="no-referrer">
             </div>]]></description>

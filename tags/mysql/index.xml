@@ -1,33 +1,33 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>MySQL - Tag - HJL</title>
-        <link>http://hsiangjenli.github.io/tags/mysql/</link>
+        <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/mysql/</link>
         <description>MySQL - Tag - HJL</description>
         <generator>Hugo -- gohugo.io</generator><language>en</language><managingEditor>hsiangjenli@gmail.com (HJL)</managingEditor>
-            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 29 Nov 2020 12:40:15 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/tags/mysql/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>hsiangjenli@gmail.com (HJL)</webMaster><lastBuildDate>Sun, 29 Nov 2020 12:40:15 &#43;0800</lastBuildDate><atom:link href="http://hsiangjenli.github.io/old.hsiangjenli.github.io/tags/mysql/" rel="self" type="application/rss+xml" /><item>
     <title>TWSE [6] MySQL to Dataframe &amp; mplfinance K線圖</title>
-    <link>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</link>
     <pubDate>Sun, 29 Nov 2020 12:40:15 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-6-mysql-to-dataframe-mplfinance-k%E7%B7%9A%E5%9C%96/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/Bk5cA2p.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [5] mpl_finance K線圖</title>
-    <link>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</link>
     <pubDate>Sun, 29 Nov 2020 12:05:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-5-mpl_finance-k%E7%B7%9A%E5%9C%96/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/MJxJbJC.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
 </item><item>
     <title>TWSE [4] 資料存入MySQL及取出</title>
-    <link>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</link>
+    <link>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</link>
     <pubDate>Sun, 29 Nov 2020 11:25:26 &#43;0800</pubDate>
     <author>Author</author>
-    <guid>http://hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</guid>
+    <guid>http://hsiangjenli.github.io/old.hsiangjenli.github.io/twse-4-%E8%B3%87%E6%96%99%E5%AD%98%E5%85%A5mysql/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="https://i.imgur.com/KrPHSG5.jpg" referrerpolicy="no-referrer">
             </div>]]></description>
